@@ -28,15 +28,15 @@ Objective: Functioning rails project with front-end Authentication
 
 Objective: Themes can be viewed and destroyed through the API.
 
-###Phase 3: Javascript widget (2 day)
+###Phase 3: Javascript widget (2 days)
 
 Objective: Widget allows users to pick colors in HSL and RGB Color spaces. Themes can be created and edited though API.
 
 ###Phase 4: Tags (1 day)
 
-Objective: Themes belonging to the current user can be tagged. Visitor can search by tags.
+Objective: Themes belonging to the current user can be tagged.
 
-###Phase 5: Search (2 day)
+###Phase 5: Search (1 day)
 
 Objective: Themes can be searched for by Tags, age, name, or creator
 
