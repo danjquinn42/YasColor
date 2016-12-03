@@ -16,3 +16,5 @@ grey box
 
 * bullet point
 * bullet point
+
+[Link to schema.md](./schema.md)
