@@ -22,7 +22,7 @@
 
 - `GET /api/themes`
   - Themes index/explore
-  - accepts `tag_name` query param to list themes by tag
+  - accepts `tag_name` query param to list themes by taga
 - `POST /api/themes`
 - `GET /api/themes/:id`
 - `PATCH /api/themes/:id`
