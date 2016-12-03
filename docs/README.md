@@ -1,20 +1,37 @@
-# Main Header
+# Yas Color
 
-Paragraph appears below a thin grey line. Lorem ipsum **Bold Text** dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-**Bold Text**: new text appaers in line
+## Minimum Viable Product
+ Brick Color is a web app inspired by [Adobe Color](https://www.color.adobe.com "Abobe Color CC"). By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+  * New account creation, login, and demo login
+  * Hosting on Heroku
+  * Production README
+  * Color themes
+  * Javascript ColorWheel widget for editing themes
+  * Tags
+  * Search for themes by name or tag
 
-## Subheading
+  * Bonus: "Yas!" button (ie. the "Appreicate" button)
+  * Bonus: Comments
+  * Bonus: Multiple libraries in 'My Themes'
 
-Text in backticsks appear as `inline code blocks` Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+## Design Docs
+  * [View Wireframes](./wireframes)
+  * [React Components](./component-hierarchy.md)
+  * [API Endpoints](./api-endpoints.md)
+  * [DB Schema](./schema.md)
+  * [Sample State](./sample-state.md)
 
-```
-Code block
-appears in
-grey box
-```
+## Implementation Timeline
 
-* bullet point
-* bullet point
+***Phase 1: Backend setup and Front End User Authentication (2 days)
 
-[Link to schema.md](./schema.md)
+Objective: Functioning rails project with front-end Authentication
+
+***Phase 2: Themes Model, API, and components (3 days)
+
+Objective: Themes can be created, read, edited and destroyed through the API.
+
+**Phase 3: Tags (1 day)
+
+Objective: Themes belonging to the current user can be tagged. User can search by tags.
