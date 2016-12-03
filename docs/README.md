@@ -11,10 +11,6 @@
   * Tags
   * Search for themes by name or tag
 
-  * Bonus: "Yas!" button (ie. the "Appreicate" button)
-  * Bonus: Comments
-  * Bonus: Multiple libraries in 'My Themes'
-
 ## Design Docs
   * [View Wireframes](./wireframes)
   * [React Components](./component-hierarchy.md)
@@ -24,14 +20,20 @@
 
 ## Implementation Timeline
 
-***Phase 1: Backend setup and Front End User Authentication (2 days)
+###Phase 1: Backend setup and Front End User Authentication (2 days)
 
 Objective: Functioning rails project with front-end Authentication
 
-***Phase 2: Themes Model, API, and components (3 days)
+###Phase 2: Themes Model, API, and components (3 days)
 
 Objective: Themes can be created, read, edited and destroyed through the API.
 
-**Phase 3: Tags (1 day)
+###Phase 3: Tags (1 day)
 
 Objective: Themes belonging to the current user can be tagged. User can search by tags.
+
+
+
+* Bonus: "Yas!" button (ie. the "Appreicate" button)
+* Bonus: Comments
+* Bonus: Multiple libraries in 'My Themes'
