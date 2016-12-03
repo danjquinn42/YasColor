@@ -1,8 +1,8 @@
-# Yas Color
+# Yas Color!
 
 
 ## Minimum Viable Product
- Brick Color is a web app inspired by [Adobe Color](www.color.adobe.com "Abobe Color CC"). By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+ Yas Color is a web app inspired by [Adobe Color](https://color.adobe.com/ "Abobe Color CC"). By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
   * New account creation, login, and demo login
   * Hosting on Heroku
   * Production README
@@ -24,16 +24,30 @@
 
 Objective: Functioning rails project with front-end Authentication
 
-###Phase 2: Themes Model, API, and components (3 days)
+###Phase 2: Themes Model, API, and components (2 days)
 
-Objective: Themes can be created, read, edited and destroyed through the API.
+Objective: Themes can be viewed and destroyed through the API.
 
-###Phase 3: Tags (1 day)
+###Phase 3: Javascript widget (2 day)
 
-Objective: Themes belonging to the current user can be tagged. User can search by tags.
+Objective: Widget allows users to pick colors in HSL and RGB Color spaces. Themes can be created and edited though API.
+
+###Phase 4: Tags (1 day)
+
+Objective: Themes belonging to the current user can be tagged. Visitor can search by tags.
+
+###Phase 5: Search (2 day)
+
+Objective: Themes can be searched for by Tags, age, name, or creator
+
+###Phase 6: Color Rules (1 day)
+
+Objective: Allow Users to apply 'Color Rules' for easier editing
 
 
+###Bonus Features (TBD)
 
 * Bonus: "Yas!" button (ie. the "Appreicate" button)
+* Bonus: Search by 'Most Yassed'
 * Bonus: Comments
-* Bonus: Multiple libraries in 'My Themes'
+* Bonus: Generate Color themes from photos
