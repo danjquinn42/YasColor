@@ -14,13 +14,15 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
-color0      | string    | not null
-color1      | string    | not null
-color2      | string    | not null
-color3      | string    | not null
-color4      | string    | not null
+colors      | array[5]  | not null, takes color_id foreign keys
 created_at  | date      | not null
 updated_at  | date      | not null
+
+## colors
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+hex_value   | string    | not null
 
 ## tags
 column name | data type | details
@@ -40,7 +42,7 @@ user_id     | integer   | not null, foreign key (references users), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-body        | string    | not null, indexed, unique
+body        | string    | not null
 theme_id    | integer   | not null, foreign key (references themes), indexed
 user_id     | integer   | not null, foreign key (references users), indexed
 created_at  | date      | not null
