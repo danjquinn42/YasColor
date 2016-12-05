@@ -7,7 +7,20 @@
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
-    createComment: {errors: ["comment can't be blank"]}
+    createComment: {errors: ["comment can't be blank"]},
+    createTheme: {
+      title: "new theme"
+      colors: ["000000", "000000", "000000", "000000", "000000"]
+    }
+    edit_tags: {
+      1: {
+        id: 1,
+        name: "Black"
+      }
+      new_tag: {
+        name: ""
+      }
+    }
   },
   themes: {
     1: {
@@ -15,8 +28,8 @@
       colors: ["001F33", "001F33", "001F33", "001F33", "001F33"],
       author_id: 1,
       tags: {
-        1: {
-          id: 1
+        2: {
+          id: 2,
           name: "Blues"
         },
       yas_count: 1,
