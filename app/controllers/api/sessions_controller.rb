@@ -11,7 +11,7 @@ class Api::SessionsController < ApplicationController
         render :show
     else
       render(
-        json: ["Email and password don't match. It the password don't fit, you must resubmit."],
+        json: ["Email and password don't match."],
         status: 422
       )
     end
@@ -27,5 +27,6 @@ class Api::SessionsController < ApplicationController
         json: ['You cannot sign out before signing in.'],
         status: 404
       )
+    end
   end
 end
