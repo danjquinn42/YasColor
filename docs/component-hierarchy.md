@@ -14,7 +14,7 @@
     * tags
 
 ###Tags
-  * Tag
+  * Tag List Items
 
 ###Search
 
@@ -22,16 +22,20 @@
   * Search
   * Theme List Items
 
+##MyThemesContainer
+  * Theme List Items
 
 ## Routes
 
 
-|Path                     | Component               |
-|-------------------------|-------------------------|
-| "/sign-up"              | "AuthFormContainer"     |
-| "/sign-in"              | "AuthFormContainer"     |
-| "/themes                | "ThemesIndexContainer"  |
-| "/themes/new            | "NewThemeContainer"     |
-| "/themes/:themeId       | "ShowThemeContainer"    |
-| "/themes/:themeId/tags  | "TagContainer"          |
-| "/search                | "Search"                |
+|Path                          | Component               |
+|------------------------------|-------------------------|
+| "/sign-up"                   | "AuthFormContainer"     |
+| "/sign-in"                   | "AuthFormContainer"     |
+| "/themes                     | "ThemesContainer"       |
+| "/themes/saved               | "MyThemesContainer"     |
+| "/themes/new                 | "NewThemeContainer"     |
+| "/themes/:themeId            | "ShowThemeContainer"    |
+| "/themes/:themeId/tags       | "TagContainer"          |
+| "/themes/:themeId/tags/edit  | "TagEditorContainer"          |
+| "/search                     | "Search"                |
