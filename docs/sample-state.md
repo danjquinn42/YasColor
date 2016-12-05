@@ -1,27 +1,24 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "Dwayne"
-  },
-  forms: {
+  sessions: {
+    currentUser: {
+      id: 1,
+      username: "Dwayne"
+    },
     signUp: {errors: []},
-    logIn: {errors: []},
-    createComment: {errors: ["comment can't be blank"]},
-    createTheme: {
-      title: "new theme"
-      colors: ["000000", "000000", "000000", "000000", "000000"]
-    }
-    edit_tags: {
-      1: {
-        id: 1,
-        name: "Black"
-      }
-      new_tag: {
-        name: ""
-      }
-    }
+    logIn: {errors: []}
+  }
+  newComment: {
+    errors: ["comment can't be blank"],
+    body: ""
   },
+  createTheme: {
+    title: "new theme"
+    colors: ["000000", "000000", "000000", "000000", "000000"]
+  }
+  tagFilter: [1], // Used to track selected Tags for filtering of themes
+  searchTerms: "Blues",
+  }
   themes: {
     1: {
       title: "Dwayne's Color Theme",
@@ -40,7 +37,6 @@
         }
       }
     },
-    tagFilters: [1] // Used to track selected Tags for filtering of themes
   }
 }
 ```

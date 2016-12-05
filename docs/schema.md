@@ -23,6 +23,12 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
+
+## taggings
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+tag_id      | integer   | not null, foreign key (references tags), indexed
 theme_id    | integer   | not null, foreign key (references themes), indexed
 
 ## yases
