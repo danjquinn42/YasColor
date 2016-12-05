@@ -3,7 +3,7 @@
   sessions: {
     currentUser: {
       id: 1,
-      username: "Dwayne"
+      name: "Dwayne"
     },
     signUp: {errors: []},
     logIn: {errors: []}
