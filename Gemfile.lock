@@ -43,6 +43,8 @@ GEM
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
     bcrypt (3.1.10)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -165,6 +167,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bcrypt (~> 3.1.7)
+  binding_of_caller
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)

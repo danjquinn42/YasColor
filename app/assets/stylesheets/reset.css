@@ -1,6 +1,6 @@
 body, h1, h2, h3, h4, h5, ul, li,
 header, footer, div, span, article, section,
-main, aside, caption, img {
+main, aside, caption, img, a {
   margin: 0;
   padding: 0;
   border: 0;
@@ -10,6 +10,7 @@ main, aside, caption, img {
   color: inherit;
   list-style-type: inherit;
   list-style: inherit;
+  text-decoration: none;
 
   background: transparent;
 
@@ -20,4 +21,18 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  font-family: 'Helvetica-Neue', 'Helvetica', sans-serif;
+  background-color: #262626;
+  color: #C0C0C0;
+  /*font-weight: lighter;*/
+  letter-spacing: 0.6px;
 }

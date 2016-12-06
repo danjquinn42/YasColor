@@ -1,0 +1,75 @@
+.header {
+  background-image: linear-gradient(
+    to bottom,
+    #282828,
+    #1A1A1A
+    );
+  height: 54px;
+}
+
+.header a {
+  display: block;
+}
+
+.header-nav {
+  width: 83%;
+  min-width: 750px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  padding: 15px 20px 5px 20px;
+  margin: 0 20px 0 0;
+  float: left;
+}
+
+.logo {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 10px 0 0;
+}
+
+.header-logo > h1 {
+  font-size: 24px;
+  display: inline-block;
+  font-weight: lighter;
+}
+
+.nav-links {
+  padding: 20px 0 10px 50px;
+  font-size: 14px;
+}
+
+.nav-links li {
+  float: left;
+  color: #777;
+  padding: 0 40px 0 0;
+  /*font-size: 14px;*/
+}
+
+.nav-links li:hover {
+  color: #ccc;
+  /*font-size: 14px;*/
+}
+
+.user-profile-link {
+  float: right;
+  /*padding: 0px 0 0 20px;*/
+}
+
+.user-profile-link > h2 {
+  /*float: right;*/
+  /*padding: 0px 0 0 20px;*/
+}
+
+.profile-pic {
+  word-wrap: break-word;
+  margin: 0 10px 0 0;
+  float: left;
+  width: 40px;
+  height: 40px;
+  background-color: lightblue;
+}
