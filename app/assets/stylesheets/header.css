@@ -57,11 +57,15 @@
 
 .user-profile-link {
   float: right;
+  /*position: rel*/
+  display: flex;
+  max-height: 40px;
   /*padding: 0px 0 0 20px;*/
 }
 
 .user-profile-link > h2 {
-  /*float: right;*/
+  float: left;
+  vertical-align: center;
   /*padding: 0px 0 0 20px;*/
 }
 
