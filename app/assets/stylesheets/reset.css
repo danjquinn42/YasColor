@@ -1,0 +1,23 @@
+body, h1, h2, h3, h4, h5, ul, li,
+header, footer, div, span, article, section,
+main, aside, caption, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  list-style-type: inherit;
+  list-style: inherit;
+
+  background: transparent;
+
+  display: block;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
