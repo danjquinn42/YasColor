@@ -1,4 +1,4 @@
-class Api::UsersController < ApplicationController
+ class Api::UsersController < ApplicationController
 
   def show
   end
@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save!
       login(@user)
-      render( json: {} )
+      render 'api/user/show'
     else
       flash.now[:errors] = @user.errors.full_messages
     end
@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :name, :pic_url)
   end
 
 end
