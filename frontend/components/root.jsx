@@ -6,19 +6,19 @@ import App from './app';
 
 const Root = ({ store }) => {
 
-  // const _ensureLoggedIn = (nextState, replace) => {
-  //   const currentUser = store.getState().session.currentUser;
-  //   if (!currentUser) {
-  //     replace('/login');
-  //   }
-  // };
-  //
-  // const _redirectIfLoggedIn = (nextState, replace) => {
-  //   const currentUser = store.getState().session.currentUser;
-  //   if (!currentUser) {
-  //     replace('/login');
-  //   }
-  // };
+  const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    }
+  };
+
+  const _redirectIfLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    }
+  };
 
   return (
     <Provider store={ store }>

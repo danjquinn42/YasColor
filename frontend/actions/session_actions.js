@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util';
+import * as APIUtil from '../util/sessions_api_util';
 
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
