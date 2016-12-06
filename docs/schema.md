@@ -6,6 +6,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 name            | string    | not null, indexed, unique
 email           | string    | not null
+pic_url         | string    |
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
