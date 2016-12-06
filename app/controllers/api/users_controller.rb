@@ -10,14 +10,14 @@
       login(@user)
       render 'api/user/show'
     else
-      flash.now[:errors] = @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name, :pic_url)
+    params.require(:user).permit(:name, :email, :password)
   end
 
 end

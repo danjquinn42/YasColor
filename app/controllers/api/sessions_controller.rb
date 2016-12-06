@@ -7,12 +7,12 @@ class Api::SessionsController < ApplicationController
       )
 
     if @user
-      @user.login(@user)
-        render :show
+      login(@user)
+        render "api/users/show"
     else
       render(
-        json: ["Email and password don't match."],
-        status: 422
+        json: ["If the password don't fit, you must re-submit."],
+        status: 401
       )
     end
   end
@@ -21,10 +21,10 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render {}
+      render "api/users/show"
     else
       render(
-        json: ['You cannot sign out before signing in.'],
+        json: ["You can't sign out before signing in! That's crazy. You're crazy."],
         status: 404
       )
     end
