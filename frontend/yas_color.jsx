@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
 
   if (window.currentUser) {
-    const preloadedState = { session: { current_user: window.currentUser } };
+    // debugger
+    const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
   } else {
     store = configureStore();
   }
+  // debugger
 
   const root = document.getElementById('root');
   ReactDom.render(<Root store={store}/>, root);

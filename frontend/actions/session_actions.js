@@ -8,20 +8,23 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export function login(user) {
   return (dispatch) => {
-    return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)),
+    return APIUtil.login(user).then(currentUser => dispatch(receiveCurrentUser(currentUser)),
             err => dispatch(receiveErrors(err.responseJSON)));
   };
 }
 
 export function logout() {
   return (dispatch) => {
-    return APIUtil.logout().then(user => dispatch(receiveCurrentUser(null)));
+    return APIUtil.logout().then(user => {
+      return dispatch(receiveCurrentUser(null));
+    }
+    );
   };
 }
 
 export function signup(user) {
   return (dispatch) => {
-    return APIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)),
+    return APIUtil.signup(user).then(currentUser => dispatch(receiveCurrentUser(currentUser)),
             err => dispatch(receiveErrors(err.responseJSON)));
   };
 }
