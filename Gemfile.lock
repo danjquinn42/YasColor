@@ -172,7 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bcrypt (~> 3.1.7)
+  bcrypt
   binding_of_caller
   byebug
   coffee-rails (~> 4.2)

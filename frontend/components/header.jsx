@@ -4,7 +4,24 @@ import { Link } from 'react-router';
 
 class Header extends React.Component{
 
-
+  username() {
+    if (window.currentUser){
+      return (
+        <Link to="/" className="user-profile-link group">
+          <img className="profile-pic"></img>
+          <h2>{window.currentUser.name}</h2>
+        </Link>
+      );
+    } else {
+      return (
+        <h2 className="user-profile-link">
+          <Link to="/login">log in </Link>
+          or
+          <Link to="/signup">sign up</Link>
+        </h2>
+      );
+    }
+  }
 
   render() {
     return (
@@ -30,11 +47,8 @@ class Header extends React.Component{
             </li>
 
           </ul>
+            {this.username()}
 
-          <Link to="/" className="user-profile-link group">
-            <img className="profile-pic"></img>
-            <h2>UserName / login</h2>
-          </Link>
         </nav>
       </header>
     );
