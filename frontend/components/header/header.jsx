@@ -22,7 +22,7 @@ class Header extends React.Component{
       );
     } else {
       return (
-        <h2 className="user-profile-link">
+        <h2 className="login-signup">
           <Link to="/login">log in</Link>
           &nbsp;or&nbsp;
           <Link to="/signup">sign up</Link>
@@ -36,7 +36,7 @@ class Header extends React.Component{
       <header className="header group">
         <nav className="header-nav">
           <Link to="/" className="header-logo">
-            <img className="logo"></img>
+            <img src={window.logo} className="logo"></img>
             <h1>Yas Color!</h1>
           </Link>
 

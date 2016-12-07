@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
 			return(
 				<ul>
 					{this.props.errors.map((error, i) => (
-						<li key={`error-${i}`}>
+						<li className="error" key={`error-${i}`}>
 							{error}
 						</li>
 					))}
@@ -77,8 +77,11 @@ class SessionForm extends React.Component {
 		return (
       <div className="modal">
   			<section className="session-form-container">
+					<Link to="/">
+						<img src={window.close} className="close"></img>
+					</Link>
 					<Link to="/" className="signup-logo">
-            <img className="logo"></img>
+            <img src={window.logo} className="logo"></img>
             <h1>Yas Color!</h1>
           </Link>
   				<form onSubmit={this.handleSubmit} className="session-form-box">

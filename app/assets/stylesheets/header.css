@@ -27,8 +27,8 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 10px 0 0;
+  /*background-color: #ccc;*/
+  margin: 0 10px -2px 0;
   display: inline;
 }
 
@@ -58,6 +58,25 @@
   display: flex;
   max-height: 40px;
   padding-bottom: 15px;
+}
+
+.login-signup {
+  font-weight: lighter;
+  margin-left: auto;
+  display: flex;
+  font-size: 14px;
+  color: #888;
+  /*max-height: 40px;*/
+  /*padding-bottom: 15px;*/
+  padding-top: 26px;
+}
+
+.login-signup a{
+  /*font-weight: bold;*/
+}
+
+.login-signup a:hover{
+  color: #ccc;
 }
 
 .user-profile-link > h2 {

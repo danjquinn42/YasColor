@@ -20,8 +20,14 @@
   color: #777;
 }
 
+.close {
+  margin-top: 10px;
+  float: right;
+  width: 24px;
+}
+
 .signup-logo {
-  padding: 15px 20px 5px 0;
+  padding: 15px 20px 0 0;
   margin: 0 20px 0px 0px;
   color: #ccc;
 }
@@ -30,8 +36,8 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 10px 0 0;
+  /*background-color: #ccc;*/
+  margin: 0 10px -5px 0;
   display: inline;
 }
 
@@ -48,11 +54,17 @@
 .form-title {
   padding: 20px 0 20px 0;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 .question {
   font-weight: lighter;
   font-size: 14px;
+}
+
+.error {
+  margin: 5px 0 -10px 0;
+  color: #BA270D;
 }
 
 .question:hover {
@@ -80,6 +92,7 @@
 }
 
 .session-form-container input {
+  height: 32px;
   margin-left: auto;
   background-color: #ccc;
   color: #262626;
@@ -92,8 +105,9 @@
 
 .session-form-container .button {
   display: block;
-  border: 2px solid #262626;
-  border-top: 2px solid #444;
+  border: 1px solid #262626;
+  border-top: 1px solid #444;
+  height: 36px;
   background-image: linear-gradient(
     to bottom,
     #4675AD,
@@ -106,7 +120,7 @@
 }
 
 .button:active {
-  border-top: 2px solid #262626;
+  border-top: 1px solid #333;
   border-bottom: 1px solid #444;
   background-image: linear-gradient(
     to bottom,

@@ -11,7 +11,7 @@ class Api::SessionsController < ApplicationController
         render "api/users/show"
     else
       render(
-        json: ["If the password don't fit, you must re-submit."],
+        json: ["Invalid username/ password"],
         status: 401
       )
     end
