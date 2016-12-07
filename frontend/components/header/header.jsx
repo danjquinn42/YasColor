@@ -1,21 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 
 class Header extends React.Component{
 
   username() {
-    if (window.currentUser){
+    if (this.props.currentUser){
       return (
         <section className="user-profile-link group">
           <img className="profile-pic"></img>
-          <h2>{window.currentUser.name}</h2>
+          <h2>{this.props.currentUser.name}</h2>
           <ul className="dropdown">
             <li>
-              <Link to="/">logout</Link>
+              <h3 onClick={this.props.logout}>log out</h3>
             </li>
             <li>
-              <Link to="/">edit profile</Link>
+              <h3 to="/">edit profile</h3>
             </li>
           </ul>
         </section>
