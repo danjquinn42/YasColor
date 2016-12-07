@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
 	render() {
 		return (
       <div className="modal">
-  			<section className="session-form-container">
+  			<section className="session-form-container group">
 					<Link to="/">
 						<img src={window.close} className="close"></img>
 					</Link>
