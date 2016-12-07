@@ -15,8 +15,8 @@ class Header extends React.Component{
     } else {
       return (
         <h2 className="user-profile-link">
-          <Link to="/login">log in </Link>
-          or
+          <Link to="/login">log in</Link>
+          &nbsp;or&nbsp;
           <Link to="/signup">sign up</Link>
         </h2>
       );

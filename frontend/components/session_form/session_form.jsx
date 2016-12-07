@@ -54,16 +54,19 @@ class SessionForm extends React.Component {
 		);
 	}
 
-  nameInput() {
+  singUpOnly() {
     if (this.props.formType === 'signup') {
       return(
-        <label className="non-display"> Name
-          <input type="text"
-            value={this.state.name}
-            placeholder="name"
-            onChange={this.update("name")}
-            className="session-input" />
-        </label>
+        <div className="name-and-photo">
+          <label className="non-display"> Name
+            <input type="text"
+              value={this.state.name}
+              placeholder="name"
+              onChange={this.update("name")}
+              className="session-input" />
+          </label>
+          <div>Add a profile photo</div>
+        </div>
       );
     }
   }
@@ -77,7 +80,7 @@ class SessionForm extends React.Component {
   					<h2 className="form-title">{this.props.formType}</h2> {this.navLink()}
   					{this.renderErrors()}
   					<div className="session-form">
-              {this.nameInput()}
+              {this.singUpOnly()}
   						<label className="non-display"> Email
   							<input type="text"
   								value={this.state.email}
