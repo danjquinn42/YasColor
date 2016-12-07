@@ -7,10 +7,18 @@ class Header extends React.Component{
   username() {
     if (window.currentUser){
       return (
-        <Link to="/" className="user-profile-link group">
+        <section className="user-profile-link group">
           <img className="profile-pic"></img>
           <h2>{window.currentUser.name}</h2>
-        </Link>
+          <ul className="dropdown">
+            <li>
+              <Link to="/">logout</Link>
+            </li>
+            <li>
+              <Link to="/">edit profile</Link>
+            </li>
+          </ul>
+        </section>
       );
     } else {
       return (

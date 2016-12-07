@@ -57,6 +57,7 @@
   margin-left: auto;
   display: flex;
   max-height: 40px;
+
 }
 
 .user-profile-link > h2 {
@@ -72,4 +73,29 @@
   width: 40px;
   height: 40px;
   background-color: gray;
+}
+
+.dropdown > li {
+  position: relative;
+  padding: 5px 10px;
+}
+
+.dropdown {
+  display: none;
+  background-color: #ccc;
+  color: #282828;
+  font-size: 14px;
+  padding: 5px 15px 12px 0;
+  position: absolute;
+  top: 54px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.dropdown:hover{
+  display: block;
+}
+
+.user-profile-link:hover .dropdown{
+  display: block;
 }
