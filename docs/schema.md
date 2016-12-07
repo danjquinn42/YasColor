@@ -16,7 +16,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
-colors      | array[5]  | not null, each element is a foreign key to the colors table
+colors      | array[5]  | not null, each element is a foreign key in the colors table
 created_at  | date      | not null
 updated_at  | date      | not null
 
