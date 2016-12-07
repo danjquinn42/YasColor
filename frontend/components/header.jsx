@@ -26,7 +26,7 @@ class Header extends React.Component{
             </li>
 
             <li>
-              <Link to="/">Mine</Link>
+              <Link to="/">My Themes</Link>
             </li>
 
           </ul>
