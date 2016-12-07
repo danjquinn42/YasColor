@@ -15,24 +15,25 @@ class Header extends React.Component{
             <h1>Yas Color!</h1>
           </Link>
 
-          <ul className="nav-links">
+          <ul className="nav-links group">
 
-            <Link to="/">
-              <li>Create</li>
-            </Link>
+            <li>
+              <Link to="/">Create</Link>
+            </li>
 
-            <Link to="/">
-              <li>Explore</li>
-            </Link>
+            <li>
+              <Link to="/">Explore</Link>
+            </li>
 
-            <Link to="/">
-              <li>Mine</li>
-            </Link>
+            <li>
+              <Link to="/">Mine</Link>
+            </li>
+
           </ul>
 
           <Link to="/" className="user-profile-link group">
             <img className="profile-pic"></img>
-            <h2>UserName</h2>
+            <h2>UserName / login</h2>
           </Link>
         </nav>
       </header>
