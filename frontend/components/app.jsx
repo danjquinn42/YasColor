@@ -6,8 +6,8 @@ import Header from './header/header_container';
 const App = ({ children }) => {
   return (
   <div>
-    { children }
     <Header />
+    { children }
   </div>
   );
 };
