@@ -57,6 +57,7 @@
   display: flex;
   max-height: 40px;
   padding-bottom: 15px;
+  font-weight: lighter;
 }
 
 .login-signup {
@@ -83,10 +84,10 @@
 
 .profile-pic {
   word-wrap: break-word;
-  margin: 6px 10px 0 0;
+  margin: 12px 12px 0 0;
   float: left;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-color: gray;
 }
 
