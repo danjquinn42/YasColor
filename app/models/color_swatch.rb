@@ -12,9 +12,23 @@
 #  theme_id   :integer
 #
 
-class ColorSwatch < ApplicationRecord
-  validates :hue, :saturation, :lightness, :theme presence: true
+class ColorSwatch < ActiveRecord::Base
+  validates :hue, :saturation, :lightness, :theme, :ord, presence: true
 
   belongs_to :theme
+
+  # after_initialize :verify_values
+
+  private
+
+  # def verify_values
+  #   unless (
+  #     self.hue.between?(0, 360) &&
+  #     self.saturation.between?(0, 100) &&
+  #     self.lightness.between?(0, 100)
+  #     )
+  #     raise "Invalid values for HSL Color hue:#{self.hue}, saturation:#{saturation}, lightness:#{lightness}"
+  #   end
+  # end
 
 end
