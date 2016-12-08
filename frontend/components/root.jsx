@@ -2,6 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
+// import ExploreContainer from './explore/explore_container';
+// import ThemeContainer from './theme/theme_container';
 
 import App from './app';
 
@@ -17,7 +19,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/'); // TODO redirect to create
+      replace('/'); /// TODO redirect to create
     }
   };
 
