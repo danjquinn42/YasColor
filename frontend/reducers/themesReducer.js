@@ -6,7 +6,7 @@ const ThemesReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_THEMES:
-      return action.themes;
+      return merge({}, action.themes);
     case RECEIVE_THEME:
       const newTheme = {[action.theme.id]: action.theme };
       return merge({}, state, newTheme);
