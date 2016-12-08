@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
+import ThemeShowContainer  from './theme_show/theme_show_container';
 // import ExploreContainer from './explore/explore_container';
 // import ThemeContainer from './theme/theme_container';
 
@@ -31,6 +32,7 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer}
             onEnter={_redirectIfLoggedIn} />
+          <Route path="/themes/:themeId" component={ThemeShowContainer} />
         </Route>
       </Router>
     </Provider>

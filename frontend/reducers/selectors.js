@@ -1,9 +1,5 @@
-export const selectTheme = ({ themes, reviews }, id) => {
+export const selectTheme = ({ themes }, id) => {
    const theme = themes[id] || {};
-   theme.reviews = [];
-   for (let id in reviews) {
-     theme.reviews.push(reviews[id]);
-   }
    return theme;
 };
 
