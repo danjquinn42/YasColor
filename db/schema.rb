@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206160257) do
+ActiveRecord::Schema.define(version: 20161208062614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "color_swatches", force: :cascade do |t|
+    t.integer  "hue",        null: false
+    t.integer  "saturation", null: false
+    t.integer  "lightness",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "ord"
+    t.integer  "theme_id"
+    t.index ["theme_id"], name: "index_color_swatches_on_theme_id", using: :btree
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_themes_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            null: false

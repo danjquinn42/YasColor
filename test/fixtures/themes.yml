@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: themes
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  title: MyString
+  colors: 
+
+two:
+  user_id: 1
+  title: MyString
+  colors: 

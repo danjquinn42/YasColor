@@ -15,18 +15,19 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-colors      | array[5]  | not null, each element is a foreign key in the colors table
+title       | string    |
 created_at  | date      | not null
 updated_at  | date      | not null
 
-## colors
+## color_swatches
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 Hue         | integer   | not null, min 0 max 360
 Saturation  | integer   | not null, min 0 max 100
-Lightness   | integer   | not null. min 0 max 100
+Lightness   | integer   | not null, min 0 max 100
+ord         | integer   | not null, min 0 max 4
+theme_id    | integer   | not null, foreign key (references themes)
 
 ## tags
 column name | data type | details

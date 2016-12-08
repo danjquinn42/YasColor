@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: color_swatches
+#
+#  id         :integer          not null, primary key
+#  hue        :integer          not null
+#  saturation :integer          not null
+#  lightness  :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  ord        :integer
+#  theme_id   :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hue: 1
+  saturation: 1
+  lightness: 1
+
+two:
+  hue: 1
+  saturation: 1
+  lightness: 1
