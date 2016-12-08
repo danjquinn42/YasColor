@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
 		this.state = { name: "", email: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.demoUser = this.demoUser.bind(this);
+    // this.props.errors = [];
 	}
 
 	componentDidUpdate() {
@@ -25,10 +26,6 @@ class SessionForm extends React.Component {
 		});
 	}
 
-	demoUser() {
-		this.setState({password: 'password', email: 'demo@yascolor.com'});
-	}
-
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
@@ -37,7 +34,7 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup" className="question">
+			return <Link to="/signup"  className="question">
               Don't yet have an account? Sign up.
             </Link>;
 		} else {
@@ -47,19 +44,43 @@ class SessionForm extends React.Component {
 		}
 	}
 
-	renderErrors() {
+
+	renderErrors(type) {
+    // debugger
 		if (this.props.errors) {
-			return(
-				<ul>
-					{this.props.errors.map((error, i) => (
-						<li className="error" key={`error-${i}`}>
-							{error}
-						</li>
-					))}
+		// 	// return(
+  		return (
+      	<ul>
+        	{	this.props.errors.map((error, i) => {
+            if ( error.includes(type)) {
+              return ( <li className="error" key={`error-${i}`}>{ error }</li> );
+            }})}
 				</ul>
-			);
-		}
+  		);
+    }
 	}
+  // 		    return (
+  //           <h4 className="error" key={`error-${i}`}>{ error }</h4>
+  //       );
+  //     }
+
+  demoUser() {
+    this.setState({password: 'password', email: 'demo@yascolor.com'});
+  }
+
+  demo() {
+    if (this.props.formType === "login") {
+      return(
+        <form onSubmit={this.handleSubmit}>
+          <input type="submit"
+            onClick={this.demoUser}
+            className="demo"
+            value="Sign in as Guest User"
+            />
+        </form>
+      );
+    }
+  }
 
   signUpOnly() {
     if (this.props.formType === 'signup') {
@@ -78,6 +99,7 @@ class SessionForm extends React.Component {
     }
   }
 
+
 	render() {
 		return (
       <div className="modal">
@@ -91,9 +113,9 @@ class SessionForm extends React.Component {
           </Link>
   				<form onSubmit={this.handleSubmit} className="session-form-box">
   					<h2 className="form-title">{this.props.formType}</h2> {this.navLink()}
-  					{this.renderErrors()}
   					<div className="session-form">
               {this.signUpOnly()}
+            {this.renderErrors('Name')}
 
 							<label htmlFor="email" className="non-display">Email</label>
   							<input type="text"
@@ -102,6 +124,7 @@ class SessionForm extends React.Component {
                   placeholder="email"
   								onChange={this.update("email")}
   								className="session-input" />
+                {this.renderErrors('Email')}
 
                 <label htmlFor="password" className="non-display">Password</label>
   							<input type="password"
@@ -110,17 +133,12 @@ class SessionForm extends React.Component {
                   placeholder="password"
   								onChange={this.update("password")}
   								className="session-input" />
+                {this.renderErrors('Password')}
 
 								<input className="button" type="submit" value="Submit" />
   					</div>
   				</form>
-					<form onSubmit={this.handleSubmit}>
-						<input type="submit"
-							onClick={this.demoUser}
-							className="demo"
-							value="Sign in as Guest User"
-							/>
-					</form>
+					{ this.demo() }
   			</section>
       </div>
 		);

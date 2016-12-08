@@ -65,7 +65,12 @@
 }
 
 .error {
-  margin: 5px 0 -10px 0;
+  position: inherit;
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  padding: 10px 0 0 0;
+  /*margin: 5px 0 5px 0;*/
   color: #BA270D;
 }
 
@@ -79,8 +84,8 @@
 }
 
 .name-and-photo > .add-photo {
-  width: 90px;
-  height: 65px;
+  width: 80px;
+  height: 61px;
   background-color: #ccc;
   font-size: 12px;
   text-align: center;
