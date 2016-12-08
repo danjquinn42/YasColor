@@ -14,14 +14,14 @@
 
 .modal .session-form-container {
   width: 400px;
-  background: #333;
+  background: #fff;
   padding: 20px 20px 30px 20px;
   position: fixed;
   top: 10%;
   left: 50%;
   margin-left: -200px;
   box-sizing: border-box;
-  color: #aaa;
+  color: #555;
 }
 
 .close {
@@ -32,7 +32,6 @@
 .signup-logo {
   padding: 15px 20px 0 0;
   margin: 0 20px 0px 0px;
-  color: #ccc;
 }
 
 .signup-logo .logo {
@@ -44,9 +43,10 @@
 }
 
 .signup-logo > h1 {
+  color: #333;
   font-size: 48px;
   display: inline;
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 .non-display {
@@ -70,7 +70,7 @@
 }
 
 .question:hover {
-  color: #ccc;
+  color: #222;
 }
 
 .name-and-photo {
@@ -96,7 +96,7 @@
 .session-form-container input {
   height: 32px;
   margin-left: auto;
-  background-color: #ccc;
+  background-color: #ddd;
   color: #262626;
   margin-top: 29px;
   width: 100%;
@@ -107,43 +107,99 @@
 
 .session-form-container .button {
   display: block;
-  border: 1px solid #262626;
-  border-top: 1px solid #444;
+  /*border-top: 1px solid #444;
+  border-bottom: 1px solid #262626;*/
   height: 36px;
   background-image: linear-gradient(
     to bottom,
-    #4675AD,
-    #416DA1
+    #3A6596,
+    #315D91,
+    #315D91
     );
   font-size: 16px;
-  color: #ccc;
+  color: #eee;
   letter-spacing: 0.08em;
 }
 
-.button:active {
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #444;
+
+.session-form-container .button:hover {
+  /*border-top: 1px solid #333;
+  border-bottom: 1px solid #444;*/
   background-image: linear-gradient(
     to bottom,
-    #416DA1,
-    #4675AD,
-    #4675AD
+    #2D5485,
+    #2D5485,
+    #2A507D
     );
+  }
+
+
+.session-form-container .button:active {
+  /*border-top: 1px solid #333;
+  border-bottom: 1px solid #444;*/
+  background-image: linear-gradient(
+    to bottom,
+    #315D91,
+    #315D91,
+    #3A6596
+    );
+  }
+
+input.demo{
+  display: block;
+  /*border-top: 1px solid #444;
+  border-bottom: 1px solid #262626;*/
+  height: 36px;
+  background-image: linear-gradient(
+    to bottom,
+    #666,
+    #555,
+    #555
+    );
+  font-size: 16px;
+  color: #ddd;
+  letter-spacing: 0.08em;
 }
+
+
+.demo:hover {
+  /*border-top: 1px solid #333;
+  border-bottom: 1px solid #444;*/
+  background-image: linear-gradient(
+    to bottom,
+    #555,
+    #444,
+    #444
+    );
+    color: #ddd;
+  }
+
+
+.demo:active {
+  /*border-top: 1px solid #333;
+  border-bottom: 1px solid #444;*/
+  background-image: linear-gradient(
+    to bottom,
+    #444,
+    #444,
+    #555
+    );
+  }
+
 
 
 ::-webkit-input-placeholder {
-   color: #777;
+   color: #888;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #777;
+   color: #888;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #777;
+   color: #888;
 }
 
 :-ms-input-placeholder {
-   color: #777;
+   color: #888;
 }
