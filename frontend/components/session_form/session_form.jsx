@@ -61,12 +61,12 @@ class SessionForm extends React.Component {
 		}
 	}
 
-  singUpOnly() {
+  signUpOnly() {
     if (this.props.formType === 'signup') {
       return(
         <div className="name-and-photo">
 					<div className="add-photo">Add a profile photo</div>
-					<label for="name" className="non-display">Name</label>
+					<label htmlFor="name" className="non-display">Name</label>
             <input type="text"
 							id="name"
               value={this.state.name}
@@ -93,9 +93,9 @@ class SessionForm extends React.Component {
   					<h2 className="form-title">{this.props.formType}</h2> {this.navLink()}
   					{this.renderErrors()}
   					<div className="session-form">
-              {this.singUpOnly()}
+              {this.signUpOnly()}
 
-							<label for="email" className="non-display">Email</label>
+							<label htmlFor="email" className="non-display">Email</label>
   							<input type="text"
 									id="email"
   								value={this.state.email}
@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
   								onChange={this.update("email")}
   								className="session-input" />
 
-								<label for="password" className="non-display">Password</label>
+                <label htmlFor="password" className="non-display">Password</label>
   							<input type="password"
 									id="password"
   								value={this.state.password}
