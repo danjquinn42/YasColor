@@ -1,1 +1,2 @@
-json.extract! @theme, :id, :title, :colors
+json.partial! 'theme', theme: @theme
+# json.extract! @theme, :id, :title, :user, :colors

@@ -14,11 +14,17 @@ class Api::ThemesController < ApplicationController
     if @theme.save!
       render :show
     else
-      render json: @theme.errors.full_messages, status 422
+      render json: @theme.errors.full_messages, status: 422
     end
   end
 
   def update
+    @theme = Theme.find(params[:id])
+    if @theme.update(themes_params)
+      render :show
+    else
+      render json: @theme.errors.full_messages, status: 422
+    end
   end
 
   def destroy
@@ -30,11 +36,12 @@ class Api::ThemesController < ApplicationController
         json: ["Unable to delete theme."],
         status: 422
       )
+    end
   end
 
   private
 
   def themes_params
-    params.require(:user).permit(:user, :title, :colors)
+    params.require(:user).permit(:user, :title, :color_swatches, :colors)
   end
 end

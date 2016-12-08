@@ -17,8 +17,6 @@ class Theme < ActiveRecord::Base
 
   after_commit :create_color_swatches
 
-  attr_reader :colors
-
   def colors=(hslArray)
     if (
       hslArray.is_a?(Array) &&
@@ -30,21 +28,21 @@ class Theme < ActiveRecord::Base
       raise "Theme must be composed of 5 HSL color values"
     end
   end
-
-  def randColor
-    [rand(360), rand(100), rand(100)]
-  end
-
-  def randSwatch
-    swatch = []
-    5.times do |i|
-      swatch.push(randColor)
-    end
-    swatch
-  end
-
-  private
-
+  #
+  # def randColor
+  #   [rand(360), rand(100), rand(100)]
+  # end
+  #
+  # def randSwatch
+  #   swatch = []
+  #   5.times do |i|
+  #     swatch.push(randColor)
+  #   end
+  #   swatch
+  # end
+  #
+  # private
+  #
   def create_color_swatches
     if (@colors)
       @colors.each_with_index do |color, index|
