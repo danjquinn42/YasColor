@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, ul, li,
+body, h1, h2, h3, h4, h5, ul, li, ol,
 header, footer, div, span, article, section,
 main, aside, caption, img, a, input, button, textarea {
   margin: 0;

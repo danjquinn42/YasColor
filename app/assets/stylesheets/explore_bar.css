@@ -1,0 +1,37 @@
+.explore-bar-wrapper {
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #1C1C1C,
+    #141414,
+    #1C1C1C
+    );
+  border-top: 2px solid #777;
+  margin: 0 auto;
+}
+
+.explore-bar {
+  width: 97%;
+  display: flex;
+  /*height: 55px;*/
+  /*padding: 10px;*/
+}
+
+.options {
+  display: inline;
+  padding: 20px 0 25px 40px;
+  color: #777;
+}
+
+.explore-bar > .dropdown {
+  display: none;
+}
+
+.search {
+  margin-top: 15px;
+  margin-left: auto;
+  display: flex;
+  height: 30px;
+  width: 250px;
+  background: #ccc;
+}
