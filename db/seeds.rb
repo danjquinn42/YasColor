@@ -23,15 +23,15 @@ users = User.create([
   ])
 
 themes = Theme.create([
-  {user: User.find_by(name: 'demo'), title: "Mint Julips and Orange Blossoms", colors: [[12, 78, 100], [60, 38, 100], [96, 32, 92], [130, 36, 74], [170, 100, 64]] },
-  {user: User.find_by(name: 'demo'), title: "Firenze", colors: [[70, 137, 102], [255, 240, 165], [225, 176, 59], [182, 73, 38], [142, 40, 0]] },
+  {user: User.find_by(name: 'demo'), title: "Mint Julips and Orange Blossoms", colors: [[12, 100, 61] , [60, 100, 81] , [96, 66, 77] , [139, 34, 61] , [170, 100, 32] ] },
+  {user: User.find_by(name: 'demo'), title: "Firenze", colors: [[149, 32, 41] , [50, 100, 82] , [36, 100, 62] , [15, 65, 43] , [17, 100, 28] ] },
   {user: User.find_by(name: 'demo'), title: "Honey", colors: [[16, 91, 99], [225, 205, 213], [225, 211, 78], [219, 158, 54], [189, 73, 50]] },
-  {user: User.find_by(name: 'Dwayne'), title: "Summer in Puerto Rico", colors: [[229, 70, 97], [255, 166, 68], [153, 138, 47], [44, 89, 79], [0, 45, 64]] },
-  {user: User.find_by(name: 'Dwayne'), title: "Fall in Michigan", colors: [[6, 75, 70], [20, 77, 82], [57, 72, 87], [226, 61, 40], [30, 56, 42]] },
-  {user: User.find_by(name: 'Nanjie'), title: "Specimens", colors: [[202, 45, 36], [168, 61, 70], [22, 72, 89], [46, 68, 94], [7, 67, 87]] },
-  {user: User.find_by(name: 'Nanjie'), title: "Korea", colors: [[62, 38, 25], [79, 55, 65], [284, 14, 62], [354, 46, 45], [31, 19, 89]] },
-  {user: User.find_by(name: 'Nanjie'), title: "Jean-Michel Basquiat", colors: [[348, 77, 66], [191, 98, 76], [39, 69, 94], [210, 5, 87], [262, 12, 13]] },
-  {user: User.find_by(name: 'Tyrone'), title: "Mowing the Lawn", colors: [[140, 34, 41], [64, 67, 87], [247, 205, 64], [142, 149, 72], [65, 68, 34]] },
-  {user: User.find_by(name: 'Rebeka'), title: "Lake Michigan", colors: [[233, 33, 27], [207, 33, 48], [187, 72, 45], [178, 38, 68], [176, 90, 37]] },
-  {user: User.find_by(name: 'Rebeka'), title: "A Human Spectrum", colors: [[27, 36, 93], [23, 52, 79], [23, 81, 25], [23, 59, 51], [23, 80, 14]] }
+  {user: User.find_by(name: 'Dwayne'), title: "Summer in Puerto Rico", colors: [[350,75,59], [31,100,63], [52,53,39], [167,34,26], [198,100,13]] },
+  {user: User.find_by(name: 'Dwayne'), title: "Fall in Michigan", colors: [[6,60,44], [20,64,50], [57,71,56], [226,44,28], [30,39,30]] },
+  {user: User.find_by(name: 'Nanjie'), title: "Specimens", colors: [[201,30,28], [168,44,49], [46,84,62], [22,74,57], [7,69,58]] },
+  {user: User.find_by(name: 'Nanjie'), title: "Korea", colors: [[31,43,81], [354,30,35], [62,23,20], [284,10,58], [79,38,47]] },
+  {user: User.find_by(name: 'Nanjie'), title: "Jean-Michel Basquiat", colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] },
+  {user: User.find_by(name: 'Tyrone'), title: "Mowing the Lawn", colors: [[356,61,34], [235,14,30], [65,35,43], [46,92,61], [65,33,20]] },
+  {user: User.find_by(name: 'Rebeka'), title: "Lake Michigan", colors: [[232,20,23], [207,20,40], [176,28,55], [187,56,29], [176,83,20]] },
+  {user: User.find_by(name: 'Rebeka'), title: "A Human Spectrum", colors: [[27,70,76], [23,49,58], [23,42,36], [23,68,15], [23,67,8]] }
   ])
