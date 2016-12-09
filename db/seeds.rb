@@ -63,5 +63,6 @@ themes = Theme.create([
   {user: User.find_by(name: 'Nanjie'), title: "Jean-Michel Basquiat", colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] },
   {user: User.find_by(name: 'Tyrone'), title: "Mowing the Lawn", colors: [[356,61,34], [235,14,30], [65,35,43], [46,92,61], [65,33,20]] },
   {user: User.find_by(name: 'Rebeka'), title: "Lake Michigan", colors: [[232,20,23], [207,20,40], [176,28,55], [187,56,29], [176,83,20]] },
+  {user: User.find_by(name: 'Rebeka'), title: "Exporter", colors: [[33,12,48], [240,11,20], [14,78,60], [60,100,95], [180,29,70]] },
 
   ])
