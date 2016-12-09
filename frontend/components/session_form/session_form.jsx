@@ -34,11 +34,11 @@ class SessionForm extends React.Component {
 	navLink() {
 		if (this.props.formType === "login") {
 			return <Link to="/signup"  className="question">
-              Don't yet have an account? Sign up.
+              Don't yet have an account? <strong>Sign up here.</strong>
             </Link>;
 		} else {
 			return <Link to="/login" className="question">
-              Already have an account? Log in.
+              Already have an account? <strong>Log in here.</strong>
             </Link>;
 		}
 	}
@@ -84,7 +84,10 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup') {
       return(
         <div className="name-and-photo">
-					<div className="add-photo">Add a profile photo</div>
+					<div className="add-photo">
+            <img src={window.user} className="profile-pic"></img>
+            <h4>Add a profile photo</h4>
+          </div>
 					<label htmlFor="name" className="non-display">Name</label>
             <input type="text"
 							id="name"

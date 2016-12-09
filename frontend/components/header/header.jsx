@@ -8,7 +8,7 @@ class Header extends React.Component{
     if (this.props.currentUser){
       return (
         <section className="user-profile-link group">
-          <img className="profile-pic"></img>
+          <img src={window.user} className="profile-pic"></img>
           <h2>{this.props.currentUser.name}</h2>
           <ul className="dropdown">
             <li>

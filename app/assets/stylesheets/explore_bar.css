@@ -34,4 +34,11 @@
   height: 30px;
   width: 250px;
   background: #ccc;
+  color: #333;
+}
+
+.search > img{
+  width: 14px;
+  height: 14px;
+  padding: 8px;
 }

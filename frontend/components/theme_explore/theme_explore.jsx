@@ -17,7 +17,10 @@ const ExploreBar = () => {
             <li>Option 4</li>
           </ul>
         </nav>
-        <input className="search" type="text" placeholder="Search"></input>
+          <div className="search" >
+            <img src={window.search} className="search-icon"></img>
+            <input type="text"></input>
+          </div>
       </section>
     </span>
   );

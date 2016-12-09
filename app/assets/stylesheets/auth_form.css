@@ -26,7 +26,7 @@
 
 .close {
   float: right;
-  width: 24px;
+  width: 15px;
 }
 
 .signup-logo {
@@ -64,12 +64,17 @@
   font-size: 14px;
 }
 
+.question > strong {
+  font-weight: normal;
+}
+
 .error {
-  position: inherit;
+  position: absolute;
+  right: 20px;
   display: block;
   text-align: right;
   font-size: 12px;
-  padding: 10px 0 0 0;
+  padding: 3px 0;
   /*margin: 5px 0 5px 0;*/
   color: #BA270D;
 }
@@ -80,19 +85,42 @@
 
 .name-and-photo {
   display: flex;
-  margin: 20px 0 0 0;
+  margin: 20px 0 -10px 0;
+
 }
 
 .name-and-photo > .add-photo {
-  width: 80px;
+  position: relative;
+  background: transparent;
+}
+
+.name-and-photo > .add-photo > h4{
+  position: absolute;
+  /*width: 80px;
   height: 61px;
-  background-color: #ccc;
+  background-color: #ccc;*/
   font-size: 12px;
   text-align: center;
   padding: 10px 5px 0 5px;
-  margin-right: 32px;
+  margin-right: 24px;
   box-sizing: border-box;
 }
+
+
+.name-and-photo > .add-photo > img {
+  position: relative;
+  width: 70px;
+  height: auto;
+  bottom: 11px;
+  /*background-color: #ccc;*/
+  font-size: 12px;
+  text-align: center;
+  padding: 0px 5px 0 5px;
+  margin-right: 24px;
+  box-sizing: border-box;
+}
+
+
 
 .name-and-photo input {
   text-transform: capitalize;
@@ -115,6 +143,7 @@
   /*border-top: 1px solid #444;
   border-bottom: 1px solid #262626;*/
   height: 36px;
+  margin-top: 44px;
   background-image: linear-gradient(
     to bottom,
     #3A6596,

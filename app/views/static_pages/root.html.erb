@@ -2,8 +2,17 @@
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
   <% end %>
-  window.logo = "<%= image_url('logo1.png') %>";
-  window.close = "<%= image_url('close-icon-29.png') %>";
+  window.close = "<%= image_url('close.png') %>";
   window.wheel = "<%= image_url('color-wheel.png') %>";
+  window.logo = "<%= image_url('logo1.png') %>";
+  window.edit = "<%= image_url('edit.png') %>";
+  window.info = "<%= image_url('info.png') %>";
+  window.link = "<%= image_url('link.png') %>";
+  window.pencil = "<%= image_url('pencil.png') %>";
+  window.publish = "<%= image_url('publish.png') %>";
+  window.save = "<%= image_url('save.png') %>";
+  window.search = "<%= image_url('search.png') %>";
+  window.trash = "<%= image_url('trash.png') %>";
+  window.user = "<%= image_url('user.png') %>";
 </script>
 <main id="root"></main>

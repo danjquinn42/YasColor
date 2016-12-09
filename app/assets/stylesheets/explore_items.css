@@ -7,11 +7,11 @@
   width: 98%;
   /*min-height: 100%;*/
   /*flex-flow: row;*/
+  justify-content: space-between;
   align-content: center;;
   margin: 0 auto;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   /*flex-direction: row;*/
-  flex-wrap: nowrap;
   /*display: grid;*/
   /*z-index: 100;*/
 }
