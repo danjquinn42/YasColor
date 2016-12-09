@@ -31,7 +31,7 @@ const ExploreItem = ({ theme, router }) => {
           <ol className="theme">
             {swatches}
           </ol>
-        <h4 className="title">{displayTitle()}</h4>
+        <Link to={`/theme/${theme.id}`} className="title">{displayTitle()}</Link>
       </section>
   </div>
   );
