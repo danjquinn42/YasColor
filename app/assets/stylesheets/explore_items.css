@@ -2,59 +2,37 @@
 .theme-grid {
   display: flex;
   box-sizing: border-box;
-  /*position: relative;*/
-  /*overflow: hidden;*/
-  width: 98%;
-  /*min-height: 100%;*/
-  /*flex-flow: row;*/
+  width: 100%;
   justify-content: space-between;
   align-content: center;;
   margin: 0 auto;
-  /*flex-wrap: wrap;*/
-  /*flex-direction: row;*/
-  /*display: grid;*/
-  /*z-index: 100;*/
+  flex-wrap: wrap;
 }
 
 .cooltip {
   display: inline-block;
-  /*display: flex;*/
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 30%;
-  /*display: block;*/
+  flex-basis: 20%;
   box-sizing: border-box;
-  width: 28%;
-  min-width: 250px;
-  margin: 25px 25px 0 25px;
-  /*float: left;*/
-  /*display: inline;*/
-  /*position: relative;*/
-  /*transition: 1s ease-in-out width;*/
+  min-width: 280px;
+  /*max-width: 250px;*/
+  margin: 4.16% 20px 0 20px;
+
+  -webkit-transition: width 600ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: width 600ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .item {
-  /*float: left;*/
-  /*min-width: 300px;*/
-  /*margin: auto;*/
   position: relative;
-  /*flex-grow: 1;*/
 }
+
 .theme {
-  /*display: block;*/
-  /*width: 30%;*/
-  /*box-sizing: border-box;*/
-  /*padding: 0;*/
-  /*margin: 0 25px;
-  border: 3px solid rgba(0,0,0,.1);*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /*display: block;*/
-  /*width: 100%;*/
   position: relative;
   padding: 0;
   border: 3px solid rgba(0, 0 , 0 , 0.1);
-  /*white-space: nowrap;*/
   overflow: hidden;
   font-size: 0;
 }
@@ -72,13 +50,7 @@
   font-weight: bolder;
   padding: 3% 0 0 0;
   text-indent: 4px;
-  /*position: absolute;*/
   font-size: 14px;
   overflow: hidden;
-  font-size-adjust: auto;
-  /*text-align: left;*/
-  /*display: block;*/
-  /*left: 20px;*/
-  /*margin: 10px 0 0 25px;*/
-  /*top: 80px;*/
+  /*font-size-adjust: auto;*/
 }
