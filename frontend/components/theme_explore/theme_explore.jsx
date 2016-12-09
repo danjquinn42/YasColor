@@ -6,18 +6,20 @@ import ExploreItem from './explore_item';
 
 const ExploreBar = () => {
   return (
-    <section>
-      <nav className="options">
-        <h3>All Themes</h3>
-        <ul className="dropdown">
-          <li>Option 1</li>
-          <li>Option 2</li>
-          <li>Option 3</li>
-          <li>Option 4</li>
-        </ul>
-      </nav>
-      <input className="search" type="text" placeholder="Search"></input>
-    </section>
+    <span className="explore-bar-wrapper group">
+      <section className="explore-bar group">
+        <nav className="options">
+          <h3>All Themes</h3>
+          <ul className="dropdown">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+          </ul>
+        </nav>
+        <input className="search" type="text" placeholder="Search"></input>
+      </section>
+    </span>
   );
 };
 
@@ -40,7 +42,7 @@ class ThemeExplore extends React.Component {
     const themes = this.props.themes;
 
     return (
-      <div>
+      <div className="explore-page">
         <ExploreBar />
 
         <main className="theme-grid">

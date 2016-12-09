@@ -17,11 +17,23 @@ const ExploreItem = ({ theme, router }) => {
     );
   });
 
+  const displayTitle = () => {
+    if (theme.title.length > 20) {
+      return(`${theme.title.slice(0, 19)}...`);
+    } else {
+      return(theme.title);
+    }
+  };
+
   return (
-    <ol className="theme">
-      {swatches}
-      <h4 className="title">{theme.title}</h4>
-    </ol>
+    <div className="cooltip">
+      <section className="item group">
+          <ol className="theme">
+            {swatches}
+          </ol>
+        <h4 className="title">{displayTitle()}</h4>
+      </section>
+  </div>
   );
 };
 
