@@ -7,7 +7,6 @@ class SessionForm extends React.Component {
 		this.state = { name: "", email: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.demoUser = this.demoUser.bind(this);
-    // this.props.errors = [];
 	}
 
 	componentDidUpdate() {
@@ -17,7 +16,7 @@ class SessionForm extends React.Component {
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
 			this.props.router.push("/");
-		}
+    }
 	}
 
 	update(field) {
@@ -44,11 +43,13 @@ class SessionForm extends React.Component {
 		}
 	}
 
+  // formIsSame() {
+  //   return (this.formType === this.props.formType);
+  // }
+
 
 	renderErrors(type) {
-    // debugger
-		if (this.props.errors) {
-		// 	// return(
+		if (this.props.errors) { //&& this.formIsSame()
   		return (
       	<ul>
         	{	this.props.errors.map((error, i) => {
@@ -59,10 +60,7 @@ class SessionForm extends React.Component {
   		);
     }
 	}
-  // 		    return (
-  //           <h4 className="error" key={`error-${i}`}>{ error }</h4>
-  //       );
-  //     }
+
 
   demoUser() {
     this.setState({password: 'password', email: 'demo@yascolor.com'});
