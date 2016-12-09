@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 const ExploreItem = ({ theme, router }) => {
 
   const swatches = theme.color_swatches.map((color) => {
-    const style = { background: `hsl(${color.hue}, ${color.lightness}%, ${color.saturation}%)`};
+    const style = { background: `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`};
     return (
       <li className="swatch"
         key={color.ord}
