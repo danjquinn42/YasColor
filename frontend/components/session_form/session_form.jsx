@@ -28,16 +28,16 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm({user: user});
+		this.props.processForm({user: user}).then(this.props.clearErrors);
 	}
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup"  className="question">
+			return <Link to="/signup" onClick={this.props.clearErrors} className="question">
               Don't yet have an account? <strong>Sign up here.</strong>
             </Link>;
 		} else {
-			return <Link to="/login" className="question">
+			return <Link to="/login" onClick={this.props.clearErrors} className="question">
               Already have an account? <strong>Log in here.</strong>
             </Link>;
 		}
@@ -105,7 +105,7 @@ class SessionForm extends React.Component {
 		return (
       <div className="modal">
   			<section className="session-form-container group">
-					<Link to="/">
+					<Link to="/" onClick={this.props.clearErrors} >
 						<img src={window.close} className="close"></img>
 					</Link>
 					<Link to="/" className="signup-logo">

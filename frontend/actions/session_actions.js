@@ -5,6 +5,7 @@ export const LOGOUT = 'LOGOUT';
 export const SIGNUP = 'SIGNUP';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export function login(user) {
   return (dispatch) => {
@@ -24,6 +25,12 @@ export function logout() {
   };
 }
 
+export function clearSessionErrors() {
+  return (dispatch) => {
+    return dispatch(clearErrors());
+  };
+}
+
 export function signup(user) {
   return (dispatch) => {
     return APIUtil.signup(user).then(currentUser => dispatch(receiveCurrentUser(currentUser)),
@@ -32,6 +39,10 @@ export function signup(user) {
             });
   };
 }
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
