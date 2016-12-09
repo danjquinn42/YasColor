@@ -79,13 +79,13 @@
 
 .user-profile-link > h2 {
   float: left;
-  margin: 25px 0 0 0;
+  margin: 25px 25px 0 0;
   vertical-align: center;
 }
 
 .profile-pic {
   word-wrap: break-word;
-  margin: 12px 12px 0 0;
+  margin: 12px 15px 0 0;
   float: left;
   width: 32px;
   height: 32px;
