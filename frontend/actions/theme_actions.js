@@ -4,10 +4,6 @@ export const RECEIVE_THEMES = 'RECEIVE_THEMES';
 export const RECEIVE_THEME = 'RECEIVE_THEME';
 export const REQUEST_THEME = 'REQUEST_THEME';
 export const REQUEST_THEMES = 'REQUEST_THEMES';
-// export const REQUEST_THEMES = 'REQUEST_THEMES';
-  // body...
-// };
-
 
 export function fetchThemes() {
   return (dispatch) => {
@@ -19,7 +15,7 @@ export function fetchThemes() {
 export function fetchTheme(id) {
   return (dispatch) => {
     dispatch(requestTheme(id));
-    return APIUtil.getTheme(id).then(themes => dispatch(receiveThemes(themes)));
+    return APIUtil.getTheme(id).then(theme => dispatch(receiveTheme(theme)));
   };
 }
 

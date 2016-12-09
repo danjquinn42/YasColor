@@ -1,6 +1,6 @@
 import { values } from 'lodash';
 
-export const selectTheme = ({ themes }, id) => {
+export const selectTheme = (themes , id) => {
    const theme = themes[id] || {};
    return theme;
 };
