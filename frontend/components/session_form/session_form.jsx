@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm({user: user}).then(this.props.clearErrors);
+		this.props.processForm({user: user});
 	}
 
 	navLink() {
@@ -104,6 +104,7 @@ class SessionForm extends React.Component {
 	render() {
 		return (
       <div className="modal">
+        <Link to="/" classNam="splashlink" onClick={this.props.clearErrors}></Link>
   			<section className="session-form-container group">
 					<Link to="/" onClick={this.props.clearErrors} >
 						<img src={window.close} className="close"></img>
