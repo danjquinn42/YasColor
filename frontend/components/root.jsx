@@ -33,8 +33,8 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer}
             onEnter={_redirectIfLoggedIn} />
-          <Route path="/themes" component={ThemeExploreContainer} />
-          <Route path="/themes/:themeId" component={ThemeShowContainer} />
+          <Route path="/explore" component={ThemeExploreContainer} />
+          <Route path="/theme/:themeId" component={ThemeShowContainer} />
         </Route>
       </Router>
     </Provider>
