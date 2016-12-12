@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { isEmpty } from 'lodash';
 
 class Create extends React.Component {
   constructor(props) {
@@ -8,6 +9,10 @@ class Create extends React.Component {
       user: window.currentUser,
       colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchTheme(this.props.params.themeId);
   }
 
   handleSubmit(e) {
@@ -34,27 +39,29 @@ class Create extends React.Component {
     return y;
   }
 
-  markers() {
-    return this.state.colors.map((color, i) => {
+  markers(theme) {
+    return theme.color_swatches.map((color, i) => {
       const hsl = {
-        background: `hsl(${color[0]}, ${color[1]}%, ${color[2]}%)`
+        background:
+        `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`
       };
       return (
         <div
           key={i}
           className="marker"
-          style={{left: `${this.hueToX(color[0], color[1])}%`,
-            top: `${this.hueToY(color[0], color[1])}%`}}>
+          style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
+            top: `${this.hueToY(color.hue, color.saturation)}%`}}>
           <div style={ hsl }></div>
         </div>
       );
     });
   }
 
-  themeBoxes() {
-    return this.state.colors.map((color, i) => {
+  themeBoxes(theme) {
+    return theme.color_swatches.map((color, i) => {
       const hsl = {
-        background: `hsl(${color[0]}, ${color[1]}%, ${color[2]}%)`
+        background:
+        `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`
       };
       return (
         <li
@@ -72,7 +79,27 @@ class Create extends React.Component {
 
   }
 
+  createDefaultColors() {
+    const c0 = { hue: 348, saturation: 62, lightness: 42, ord: 0 };
+    const c1 = { hue: 191, saturation: 96, lightness: 39, ord: 1 };
+    const c2 = { hue: 213, saturation: 14, lightness: 85, ord: 2 };
+    const c3 = { hue: 39, saturation: 85, lightness: 62, ord: 3 };
+    const c4 = { hue: 270, saturation: 15, lightness: 12, ord: 4 };
+    return [c0, c1, c2, c3, c4];
+  }
+
   render() {
+    let { theme } = this.props;
+
+    if (_.isEmpty(theme)) {
+      theme = {
+        id: 0,
+        title: "new theme",
+        color_swatches: this.createDefaultColors(),
+        user: window.currentUser
+      };
+    }
+    console.log(theme);
 
     return(
       <section id="content">
@@ -90,7 +117,7 @@ class Create extends React.Component {
               src={window.wheel}
               draggable="false" />
 
-            { this.markers() }
+            { this.markers(theme) }
 
           </div>
         </div>
@@ -98,7 +125,7 @@ class Create extends React.Component {
         <div className="theme">
 
           <ul className="themeBox">
-            { this.themeBoxes() }
+            { this.themeBoxes(theme) }
           </ul>
         </div>
           <div className="sliderList">
@@ -108,26 +135,6 @@ class Create extends React.Component {
     );
   }
 }
-// <svg
-//   xmlns="http://www.w3.org/2000/svg"
-//   version="1.1"
-//   className="markertails"
-//   preserveAspectRatio="xMidYMin meet"
-//   viewBox="-10 -10 120 120">
-// </svg>
-// <g>
-//   <path d="M 50,50 L 87.17996610356089,52.8107153071884 A 4,4,0,1,0,86.93011365902355,44.860281609698625Z">
-//   </path>
-//   <path d="M 50,50 L 29.18501431060884,46.39633925702751 A 4,4,0,1,0,29.308478968931535,54.25569705463762Z">
-//   </path>
-//   <path d="M 50,50 L 99.68,53.98717945420068 A 4,4,0,1,0,99.68,46.01282054579932Z">
-//   </path>
-//   <path d="M 50,50 L 2.905266605764254,45.273893089882925 A 4,4,0,1,0,2.7800544082551184,53.244493537156806Z">
-//   </path>
-//   <path d="M 50,50 L 97.01468897296326,55.465255783175024 A 4,4,0,1,0,97.2650824737454,47.497605396815594Z">
-//   </path>
-// </g>
-//
-//
+
 
 export default Create;

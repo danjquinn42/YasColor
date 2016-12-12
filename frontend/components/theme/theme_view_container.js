@@ -13,7 +13,7 @@ const mapStateToProps = ( { themes, loading }, ownProps ) => {
 
 const mapDispatchToProps = (dispatch) => {
   // debugger
-  return  { fetchTheme: (id) => dispatch(fetchTheme(id)) };
+  return  { fetchTheme: (id) => dispatch(fetchTheme(id))};
 };
 
 export default connect(

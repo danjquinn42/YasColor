@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Create from './create';
-import { createTheme } from '../../actions/theme_actions';
+import { createTheme, fetchTheme } from '../../actions/theme_actions';
 import { selectTheme } from '../../reducers/selectors';
 
 
@@ -12,7 +12,9 @@ const mapStateToProps = ( { themes, loading }, ownProps ) => {
 
 const mapDispatchToProps = (dispatch) => {
   // debugger
-  return  { createTheme: theme => dispatch(createTheme(theme)) };
+  return  {
+    createTheme: theme => dispatch(createTheme(theme)),
+    fetchTheme: (id) => dispatch(fetchTheme(id)) };
 };
 
 export default connect(

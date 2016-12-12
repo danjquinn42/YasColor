@@ -36,6 +36,7 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} />
           <Route path="/explore" component={ThemeExploreContainer} />
           <Route path="/create" component={CreateContainer} />
+          <Route path="/create/:themeId" component={CreateContainer} />
           <Route path="/theme/:themeId" component={ThemeViewContainer} />
         </Route>
       </Router>

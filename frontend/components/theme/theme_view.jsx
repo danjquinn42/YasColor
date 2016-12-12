@@ -6,10 +6,14 @@ import ActionsPanel from './actions_panel';
 
 class ThemeView extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { themeDisplay: "small"};
+  }
+
   componentDidMount() {
     this.props.fetchTheme(this.props.params.themeId);
     // this.swatches = this.seatches.bind(this);
-    this.state = { themeDisplay: "small"};
     // debugger
   }
 
@@ -40,7 +44,6 @@ class ThemeView extends React.Component {
     } else {
       const title = (theme.title) ? theme.title : `Untitled No. ${theme.id}`;
 
-      // {this.swatches(theme)}
       return (
         <content className="view-page group">
           <div className = "edit-title group">

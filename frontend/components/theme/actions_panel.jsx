@@ -16,7 +16,7 @@ const ActionsPanel = ( theme, router) => {
         </li>
 
         <li className="action-item">
-          <Link to="/create">
+          <Link to={`/create/${theme.id}`}>
             <img className="action-icon" src={window.edit}></img>
             <h4>Edit Copy</h4>
           </Link>
