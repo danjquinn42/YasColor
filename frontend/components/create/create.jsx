@@ -80,6 +80,9 @@ class Create extends React.Component {
       backgroundImage: `linear-gradient(
         to right,
         hsl(${color.hue}, 0%, ${color.lightness}%),
+        hsl(${color.hue}, 25%, ${color.lightness}%),
+        hsl(${color.hue}, 50%, ${color.lightness}%),
+        hsl(${color.hue}, 75%, ${color.lightness}%),
         hsl(${color.hue}, 100%, ${color.lightness}%))`
     };
   }
@@ -88,12 +91,16 @@ class Create extends React.Component {
     return{
       backgroundImage: `linear-gradient(
         to right,
-        hsl(${color.hue}, ${color.saturation}%, ${0}%),
-        hsl(${color.hue}, ${color.saturation}%, ${20}%),
-        hsl(${color.hue}, ${color.saturation}%, ${40}%),
-        hsl(${color.hue}, ${color.saturation}%, ${60}%),
-        hsl(${color.hue}, ${color.saturation}%, ${80}%),
-        hsl(${color.hue}, ${color.saturation}%, ${100}%))`
+        hsl(${color.hue}, ${color.saturation}%, 0%),
+        hsl(${color.hue}, ${color.saturation}%, 5%),
+        hsl(${color.hue}, ${color.saturation}%, 10%),
+        hsl(${color.hue}, ${color.saturation}%, 15%),
+        hsl(${color.hue}, ${color.saturation}%, 20%),
+        hsl(${color.hue}, ${color.saturation}%, 30%),
+        hsl(${color.hue}, ${color.saturation}%, 40%),
+        hsl(${color.hue}, ${color.saturation}%, 60%),
+        hsl(${color.hue}, ${color.saturation}%, 80%),
+        hsl(${color.hue}, ${color.saturation}%, 100%))`
     };
   }
 
@@ -112,7 +119,7 @@ class Create extends React.Component {
           <input
             type="range"
             className={`hue ${this.firstOrLast(i)}`}
-            onChange={this.update(theme.color_swatches[i].hue)}
+            onChange={this.update(color.hue)}
             id="hue"
             min="0"
             max="360"
