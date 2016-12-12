@@ -13,8 +13,6 @@ class ThemeView extends React.Component {
 
   componentDidMount() {
     this.props.fetchTheme(this.props.params.themeId);
-    // this.swatches = this.seatches.bind(this);
-    // debugger
   }
 
   toggleFullscreen() {

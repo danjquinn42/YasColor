@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router';
 import ExploreItem from '../theme_explore/explore_item';
 
 const MyItems = ( {themes} ) => {
-  // debugger
   return (
     <ul className="theme-grid">
       { themes.map(theme => <ExploreItem key={theme.id} theme={theme} />) }

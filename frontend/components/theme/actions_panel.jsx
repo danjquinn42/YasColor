@@ -14,16 +14,28 @@ const ActionsPanel = ( theme, updateUser, router) => {
     }
   };
 
+  const verifyUser = () => {
+    if (window.currentUser) {
+      return (<Link to="/mythemes" onClick={saveTheme}>
+      <img className="action-icon" src={window.save}></img>
+      <h4>Save to Library</h4>
+    </Link>);
+    } else {
+      return ( <Link to="/login">
+      <img className="action-icon" src={window.save}></img>
+      <h4>Save to Library</h4>
+    </Link>);
+    }
+  }
+
   return (
 
     <section className="actions-panel group">
       <h3>Actions</h3>
       <ul>
         <li className="action-item">
-          <Link to="/mythemes" onClick={saveTheme}>
-            <img className="action-icon" src={window.save}></img>
-            <h4>Save to Library</h4>
-          </Link>
+            { verifyUser() }
+
         </li>
 
         <li className="action-item">

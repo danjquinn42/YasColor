@@ -11,7 +11,6 @@ const mapStateToProps = ( { themes, loading }, ownProps ) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  // debugger
   return  {
     createTheme: theme => dispatch(createTheme(theme)),
     fetchTheme: (id) => dispatch(fetchTheme(id)) };

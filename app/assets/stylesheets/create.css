@@ -83,6 +83,7 @@
   top: -9px;
   width: 18px;
   height: 18px;
+  box-shadow: 0 0 0 2pt rgba(240, 240, 240, 0.9);
 }
 
 .marker > div:hover {
@@ -101,20 +102,26 @@
 }
 
 #slider-list {
+  margin-top: 20px;
   display: flex;
 }
 
-#slider-list:first-child > input[type=range]{
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50px;
+.first-slider{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.last-slider{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .slider {
-
   width: 20%;
 }
 
 input[type=range] {
+  margin-bottom: 10px;
   -webkit-appearance: none;
   border: 1px solid #000000;
   height: 20px;

@@ -9,6 +9,7 @@ class Create extends React.Component {
       user: window.currentUser,
       colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.sliderList = this.sliderList.bind(this);
   }
 
   componentDidMount() {
@@ -96,21 +97,29 @@ class Create extends React.Component {
     };
   }
 
+  firstOrLast(i){
+    if (i === 0) {
+      return "first-slider";
+    } else if (i === 4) {
+      return "last-slider";
+    }
+  }
+
   sliderList(theme) {
     return theme.color_swatches.map((color, i) => {
       return (
         <li className="slider hsl" key={i} data-mode="hsl">
           <input
             type="range"
-            className="hue"
-            onChange={this.update(color.hue)}
+            className={`hue ${this.firstOrLast(i)}`}
+            onChange={this.update(theme.color_swatches[i].hue)}
             id="hue"
             min="0"
             max="360"
             value={color.hue}></input>
           <input
             type="range"
-            className="saturation"
+            className={`saturation ${this.firstOrLast(i)}`}
             onChange={this.update()}
             style={this.saturationGradient(color)}
             id="saturation"
@@ -119,7 +128,7 @@ class Create extends React.Component {
             value={color.saturation}></input>
           <input
             type="range"
-            className="lightness"
+            className={`lightness ${this.firstOrLast(i)}`}
             onChange={this.update()}
             style={this.lightnessGradient(color)}
             id="lightness"
