@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
     validates :password, length: { minimum: 6, allow_nil: true }
 
     has_many :themes
+    has_many :theme_saves
 
    attr_reader :password
 

@@ -13,6 +13,7 @@ class Theme < ActiveRecord::Base
   validates :user, presence: true
 
   has_many :color_swatches
+  has_many :theme_saves
   belongs_to :user
 
   after_commit :create_color_swatches

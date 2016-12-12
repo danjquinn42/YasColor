@@ -22,9 +22,14 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/'); /// TODO redirect to create
+      replace('/create'); /// TODO redirect to create
     }
   };
+
+  // const _redirectToCreate = (nextState, replace) => {
+  //   if (this.path === '/'){
+  //   replace('/create');}
+  // };
 
   return (
     <Provider store={ store }>
