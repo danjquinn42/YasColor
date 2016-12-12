@@ -31,6 +31,18 @@ class Header extends React.Component{
     }
   }
 
+  verifyUser() {
+    if (window.currentUser) {
+      return (<Link to="/mythemes">
+          <h4>My Themes</h4>
+        </Link>);
+    } else {
+      return ( <Link to="/login">
+          <h4>My Themes</h4>
+        </Link>);
+    }
+  }
+
   render() {
     return (
       <header className="header group">
@@ -51,7 +63,7 @@ class Header extends React.Component{
             </li>
 
             <li>
-              <Link to="/mythemes">My Themes</Link>
+              {this.verifyUser()}
             </li>
 
           </ul>
