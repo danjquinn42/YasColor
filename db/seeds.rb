@@ -53,16 +53,21 @@ themes = Theme.create([
   {user: User.find_by(name: 'Nanjie'), title: "Parsley Sage Rosemary and Thyme", colors: [[76,48,39], [67,48,26], [67,48,44], [59,45,30], [67,48,35]] },
   {user: User.find_by(name: 'Nanjie'), title: "Flat UI Terminal Theme", colors: [[211,31,27], [145,77,41], [146,80,38], [147,38,62], [8,88,57]] },
 
-  {user: User.find_by(name: 'Nanjie'), title: "Jean-Michel Basquiat", colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] },
   {user: User.find_by(name: 'Tyrone'), title: "Mowing the Lawn", colors: [[356,61,34], [235,14,30], [65,35,43], [46,92,61], [65,33,20]] },
-  {user: User.find_by(name: 'Rebeka'), title: "Lake Michigan", colors: [[232,20,23], [207,20,40], [176,28,55], [187,56,29], [176,83,20]] },
 
-  {user: User.find_by(name: 'Dwayne'), title: "Fall in Michigan", colors: [[6,60,44], [20,64,50], [57,71,56], [226,44,28], [30,39,30]] },
-  {user: User.find_by(name: 'Nanjie'), title: "Specimens", colors: [[201,30,28], [168,44,49], [46,84,62], [22,74,57], [7,69,58]] },
-  {user: User.find_by(name: 'Nanjie'), title: "Korea", colors: [[31,43,81], [354,30,35], [62,23,20], [284,10,58], [79,38,47]] },
-  {user: User.find_by(name: 'Nanjie'), title: "Jean-Michel Basquiat", colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] },
-  {user: User.find_by(name: 'Tyrone'), title: "Mowing the Lawn", colors: [[356,61,34], [235,14,30], [65,35,43], [46,92,61], [65,33,20]] },
-  {user: User.find_by(name: 'Rebeka'), title: "Lake Michigan", colors: [[232,20,23], [207,20,40], [176,28,55], [187,56,29], [176,83,20]] },
+  {user: User.find_by(name: 'Dwayne'), title: "Fall in Michigan copy", colors: [[6,60,44], [20,64,50], [57,71,56], [226,44,28], [30,39,30]] },
+  {user: User.find_by(name: 'Nanjie'), title: "Specimens copy", colors: [[201,30,28], [168,44,49], [46,84,62], [22,74,57], [7,69,58]] },
+  {user: User.find_by(name: 'Nanjie'), title: "Korea copy", colors: [[31,43,81], [354,30,35], [62,23,20], [284,10,58], [79,38,47]] },
+  {user: User.find_by(name: 'Nanjie'), title: "Jean-Michel Basquiat copy", colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] },
+  {user: User.find_by(name: 'Tyrone'), title: "Mowing the Lawn copy", colors: [[356,61,34], [235,14,30], [65,35,43], [46,92,61], [65,33,20]] },
+  {user: User.find_by(name: 'Rebeka'), title: "Lake Michigan copy", colors: [[232,20,23], [207,20,40], [176,28,55], [187,56,29], [176,83,20]] },
   {user: User.find_by(name: 'Rebeka'), title: "Exporter", colors: [[33,12,48], [240,11,20], [14,78,60], [60,100,95], [180,29,70]] },
-
   ])
+
+  theme_saves = ThemeSave.create([
+    {user: User.find_by(name: 'demo'), theme: Theme.find_by(title: "Gold and Curry")},
+    {user: User.find_by(name: 'demo'), theme: Theme.find_by(title: "Camping Sunset")},
+    {user: User.find_by(name: 'demo'), theme: Theme.find_by(title: "Fall in Michigan")},
+    {user: User.find_by(name: 'demo'), theme: Theme.find_by(title: "Olives and Orange")},
+    {user: User.find_by(name: 'demo'), theme: Theme.find_by(title: "Honey")}
+    ])

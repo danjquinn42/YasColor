@@ -13,16 +13,38 @@
 #
 
 class User < ActiveRecord::Base
-    validates :name, :password_digest, :session_token, presence: true
-    validates :email, presence: true, uniqueness: true
-    validates :password, length: { minimum: 6, allow_nil: true }
+  validates :name, :password_digest, :session_token, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, length: { minimum: 6, allow_nil: true }
 
-    has_many :themes
-    has_many :theme_saves
+  has_many :themes
+
+  has_many(
+   :theme_saves,
+   class_name: "ThemeSave"
+   )
+
+  has_many(
+    :saved_themes,
+    through: :theme_saves,
+    source: :theme
+  )
 
    attr_reader :password
 
    after_initialize :ensure_session_token
+
+   def all_my_themes
+    Theme.find_by_sql(
+      "SELECT
+        *
+      FROM
+        themes
+      JOIN
+        theme_saves ON theme_saves.theme_id = themes.id
+      WHERE
+        theme_saves.user_id = #{self.id} OR themes.user_id = #{self.id}")
+   end
 
    def password=(password)
      @password = password

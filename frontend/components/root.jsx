@@ -5,6 +5,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import ThemeExploreContainer  from './theme_explore/theme_explore_container';
 import ThemeViewContainer from './theme/theme_view_container';
 import CreateContainer from './create/create_container';
+import MyThemesContainer from './my_themes/my_themes_container';
 // import ExploreContainer from './explore/explore_container';
 // import ThemeContainer from './theme/theme_container';
 
@@ -41,6 +42,7 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} />
           <Route path="/explore" component={ThemeExploreContainer} />
           <Route path="/create" component={CreateContainer} />
+          <Route path="/mythemes" component={MyThemesContainer} />
           <Route path="/create/:themeId" component={CreateContainer} />
           <Route path="/theme/:themeId" component={ThemeViewContainer} />
         </Route>

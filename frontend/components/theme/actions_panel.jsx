@@ -2,14 +2,25 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const ActionsPanel = ( theme, router) => {
-  // debugger
+const ActionsPanel = ( theme, updateUser, router) => {
+
+  //
+  const saveTheme = () => {
+    const user = window.currentUser;
+    // const themeSaves = user.theme_saves;
+    if (!user.saved_themes.includes(theme)){
+      user.saved_themes.push(theme);
+      updateUser(user);
+    }
+  };
+
   return (
+
     <section className="actions-panel group">
       <h3>Actions</h3>
       <ul>
         <li className="action-item">
-          <Link to="/">
+          <Link to="/mythemes" onClick={saveTheme}>
             <img className="action-icon" src={window.save}></img>
             <h4>Save to Library</h4>
           </Link>

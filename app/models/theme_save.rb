@@ -10,7 +10,7 @@
 #
 
 class ThemeSave < ApplicationRecord
-  validates :user, :theme
+  validates :user, :theme, presence: true
 
   belongs_to :user
   belongs_to :theme

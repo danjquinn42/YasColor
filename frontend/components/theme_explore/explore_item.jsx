@@ -2,11 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-// Object {id: 18, title: "Mint Julips and Orange Blossoms",
-//          user: Object, color_swatches: Array[5]}
-
 const ExploreItem = ({ theme, router }) => {
-
+  // debugger
   const swatches = theme.color_swatches.map((color) => {
     const style = { background: `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`};
     return (
@@ -38,7 +35,3 @@ const ExploreItem = ({ theme, router }) => {
 };
 
 export default ExploreItem;
-
-// <ol className="swatch">
-//   { theme.map((theme))}
-// </ol>

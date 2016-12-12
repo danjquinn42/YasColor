@@ -33,13 +33,13 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup" onClick={this.props.clearErrors} className="question">
+			return (<Link to="/signup" onClick={this.props.clearErrors} className="question">
               Don't yet have an account? <strong>Sign up here.</strong>
-            </Link>;
+            </Link>);
 		} else {
-			return <Link to="/login" onClick={this.props.clearErrors} className="question">
+			return (<Link to="/login" onClick={this.props.clearErrors} className="question">
               Already have an account? <strong>Log in here.</strong>
-            </Link>;
+            </Link>);
 		}
 	}
 

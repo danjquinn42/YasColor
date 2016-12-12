@@ -39,19 +39,22 @@ class Create extends React.Component {
     return y;
   }
 
+  HSLBackground(color){
+    return {
+      background:
+      `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`
+    };
+  }
+
   markers(theme) {
     return theme.color_swatches.map((color, i) => {
-      const hsl = {
-        background:
-        `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`
-      };
       return (
         <div
           key={i}
           className="marker"
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
             top: `${this.hueToY(color.hue, color.saturation)}%`}}>
-          <div style={ hsl }></div>
+          <div style={ this.HSLBackground(color) }></div>
         </div>
       );
     });
@@ -59,24 +62,73 @@ class Create extends React.Component {
 
   themeBoxes(theme) {
     return theme.color_swatches.map((color, i) => {
-      const hsl = {
-        background:
-        `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`
-      };
       return (
         <li
           key={i}
           draggable="false"
           aria-haspopup="true"
           data-index={0}
-          style={ hsl } >
+          style={ this.HSLBackground(color) } >
         </li>
       );
     });
   }
 
-  sliderList() {
+  saturationGradient(color){
+    return{
+      backgroundImage: `linear-gradient(
+        to right,
+        hsl(${color.hue}, 0%, ${color.lightness}%),
+        hsl(${color.hue}, 100%, ${color.lightness}%))`
+    };
+  }
 
+  lightnessGradient(color){
+    return{
+      backgroundImage: `linear-gradient(
+        to right,
+        hsl(${color.hue}, ${color.saturation}%, ${0}%),
+        hsl(${color.hue}, ${color.saturation}%, ${20}%),
+        hsl(${color.hue}, ${color.saturation}%, ${40}%),
+        hsl(${color.hue}, ${color.saturation}%, ${60}%),
+        hsl(${color.hue}, ${color.saturation}%, ${80}%),
+        hsl(${color.hue}, ${color.saturation}%, ${100}%))`
+    };
+  }
+
+  sliderList(theme) {
+    return theme.color_swatches.map((color, i) => {
+      return (
+        <li className="slider hsl" key={i} data-mode="hsl">
+          <input
+            type="range"
+            className="hue"
+            onChange={this.update(color.hue)}
+            id="hue"
+            min="0"
+            max="360"
+            value={color.hue}></input>
+          <input
+            type="range"
+            className="saturation"
+            onChange={this.update()}
+            style={this.saturationGradient(color)}
+            id="saturation"
+            min="0"
+            max="100"
+            value={color.saturation}></input>
+          <input
+            type="range"
+            className="lightness"
+            onChange={this.update()}
+            style={this.lightnessGradient(color)}
+            id="lightness"
+            min="0"
+            max="100"
+            value={color.lightness}></input>
+        </li>
+      );
+    });
   }
 
   createDefaultColors() {
@@ -99,7 +151,6 @@ class Create extends React.Component {
         user: window.currentUser
       };
     }
-    console.log(theme);
 
     return(
       <section id="content">
@@ -128,9 +179,9 @@ class Create extends React.Component {
             { this.themeBoxes(theme) }
           </ul>
         </div>
-          <div className="sliderList">
-          { this.sliderList() }
-          </div>
+          <ol id="slider-list" className="group">
+          { this.sliderList(theme) }
+        </ol>
       </section>
     );
   }

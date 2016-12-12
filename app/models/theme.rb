@@ -13,7 +13,10 @@ class Theme < ActiveRecord::Base
   validates :user, presence: true
 
   has_many :color_swatches
-  has_many :theme_saves
+  has_many(
+   :theme_saves,
+   class_name:  "ThemeSave")
+
   belongs_to :user
 
   after_commit :create_color_swatches
@@ -29,21 +32,9 @@ class Theme < ActiveRecord::Base
       raise "Theme must be composed of 5 HSL color values"
     end
   end
-  #
-  # def randColor
-  #   [rand(360), rand(100), rand(100)]
-  # end
-  #
-  # def randSwatch
-  #   swatch = []
-  #   5.times do |i|
-  #     swatch.push(randColor)
-  #   end
-  #   swatch
-  # end
-  #
-  # private
-  #
+
+
+
   def create_color_swatches
     if (@colors)
       @colors.each_with_index do |color, index|
