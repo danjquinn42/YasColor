@@ -5,10 +5,11 @@ import { updateUser } from '../../actions/user_actions';
 import { selectTheme } from '../../reducers/selectors';
 
 
-const mapStateToProps = ( { themes, loading }, ownProps ) => {
+const mapStateToProps = ( { themes, loading, session }, ownProps ) => {
   return {
     theme: selectTheme(themes, ownProps.params.themeId),
-    loading: loading.themeLoading
+    loading: loading.themeLoading,
+    user: session.currentUser
   };
 };
 

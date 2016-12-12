@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const ActionsPanel = ( theme, updateUser, router) => {
+const ActionsPanel = ( theme, user, updateUser, router) => {
 
   //
   const saveTheme = () => {
-    const user = window.currentUser;
-    // const themeSaves = user.theme_saves;
-    if (!user.saved_themes.includes(theme)){
+    const themeIDs = user.saved_themes.map((sTheme) => {
+      return sTheme.id
+    });
+    if (!themeIDs.includes(theme.id)){
       user.saved_themes.push(theme);
       updateUser(user);
     }

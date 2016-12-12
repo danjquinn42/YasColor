@@ -58,6 +58,7 @@
   max-height: 40px;
   padding-bottom: 15px;
   font-weight: lighter;
+  z-index: 999;
 }
 
 .login-signup {

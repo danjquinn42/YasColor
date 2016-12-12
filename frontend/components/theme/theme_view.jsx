@@ -36,7 +36,7 @@ class ThemeView extends React.Component {
 
 
   render(){
-    const { theme, loading, children, updateUser } = this.props;
+    const { theme, loading, children, user, updateUser } = this.props;
     if (loading || !theme.color_swatches) {
       return <h1>loading</h1>;
     } else {
@@ -54,7 +54,7 @@ class ThemeView extends React.Component {
           </ol>
           <div className="metadata group">
             <Comments />
-            {ActionsPanel(theme, updateUser)}
+            {ActionsPanel(theme, user, updateUser)}
           </div>
         </content>
       );
