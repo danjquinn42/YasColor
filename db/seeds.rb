@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Theme.destroy_all
+ThemeSave.destroy_all
+ColorSwatch.destroy_all
+
 
 users = User.create([
   {name: 'demo', email: 'demo@yascolor.com', password: 'password' },
