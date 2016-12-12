@@ -43,7 +43,7 @@ class Header extends React.Component{
           <ul className="nav-links group">
 
             <li>
-              <Link to="/">Create</Link>
+              <Link to="/create">Create</Link>
             </li>
 
             <li>

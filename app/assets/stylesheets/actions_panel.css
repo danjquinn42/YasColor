@@ -1,0 +1,64 @@
+.metadata > .actions-panel {
+  box-sizing: border-box;
+  border-left: 5px solid #292929;
+  display: inline;
+  /*flex-basis: 25%;*/
+  width: 275px;
+  height: 100%;
+  /*display: inline;*/
+  background: #4B4B4B;
+  margin-left: auto;
+  /*height: 100%;*/
+  float: right;
+}
+
+.actions-panel > h3 {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  padding: 15px 20px 10px 20px;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #4B4B4B,
+    #343434
+    );
+  border-top: 1px solid #353535;
+  box-sizing: border-box;
+}
+
+.actions-panel li {
+  display: flex;
+  margin: 20px;
+  font-size: 14px;
+  vertical-align: baseline;
+  color: #aaa;
+}
+
+.actions-panel li > a {
+  display: flex;
+}
+
+.actions-panel li > a > h4 {
+  display: inline;
+}
+
+.actions-panel .info-content{
+  position: relative;
+  left: 20px;
+  float: right;
+  /*background: green;*/
+}
+
+.action-item:hover {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.action-icon {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: -2px;
+}

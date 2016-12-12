@@ -43,10 +43,6 @@ class SessionForm extends React.Component {
 		}
 	}
 
-  // formIsSame() {
-  //   return (this.formType === this.props.formType);
-  // }
-
 
 	renderErrors(type) {
 		if (this.props.errors) { //&& this.formIsSame()
@@ -104,7 +100,7 @@ class SessionForm extends React.Component {
 	render() {
 		return (
       <div className="modal">
-        <Link to="/" classNam="splashlink" onClick={this.props.clearErrors}></Link>
+        <Link to="/" className="splashlink" onClick={this.props.clearErrors}></Link>
   			<section className="session-form-container group">
 					<Link to="/" onClick={this.props.clearErrors} >
 						<img src={window.close} className="close"></img>

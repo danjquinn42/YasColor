@@ -9,7 +9,13 @@ class ThemeView extends React.Component {
   componentDidMount() {
     this.props.fetchTheme(this.props.params.themeId);
     // this.swatches = this.seatches.bind(this);
+    this.state = { themeDisplay: "small"};
     // debugger
+  }
+
+  toggleFullscreen() {
+    const css = (this.state.themeDisplay === "small") ? "fullscreen" : "small";
+    this.setState({themeDisplay: css});
   }
 
   swatches(theme){
@@ -17,13 +23,15 @@ class ThemeView extends React.Component {
       const style = { background: `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`};
 
       return (
-        <li className="view-swatch"
+        <li className={`view-swatch`}
           key={color.ord}
           style={ style }
           ></li>
       );
     });
   }
+
+
 
   render(){
     const { theme, loading, children } = this.props;
@@ -36,15 +44,16 @@ class ThemeView extends React.Component {
       return (
         <content className="view-page group">
           <div className = "edit-title group">
-            <input className="title" type="text" value={title }></input>
+            <input className="title" type="text" defaultValue={title }></input>
             <img className="pencil" src={window.pencil}></img>
           </div>
-          <ol className="view-theme">
+          <ol className={`view-theme ${this.state.themeDisplay}`}
+            onClick={this.toggleFullscreen.bind(this)}>
             {this.swatches(theme)}
           </ol>
           <div className="metadata group">
             <Comments />
-            <ActionsPanel />
+            {ActionsPanel(theme)}
           </div>
         </content>
       );
