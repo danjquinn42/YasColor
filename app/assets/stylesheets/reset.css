@@ -16,6 +16,15 @@ main, aside, caption, img, a, input, button, textarea {
   background: transparent;
 
   display: block;
+
+
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 img {

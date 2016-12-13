@@ -12,7 +12,6 @@ import MyThemesContainer from './my_themes/my_themes_container';
 import App from './app';
 
 const Root = ({ store }) => {
-
   // const _ensureLoggedIn = (nextState, replace) => {
   //   const currentUser = store.getState().session.currentUser;
   //   if (!currentUser) {
