@@ -37,7 +37,7 @@ class ThemeView extends React.Component {
 
   render(){
     const { theme, loading, children, user, updateUser } = this.props;
-    if (loading || !theme.color_swatches) {
+    if (loading || theme.default) {
       return <h1>loading</h1>;
     } else {
       const title = (theme.title) ? theme.title : `Untitled No. ${theme.id}`;

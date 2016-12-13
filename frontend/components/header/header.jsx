@@ -32,7 +32,7 @@ class Header extends React.Component{
   }
 
   verifyUser() {
-    if (window.currentUser) {
+    if (this.props.currentUser) {
       return (<Link to="/mythemes">
           <h4>My Themes</h4>
         </Link>);

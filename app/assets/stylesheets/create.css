@@ -120,6 +120,16 @@
   width: 20%;
 }
 
+input-range {
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 100%;
+  /*background: transparent;*/
+  cursor: pointer;
+}
+
 input[type=range] {
   margin-bottom: 10px;
   -webkit-appearance: none;

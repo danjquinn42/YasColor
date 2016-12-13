@@ -1,29 +1,43 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { isEmpty } from 'lodash';
+import InputRange from 'react-input-range';
 
 class Create extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: "",
-      user: window.currentUser,
-      colors: [[348,62,41], [191,96,39], [213,14,85], [39,85,62], [270,6,12]] };
+    this.state = {
+      theme: this.props.theme
+    }; // TODO : State should should be set from initial params
+    // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sliderList = this.sliderList.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
+    if (this.props.params.themeId) {
     this.props.fetchTheme(this.props.params.themeId);
+    } //TODO : replace fetchTheme with ReceiveTheme if this.props.params.themeId
   }
+
+  // TODO :
+  componentWillReceiveProps(nextProps) {
+    // debugger
+    this.setState({ theme: nextProps.theme});
+  }
+  //componentWillUnmount ==> dispatch resetCurrentTheme
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTheme(this.state)
-    .then((data) => this.props.router.push(`/theme/${data.id}`));
+    this.props.createTheme(this.state).
+      then((data) => this.props.router.push(`/theme/${data.id}`));
   }
 
+
   update(property) {
-    return e => this.setState({ [property]: e.target.value });
+    debugger;
+    return event => this.setState({ [property]: event.target.value });
   }
 
   hueToX(hue, saturation) {
@@ -61,8 +75,8 @@ class Create extends React.Component {
     });
   }
 
-  themeBoxes(theme) {
-    return theme.color_swatches.map((color, i) => {
+  themeBoxes() {
+    return this.props.theme.color_swatches.map((color, i) => {
       return (
         <li
           key={i}
@@ -112,60 +126,64 @@ class Create extends React.Component {
     }
   }
 
-  sliderList(theme) {
-    return theme.color_swatches.map((color, i) => {
+  sliderList() {
+
+    return this.props.theme.color_swatches.map((color, i) => {
       return (
         <li className="slider hsl" key={i} data-mode="hsl">
           <input
             type="range"
             className={`hue ${this.firstOrLast(i)}`}
-            onChange={this.update(color.hue)}
+            value={color.hue}
             id="hue"
             min="0"
             max="360"
-            value={color.hue}></input>
+            onChange={this.update(this.props.theme.color_swatches)}>
+          </input>
           <input
             type="range"
             className={`saturation ${this.firstOrLast(i)}`}
-            onChange={this.update()}
+            onChange={this.update(color.saturation)}
             style={this.saturationGradient(color)}
             id="saturation"
             min="0"
             max="100"
-            value={color.saturation}></input>
+            defaultValue={color.saturation}></input>
           <input
             type="range"
             className={`lightness ${this.firstOrLast(i)}`}
-            onChange={this.update()}
+            onChange={this.update(color.lightness)}
             style={this.lightnessGradient(color)}
             id="lightness"
             min="0"
             max="100"
-            value={color.lightness}></input>
+            defaultValue={color.lightness}></input>
         </li>
       );
     });
   }
 
-  createDefaultColors() {
-    const c0 = { hue: 348, saturation: 62, lightness: 42, ord: 0 };
-    const c1 = { hue: 191, saturation: 96, lightness: 39, ord: 1 };
-    const c2 = { hue: 213, saturation: 14, lightness: 85, ord: 2 };
-    const c3 = { hue: 39, saturation: 85, lightness: 62, ord: 3 };
-    const c4 = { hue: 270, saturation: 15, lightness: 12, ord: 4 };
-    return [c0, c1, c2, c3, c4];
-  }
+  // createDefaultColors() {
+  //   const c0 = { hue: 348, saturation: 62, lightness: 42, ord: 0 };
+  //   const c1 = { hue: 191, saturation: 96, lightness: 39, ord: 1 };
+  //   const c2 = { hue: 213, saturation: 14, lightness: 85, ord: 2 };
+  //   const c3 = { hue: 39, saturation: 85, lightness: 62, ord: 3 };
+  //   const c4 = { hue: 270, saturation: 15, lightness: 12, ord: 4 };
+  //   return [c0, c1, c2, c3, c4];
+  // }
 
   render() {
-    let { theme } = this.props;
+    let { theme, user, loading } = this.props;
 
-    if (_.isEmpty(theme)) {
-      theme = {
-        id: 0,
-        title: "new theme",
-        color_swatches: this.createDefaultColors(),
-        user: window.currentUser
-      };
+    // if (_.isEmpty(theme)) {
+    //   theme = {
+    //     title: "new theme",
+    //     color_swatches: this.createDefaultColors(),
+    //     user: user
+    //   };
+    // }
+    if (loading || !theme.color_swatches) {
+      return <h1>loading</h1>;
     }
 
     return(

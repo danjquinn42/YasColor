@@ -27,9 +27,10 @@ const ExploreBar = () => {
 };
 
 const ExploreItems = ({ themes }) => {
+  // debugger
   return (
     <ul className="theme-grid">
-      { themes.map(theme => <ExploreItem key={theme.id} theme={theme} />) }
+      { themes.map((theme) => <ExploreItem key={theme.id} theme={theme} />) }
     </ul>
   );
 };
@@ -43,13 +44,12 @@ class ThemeExplore extends React.Component {
 
   render() {
     const themes = this.props.themes;
-
     return (
       <div className="explore-page">
         <ExploreBar />
 
         <main>
-          <ExploreItems themes={ themes} />
+          <ExploreItems themes={ themes } />
         </main>
       </div>
     );

@@ -8,7 +8,6 @@ export const REQUEST_THEMES = 'REQUEST_THEMES';
 
 export function fetchThemes() {
   return (dispatch) => {
-    dispatch(requestThemes());
     return APIUtil.getThemes().then(themes => dispatch(receiveThemes(themes)));
   };
 }
