@@ -8,7 +8,7 @@ class Create extends React.Component {
     super(props);
     this.state = {
       theme: this.props.theme,
-      swatches: this.props.theme.color_swatches,
+      selected: 2,
       color0hue: this.props.theme.color_swatches[0].hue,
       color0saturation: this.props.theme.color_swatches[0].saturation,
       color0lightness: this.props.theme.color_swatches[0].lightness,
@@ -38,44 +38,35 @@ class Create extends React.Component {
     return { hue: this.state.color0hue,
       saturation: this.state.color0saturation,
       lightness: this.state.color0lightness,
-      selected: 'not-selected' };
+      id: 0};
   }
 
   color1() {
     return { hue: this.state.color1hue,
       saturation: this.state.color1saturation,
       lightness: this.state.color1lightness,
-      selected: 'not-selected' };
+      id: 1};
   }
 
   color2() {
     return { hue: this.state.color2hue,
       saturation: this.state.color2saturation,
       lightness: this.state.color2lightness,
-      selected: 'selected' };
+      id: 2};
   }
 
   color3() {
     return { hue: this.state.color3hue,
       saturation: this.state.color3saturation,
       lightness: this.state.color3lightness,
-      selected: 'not-selected' };
+      id: 3};
   }
 
   color4() {
     return { hue: this.state.color4hue,
       saturation: this.state.color4saturation,
       lightness: this.state.color4lightness,
-      selected: 'not-selected' };
-  }
-
-  selectColor(color) {
-    this.color0.selected = 'not-selected';
-    this.color1.selected = 'not-selected';
-    this.color2.selected = 'not-selected';
-    this.color3.selected = 'not-selected';
-    this.color4.selected = 'not-selected';
-    color.selected = 'selected';
+      id: 4};
   }
 
 
@@ -136,9 +127,9 @@ class Create extends React.Component {
   marker(color) {
       return (
         <div
-          className={`marker ${color.selected}`}
+          className={`marker ${this.selectedClass(color)}`}
           draggable="true"
-          onClick={(event) =>(this.selectColor(color))}
+          onMouseDown={this.selectColor(color.id)}
           onDrag={(proxy, event) =>(console.log(`drag - X:${proxy.clientX} by Y:${proxy.clientX}`))}
 
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
@@ -152,11 +143,11 @@ class Create extends React.Component {
       const oneBox = (color) => {
         return (
           <li
-            className={color.selected}
+            className={this.selectedClass(color)}
             draggable="false"
             aria-haspopup="true"
             data-index={0}
-            onClick={(event) =>(this.selectColor(color))}
+            onMouseDown={this.selectColor(color.id)}
             style={{
               background:
               `hsl(${color.hue},
@@ -177,33 +168,37 @@ class Create extends React.Component {
       );
   }
 
-  saturationGradient(hue, lightness){
+  saturationGradient(color){
+    if (this.isSelected(color)){
     return{
-      backgroundImage: `linear-gradient(
-        to right,
-        hsl(${hue}, 0%, ${lightness}%),
-        hsl(${hue}, 25%, ${lightness}%),
-        hsl(${hue}, 50%, ${lightness}%),
-        hsl(${hue}, 75%, ${lightness}%),
-        hsl(${hue}, 100%, ${lightness}%))`
-    };
+        backgroundImage: `linear-gradient(
+          to right,
+          hsl(${color.hue}, 0%, ${color.lightness}%),
+          hsl(${color.hue}, 25%, ${color.lightness}%),
+          hsl(${color.hue}, 50%, ${color.lightness}%),
+          hsl(${color.hue}, 75%, ${color.lightness}%),
+          hsl(${color.hue}, 100%, ${color.lightness}%))`
+      };
+    }
   }
 
-  lightnessGradient(hue, saturation){
-    return{
-      backgroundImage: `linear-gradient(
-        to right,
-        hsl(${hue}, ${saturation}%, 0%),
-        hsl(${hue}, ${saturation}%, 5%),
-        hsl(${hue}, ${saturation}%, 10%),
-        hsl(${hue}, ${saturation}%, 15%),
-        hsl(${hue}, ${saturation}%, 20%),
-        hsl(${hue}, ${saturation}%, 30%),
-        hsl(${hue}, ${saturation}%, 40%),
-        hsl(${hue}, ${saturation}%, 60%),
-        hsl(${hue}, ${saturation}%, 80%),
-        hsl(${hue}, ${saturation}%, 100%))`
-    };
+  lightnessGradient(color){
+    if (this.isSelected(color)){
+      return{
+        backgroundImage: `linear-gradient(
+          to right,
+          hsl(${color.hue}, ${color.saturation}%, 0%),
+          hsl(${color.hue}, ${color.saturation}%, 5%),
+          hsl(${color.hue}, ${color.saturation}%, 10%),
+          hsl(${color.hue}, ${color.saturation}%, 15%),
+          hsl(${color.hue}, ${color.saturation}%, 20%),
+          hsl(${color.hue}, ${color.saturation}%, 30%),
+          hsl(${color.hue}, ${color.saturation}%, 40%),
+          hsl(${color.hue}, ${color.saturation}%, 60%),
+          hsl(${color.hue}, ${color.saturation}%, 80%),
+          hsl(${color.hue}, ${color.saturation}%, 100%))`
+      };
+    }
   }
 
   firstOrLast(i){
@@ -211,6 +206,23 @@ class Create extends React.Component {
       return "first-slider";
     } else if (i === 4) {
       return "last-slider";
+    }
+  }
+
+  selectColor(colorId) {
+    console.log(this.state.selected);
+    return (event) => { this.setState({ selected: colorId }); };
+  }
+
+  isSelected(color) {
+    return (color.id === this.state.selected);
+  }
+
+  selectedClass(color) {
+    if (this.isSelected(color)) {
+      return "selected";
+    } else {
+      return "not-selected";
     }
   }
 
@@ -237,12 +249,12 @@ class Create extends React.Component {
 
   sliders(color, colorString, pos){
     return(
-      <li className={`slider hsl ${color.selected}`} data-mode="hsl">
+      <li className={`slider hsl ${this.selectedClass(color)}`} data-mode="hsl">
         <input
           type="range"
-          className={`hue ${this.firstOrLast(pos)} `}
+          className={`hue ${this.firstOrLast(pos)}  ${this.selectedClass(color)}`}
           onChange={this.updateHue(`${colorString}hue`)}
-          onClick={(event) =>(this.selectColor(color))}
+          onMouseDown={this.selectColor(color.id)}
           id="hue"
           min="0"
           max="360"
@@ -250,20 +262,20 @@ class Create extends React.Component {
         </input>
         <input
           type="range"
-          className={`saturation ${this.firstOrLast(pos)}`}
+          className={`saturation ${this.firstOrLast(pos)}  ${this.selectedClass(color)}`}
           onChange={this.updateSaturation(`${colorString}saturation`)}
-          onClick={(event) =>(this.selectColor(color))}
-          style={this.saturationGradient(color.hue, color.lightness)}
+          onMouseDown={this.selectColor(color.id)}
+          style={this.saturationGradient(color)}
           id="saturation"
           min="0"
           max="100"
           value={color.saturation}></input>
         <input
           type="range"
-          className={`lightness ${this.firstOrLast(pos)}`}
+          className={`lightness ${this.firstOrLast(pos)}  ${this.selectedClass(color)}`}
           onChange={this.updateLightness(`${colorString}lightness`)}
-          onClick={(event) =>(this.selectColor(color))}
-          style={this.lightnessGradient(color.hue, color.saturation)}
+          onMouseDown={this.selectColor(color.id)}
+          style={this.lightnessGradient(color)}
           id="lightness"
           min="0"
           max="100"
@@ -298,7 +310,7 @@ class Create extends React.Component {
 
   values(color) {
     return(
-          <div className={`value-item ${color.selected}`}>
+          <li className={`value-item ${this.selectedClass(color)}`}>
             <h5 className="value-type">HSL</h5>
             <ol className="color-format">
               <li>
@@ -311,7 +323,7 @@ class Create extends React.Component {
                 {color.lightness}
               </li>
             </ol>
-          </div>
+          </li>
     );
   }
 
