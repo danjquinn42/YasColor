@@ -28,8 +28,8 @@ users = User.create([
   ])
 
 themes = Theme.create([
-  {user: User.find_by(name: 'demo'), title: "Mint Julips and Orange Blossoms", colors: [[12, 100, 61] , [60, 100, 81] , [96, 66, 77] , [139, 34, 61] , [170, 100, 32] ] },
-  {user: User.find_by(name: 'demo'), title: "Firenze", colors: [[149, 32, 41] , [50, 100, 82] , [36, 100, 62] , [15, 65, 43] , [17, 100, 28] ] },
+  {user: User.find_by(name: 'demo'), title: "Mint Julips and Orange Blossoms", colors: [[12, 100, 61], [60, 100, 81], [96, 66, 77], [139, 34, 61], [170, 100, 32] ] },
+  {user: User.find_by(name: 'demo'), title: "Firenze", colors: [[149, 32, 41], [50, 100, 82], [36, 100, 62], [15, 65, 43], [17, 100, 28] ] },
   {user: User.find_by(name: 'demo'), title: "Honey", colors: [[186,72,23], [53,100,92], [45,100,65], [38,70,54], [10,58,47]] },
   {user: User.find_by(name: 'Dwayne'), title: "Summer in Puerto Rico", colors: [[350,75,59], [31,100,63], [52,53,39], [167,34,26], [198,100,13]] },
   {user: User.find_by(name: 'Dwayne'), title: "Fall in Michigan", colors: [[6,60,44], [20,64,50], [57,71,56], [226,44,28], [30,39,30]] },
