@@ -9,40 +9,65 @@ class Create extends React.Component {
     this.state = {
       theme: this.props.theme,
       swatches: this.props.theme.color_swatches,
-      color0: this.props.theme.color_swatches[0],
-        color0hue: this.props.theme.color_swatches[0].hue,
-        color0saturation: this.props.theme.color_swatches[0].saturation,
-        color0lightness: this.props.theme.color_swatches[0].lightness,
-      color1: this.props.theme.color_swatches[1],
-        color1hue: this.props.theme.color_swatches[1].hue,
-        color1saturation: this.props.theme.color_swatches[1].saturation,
-        color1lightness: this.props.theme.color_swatches[1].lightness,
-      color2: this.props.theme.color_swatches[2],
-        color2hue: this.props.theme.color_swatches[2].hue,
-        color2saturation: this.props.theme.color_swatches[2].saturation,
-        color2lightness: this.props.theme.color_swatches[2].lightness,
-      color3: this.props.theme.color_swatches[3],
-        color3hue: this.props.theme.color_swatches[3].hue,
-        color3saturation: this.props.theme.color_swatches[3].saturation,
-        color3lightness: this.props.theme.color_swatches[3].lightness,
-      color4: this.props.theme.color_swatches[4],
-        color4hue: this.props.theme.color_swatches[4].hue,
-        color4saturation: this.props.theme.color_swatches[4].saturation,
-        color4lightness: this.props.theme.color_swatches[4].lightness,
+      color0hue: this.props.theme.color_swatches[0].hue,
+      color0saturation: this.props.theme.color_swatches[0].saturation,
+      color0lightness: this.props.theme.color_swatches[0].lightness,
+      color1hue: this.props.theme.color_swatches[1].hue,
+      color1saturation: this.props.theme.color_swatches[1].saturation,
+      color1lightness: this.props.theme.color_swatches[1].lightness,
+      color2hue: this.props.theme.color_swatches[2].hue,
+      color2saturation: this.props.theme.color_swatches[2].saturation,
+      color2lightness: this.props.theme.color_swatches[2].lightness,
+      color3hue: this.props.theme.color_swatches[3].hue,
+      color3saturation: this.props.theme.color_swatches[3].saturation,
+      color3lightness: this.props.theme.color_swatches[3].lightness,
+      color4hue: this.props.theme.color_swatches[4].hue,
+      color4saturation: this.props.theme.color_swatches[4].saturation,
+      color4lightness: this.props.theme.color_swatches[4].lightness
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sliderList = this.sliderList.bind(this);
-    this.markers = this.markers.bind(this);
+    this.marker = this.marker.bind(this);
     this.updateHue = this.updateHue.bind(this);
     this.updateSaturation = this.updateSaturation.bind(this);
     this.updateLightness = this.updateLightness.bind(this);
     this.HSLBackground = this.HSLBackground.bind(this);
     }
 
+    color0() {
+      return { hue: this.state.color0hue,
+        saturation: this.state.color0saturation,
+        lightness: this.state.color0lightness };
+    }
+
+    color1() {
+      return { hue: this.state.color1hue,
+        saturation: this.state.color1saturation,
+        lightness: this.state.color1lightness };
+    }
+
+    color2() {
+      return { hue: this.state.color2hue,
+        saturation: this.state.color2saturation,
+        lightness: this.state.color2lightness };
+    }
+
+    color3() {
+      return { hue: this.state.color3hue,
+        saturation: this.state.color3saturation,
+        lightness: this.state.color3lightness };
+    }
+
+    color4() {
+      return { hue: this.state.color4hue,
+        saturation: this.state.color4saturation,
+        lightness: this.state.color4lightness };
+    }
+
   componentDidMount() {
     if (this.props.params.themeId) {
     this.props.fetchTheme(this.props.params.themeId);
-    } //TODO : replace fetchTheme with ReceiveTheme if this.props.params.themeId
+    }
   }
 
 
@@ -50,12 +75,22 @@ class Create extends React.Component {
     this.setState({
       theme: nextProps.theme,
       swatches: nextProps.theme.color_swatches,
-      color0: nextProps.theme.color_swatches[0],
-      color1: nextProps.theme.color_swatches[1],
-      color2: nextProps.theme.color_swatches[2],
-      color3: nextProps.theme.color_swatches[3],
-      color4: nextProps.theme.color_swatches[4]}
-    );
+      color0hue: nextProps.theme.color_swatches[0].hue,
+      color0saturation: nextProps.theme.color_swatches[0].saturation,
+      color0lightness: nextProps.theme.color_swatches[0].lightness,
+      color1hue: nextProps.theme.color_swatches[1].hue,
+      color1saturation: nextProps.theme.color_swatches[1].saturation,
+      color1lightness: nextProps.theme.color_swatches[1].lightness,
+      color2hue: nextProps.theme.color_swatches[2].hue,
+      color2saturation: nextProps.theme.color_swatches[2].saturation,
+      color2lightness: nextProps.theme.color_swatches[2].lightness,
+      color3hue: nextProps.theme.color_swatches[3].hue,
+      color3saturation: nextProps.theme.color_swatches[3].saturation,
+      color3lightness: nextProps.theme.color_swatches[3].lightness,
+      color4hue: nextProps.theme.color_swatches[4].hue,
+      color4saturation: nextProps.theme.color_swatches[4].saturation,
+      color4lightness: nextProps.theme.color_swatches[4].lightness
+    });
   }
   //componentWillUnmount ==> dispatch resetCurrentTheme
 
@@ -82,66 +117,73 @@ class Create extends React.Component {
   }
 
   HSLBackground(color){
-    return {
-      background:
-      `hsl(${this.state.color0hue}, ${this.state.color0saturation}%, ${this.state.color0lightness}%)`
-    };
+    return { background: `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)` };
   }
 
-  markers() {
-    return this.state.swatches.map((color, i) => {
+  marker(color) {
       return (
         <div
-          key={i}
           className="marker"
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
             top: `${this.hueToY(color.hue, color.saturation)}%`}}>
           <div style={ this.HSLBackground(color) }></div>
         </div>
       );
-    });
   }
 
   themeBoxes() {
-    return this.state.swatches.map((color, i) => {
-      return (
-        <li
-          key={i}
+      const oneBox = (color) => {
+        return (
+          <li
           draggable="false"
           aria-haspopup="true"
           data-index={0}
-          style={ this.HSLBackground(color) } >
-        </li>
+          style={{
+            background:
+            `hsl(${color.hue},
+              ${color.saturation}%,
+              ${color.lightness}%)` }} >
+          </li>
+        );
+      };
+
+      return (
+        <ul className="themeBox">
+          {oneBox(this.color0())}
+          {oneBox(this.color1())}
+          {oneBox(this.color2())}
+          {oneBox(this.color3())}
+          {oneBox(this.color4())}
+        </ul>
       );
-    });
   }
 
-  saturationGradient(color){
+  saturationGradient(hue, lightness){
     return{
       backgroundImage: `linear-gradient(
         to right,
-        hsl(${color.hue}, 0%, ${color.lightness}%),
-        hsl(${color.hue}, 25%, ${color.lightness}%),
-        hsl(${color.hue}, 50%, ${color.lightness}%),
-        hsl(${color.hue}, 75%, ${color.lightness}%),
-        hsl(${color.hue}, 100%, ${color.lightness}%))`
+        hsl(${hue}, 0%, ${lightness}%),
+        hsl(${hue}, 25%, ${lightness}%),
+        hsl(${hue}, 50%, ${lightness}%),
+        hsl(${hue}, 75%, ${lightness}%),
+        hsl(${hue}, 100%, ${lightness}%))`
     };
   }
 
-  lightnessGradient(color){
+  lightnessGradient(hue, saturation){
     return{
       backgroundImage: `linear-gradient(
         to right,
-        hsl(${color.hue}, ${color.saturation}%, 0%),
-        hsl(${color.hue}, ${color.saturation}%, 5%),
-        hsl(${color.hue}, ${color.saturation}%, 10%),
-        hsl(${color.hue}, ${color.saturation}%, 15%),
-        hsl(${color.hue}, ${color.saturation}%, 20%),
-        hsl(${color.hue}, ${color.saturation}%, 30%),
-        hsl(${color.hue}, ${color.saturation}%, 40%),
-        hsl(${color.hue}, ${color.saturation}%, 60%),
-        hsl(${color.hue}, ${color.saturation}%, 80%),
-        hsl(${color.hue}, ${color.saturation}%, 100%))`
+        hsl(${hue}, ${saturation}%, 0%),
+        hsl(${hue}, ${saturation}%, 5%),
+        hsl(${hue}, ${saturation}%, 10%),
+        hsl(${hue}, ${saturation}%, 15%),
+        hsl(${hue}, ${saturation}%, 20%),
+        hsl(${hue}, ${saturation}%, 30%),
+        hsl(${hue}, ${saturation}%, 40%),
+        hsl(${hue}, ${saturation}%, 60%),
+        hsl(${hue}, ${saturation}%, 80%),
+        hsl(${hue}, ${saturation}%, 100%))`
     };
   }
 
@@ -153,63 +195,6 @@ class Create extends React.Component {
     }
   }
 
-
-  // updateHue(hue) {
-  //   let hues = [];
-  //   let newSwatches;
-  //
-  //   return function (event) {
-  //     // debugger;
-  //     hues.push(event.target.value);
-  //     if ( hues.length === 5 ) {
-  //       newSwatches = this.state.theme.color_swatches;
-  //       newSwatches = newSwatches.map((color, i) =>{
-  //         color.hue = hues[i];
-  //       });
-  //       this.updateSwatches(newSwatches);
-  //     }
-  //   }.bind(this);
-  // }
-  //
-  // updateSaturation(saturation) {
-  //   let saturations = [];
-  //   let newSwatches;
-  //
-  //   return function (event) {
-  //     saturations.push(event.target.value);
-  //     if ( saturations.length === 5 ) {
-  //       newSwatches = this.state.theme.color_swatches;
-  //       newSwatches = newSwatches.map((color, i) =>{
-  //         color.saturation = saturations[i];
-  //       });
-  //       this.updateSwatches(newSwatches);
-  //     }
-  //   }.bind(this);
-  //   // return event => this.setState({ [property]: event.target.value });
-  // }
-  // updateLightness(lightness) {
-  //   let lightnesses = [];
-  //   let newSwatches;
-  //
-  //   return function (event) {
-  //     lightnesses.push(event.target.value);
-  //     if ( lightnesses.length === 5 ) {
-  //       newSwatches = this.state.theme.color_swatches;
-  //       newSwatches = newSwatches.map((color, i) =>{
-  //         color.lightness = lightnesses[i];
-  //       });
-  //       this.updateSwatches(newSwatches);
-  //     }
-  //   }.bind(this);
-  //   // return event => this.setState({ [property]: event.target.value });
-  // }
-  //
-  // updateSwatches(newSwatches) {
-  //
-  //   let themeCopy = this.state.theme;
-  //   themeCopy.color_swatches = newSwatches;
-  //   this.setState( { theme: themeCopy });
-  // }
 
   updateHue(hue){
     return (event) => {
@@ -232,41 +217,165 @@ class Create extends React.Component {
   }
 
   sliderList() {
-
-    return this.state.swatches.map((color, i) => {
       return (
-        <li className="slider hsl" key={i} data-mode="hsl">
+        <ol id="slider-list" className="group">
+        <li className="slider hsl"  data-mode="hsl">
           <input
             type="range"
-            className={`hue ${this.firstOrLast(i)}`}
-            onChange={this.updateHue(`color${i}hue`)}
+            className={`hue ${this.firstOrLast(0)}`}
+            onChange={this.updateHue(`color0hue`)}
             id="hue"
             min="0"
             max="360"
-            value={this.state.color0hue}
-            >
+            value={this.state.color0hue}>
           </input>
           <input
             type="range"
-            className={`saturation ${this.firstOrLast(i)}`}
-            onChange={this.updateSaturation(`color${i}saturation`)}
-            style={this.saturationGradient(color)}
+            className={`saturation ${this.firstOrLast(0)}`}
+            onChange={this.updateSaturation(`color0saturation`, `color0`)}
+            style={this.saturationGradient(this.state.color0hue, this.state.color0lightness)}
             id="saturation"
             min="0"
             max="100"
             value={this.state.color0saturation}></input>
           <input
             type="range"
-            className={`lightness ${this.firstOrLast(i)}`}
-            onChange={this.updateLightness(`color${i}lightness`)}
-            style={this.lightnessGradient(color)}
+            className={`lightness ${this.firstOrLast(0)}`}
+            onChange={this.updateLightness(`color0lightness`)}
+            style={this.lightnessGradient(this.state.color0hue, this.state.color0saturation)}
             id="lightness"
             min="0"
             max="100"
             value={this.state.color0lightness}></input>
         </li>
+
+
+        <li className="slider hsl"  data-mode="hsl">
+          <input
+            type="range"
+            className={`hue ${this.firstOrLast(1)}`}
+            onChange={this.updateHue(`color1hue`)}
+            id="hue"
+            min="0"
+            max="360"
+            value={this.state.color1hue}>
+          </input>
+          <input
+            type="range"
+            className={`saturation ${this.firstOrLast(1)}`}
+            onChange={this.updateSaturation(`color1saturation`, `color1`)}
+            style={this.saturationGradient(this.state.color1hue, this.state.color1lightness)}
+            id="saturation"
+            min="0"
+            max="100"
+            value={this.state.color1saturation}></input>
+          <input
+            type="range"
+            className={`lightness ${this.firstOrLast(1)}`}
+            onChange={this.updateLightness(`color1lightness`)}
+            style={this.lightnessGradient(this.state.color1hue, this.state.color1saturation)}
+            id="lightness"
+            min="0"
+            max="100"
+            value={this.state.color1lightness}></input>
+        </li>
+
+
+        <li className="slider hsl"  data-mode="hsl">
+          <input
+            type="range"
+            className={`hue ${this.firstOrLast(2)}`}
+            onChange={this.updateHue(`color2hue`)}
+            id="hue"
+            min="0"
+            max="360"
+            value={this.state.color2hue}>
+          </input>
+          <input
+            type="range"
+            className={`saturation ${this.firstOrLast(2)}`}
+            onChange={this.updateSaturation(`color2saturation`, `color2`)}
+            style={this.saturationGradient(this.state.color2hue, this.state.color2lightness)}
+            id="saturation"
+            min="0"
+            max="100"
+            value={this.state.color2saturation}></input>
+          <input
+            type="range"
+            className={`lightness ${this.firstOrLast(2)}`}
+            onChange={this.updateLightness(`color2lightness`)}
+            style={this.lightnessGradient(this.state.color2hue, this.state.color2saturation)}
+            id="lightness"
+            min="0"
+            max="100"
+            value={this.state.color2lightness}></input>
+        </li>
+
+
+        <li className="slider hsl"  data-mode="hsl">
+          <input
+            type="range"
+            className={`hue ${this.firstOrLast(3)}`}
+            onChange={this.updateHue(`color3hue`)}
+            id="hue"
+            min="0"
+            max="360"
+            value={this.state.color3hue}>
+          </input>
+          <input
+            type="range"
+            className={`saturation ${this.firstOrLast(3)}`}
+            onChange={this.updateSaturation(`color3saturation`, `color3`)}
+            style={this.saturationGradient(this.state.color3hue, this.state.color3lightness)}
+            id="saturation"
+            min="0"
+            max="100"
+            value={this.state.color3saturation}></input>
+          <input
+            type="range"
+            className={`lightness ${this.firstOrLast(3)}`}
+            onChange={this.updateLightness(`color3lightness`)}
+            style={this.lightnessGradient(this.state.color3hue, this.state.color3saturation)}
+            id="lightness"
+            min="0"
+            max="100"
+            value={this.state.color3lightness}></input>
+        </li>
+
+
+        <li className="slider hsl"  data-mode="hsl">
+          <input
+            type="range"
+            className={`hue ${this.firstOrLast(4)}`}
+            onChange={this.updateHue(`color4hue`)}
+            id="hue"
+            min="0"
+            max="360"
+            value={this.state.color4hue}>
+          </input>
+          <input
+            type="range"
+            className={`saturation ${this.firstOrLast(4)}`}
+            onChange={this.updateSaturation(`color4saturation`, `color4`)}
+            style={this.saturationGradient(this.state.color4hue, this.state.color4lightness)}
+            id="saturation"
+            min="0"
+            max="100"
+            value={this.state.color4saturation}></input>
+          <input
+            type="range"
+            className={`lightness ${this.firstOrLast(4)}`}
+            onChange={this.updateLightness(`color4lightness`)}
+            style={this.lightnessGradient(this.state.color4hue, this.state.color4saturation)}
+            id="lightness"
+            min="0"
+            max="100"
+            value={this.state.color4lightness}></input>
+        </li>
+      </ol>
+
+
       );
-    });
   }
 
 
@@ -295,24 +404,25 @@ class Create extends React.Component {
               src={window.wheel}
               draggable="false" />
 
-            { this.markers() }
+            {this.marker(this.color0())}
+            {this.marker(this.color1())}
+            {this.marker(this.color2())}
+            {this.marker(this.color3())}
+            {this.marker(this.color4())}
 
           </div>
         </div>
 
         <div className="theme">
 
-          <ul className="themeBox">
-            { this.themeBoxes() }
-          </ul>
+          { this.themeBoxes() }
+
         </div>
-          <ol id="slider-list" className="group">
+
           { this.sliderList() }
-        </ol>
       </section>
     );
   }
 }
-
 
 export default Create;
