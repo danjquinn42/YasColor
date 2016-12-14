@@ -12,7 +12,8 @@
 class Theme < ActiveRecord::Base
   validates :user, presence: true
 
-  has_many :color_swatches
+  has_many :color_swatches, inverse_of: :theme
+
   has_many(
    :theme_saves,
    class_name:  "ThemeSave")
@@ -44,13 +45,12 @@ class Theme < ActiveRecord::Base
         c.lightness = color[2]
         c.ord = index
         c.theme_id = self.id
-        unless c.save!
+        unless c.save
           Themes.delete(self.id)
           raise "unable to save color #{index} with values hue:#{c.hue}, saturation:#{c.saturation}, lightness#{c.lightness}, theme_id:#{c.theme_id}"
         end
       end
     else
-      raise "Colors have not been successfully added to the theme"
     end
   end
 

@@ -45,8 +45,10 @@ class ThemeView extends React.Component {
       return (
         <content className="view-page group">
           <div className = "edit-title group">
+            <form>
             <input className="title" type="text" defaultValue={title }></input>
             <img className="pencil" src={window.pencil}></img>
+            </form>
           </div>
           <ol className={`view-theme ${this.state.themeDisplay}`}
             onClick={this.toggleFullscreen.bind(this)}>

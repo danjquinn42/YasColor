@@ -34,39 +34,69 @@ class Create extends React.Component {
     this.HSLBackground = this.HSLBackground.bind(this);
   }
 
-  color0() {
+  color0(format) {
+    if (format === 'array') {
+      return [this.state.color0hue,
+              this.state.color0saturation,
+              this.state.color0lightness];
+    } else {
     return { hue: this.state.color0hue,
       saturation: this.state.color0saturation,
       lightness: this.state.color0lightness,
-      id: 0};
+      ord: 0};
+    }
   }
 
-  color1() {
+  color1(format) {
+    if (format === 'array') {
+      return [this.state.color1hue,
+              this.state.color1saturation,
+              this.state.color1lightness];
+    } else {
     return { hue: this.state.color1hue,
       saturation: this.state.color1saturation,
       lightness: this.state.color1lightness,
-      id: 1};
+      ord: 1};
+    }
   }
 
-  color2() {
+  color2(format) {
+    if (format === 'array') {
+      return [this.state.color2hue,
+              this.state.color2saturation,
+              this.state.color2lightness];
+    } else {
     return { hue: this.state.color2hue,
       saturation: this.state.color2saturation,
       lightness: this.state.color2lightness,
-      id: 2};
+      ord: 2};
+    }
   }
 
-  color3() {
+  color3(format) {
+    if (format === 'array') {
+      return [this.state.color3hue,
+              this.state.color3saturation,
+              this.state.color3lightness];
+    } else {
     return { hue: this.state.color3hue,
       saturation: this.state.color3saturation,
       lightness: this.state.color3lightness,
-      id: 3};
+      ord: 3};
+    }
   }
 
-  color4() {
+  color4(format) {
+    if (format === 'array') {
+      return [this.state.color0hue,
+              this.state.color0saturation,
+              this.state.color0lightness];
+    } else {
     return { hue: this.state.color4hue,
       saturation: this.state.color4saturation,
       lightness: this.state.color4lightness,
-      id: 4};
+      ord: 4};
+    }
   }
 
 
@@ -103,7 +133,18 @@ class Create extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTheme(this.state.theme).
+    const color_swatches =  [
+        this.color0(),
+        this.color1(),
+        this.color2(),
+        this.color3(),
+        this.color4() ];
+
+    const theme = {
+      title: "untitled theme",
+      color_swatches: color_swatches
+    };
+    this.props.createTheme(theme).
       then((data) => this.props.router.push(`/theme/${data.id}`));
   }
 
@@ -118,8 +159,6 @@ class Create extends React.Component {
     hue = hue * Math.PI / 180;
     return ((Math.sin(hue) * saturation) + 1 ) / 2 * -100 + 100;
   }
-
-
 
 
 
@@ -169,7 +208,7 @@ class Create extends React.Component {
           className={`marker ${this.selectedClass(color)}`}
           draggable="false"
           onClick={this.getCoordinates(color)}
-          onMouseDown={this.selectColor(color.id)}
+          onMouseDown={this.selectColor(color.ord)}
 
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
             top: `${this.hueToY(color.hue, color.saturation)}%`}}>
@@ -186,7 +225,7 @@ class Create extends React.Component {
             draggable="false"
             aria-haspopup="true"
             data-index={0}
-            onMouseDown={this.selectColor(color.id)}
+            onMouseDown={this.selectColor(color.ord)}
             style={{
               background:
               `hsl(${color.hue},
@@ -253,7 +292,7 @@ class Create extends React.Component {
   }
 
   isSelected(color) {
-    return (color.id === this.state.selected);
+    return (color.ord === this.state.selected);
   }
 
   selectedClass(color) {
@@ -292,7 +331,7 @@ class Create extends React.Component {
           type="range"
           className={`hue ${this.firstOrLast(pos)}  ${this.selectedClass(color)}`}
           onChange={this.updateHue(`${colorString}hue`)}
-          onMouseDown={this.selectColor(color.id)}
+          onMouseDown={this.selectColor(color.ord)}
           id="hue"
           min="0"
           max="360"
@@ -302,7 +341,7 @@ class Create extends React.Component {
           type="range"
           className={`saturation ${this.firstOrLast(pos)}  ${this.selectedClass(color)}`}
           onChange={this.updateSaturation(`${colorString}saturation`)}
-          onMouseDown={this.selectColor(color.id)}
+          onMouseDown={this.selectColor(color.ord)}
           style={this.saturationGradient(color)}
           id="saturation"
           min="0"
@@ -312,7 +351,7 @@ class Create extends React.Component {
           type="range"
           className={`lightness ${this.firstOrLast(pos)}  ${this.selectedClass(color)}`}
           onChange={this.updateLightness(`${colorString}lightness`)}
-          onMouseDown={this.selectColor(color.id)}
+          onMouseDown={this.selectColor(color.ord)}
           style={this.lightnessGradient(color)}
           id="lightness"
           min="0"
@@ -348,7 +387,8 @@ class Create extends React.Component {
 
   values(color) {
     return(
-          <div className={`value-item ${this.selectedClass(color)}`}>
+          <div className={`value-item ${this.selectedClass(color)}`}
+            onMouseDown={this.selectColor(color.ord)}>
             <h5 className="value-type">HSL</h5>
             <ol className="color-format group">
               <li>
@@ -378,8 +418,9 @@ class Create extends React.Component {
 
         <div className="editor"
           draggable="false">
-
-          <button className="save-button">Save</button>
+          <form onSubmit={this.handleSubmit}>
+            <input type="submit" className="save-button" value="Save"></input>
+          </form>
           <div className="harmonyrule"></div>
 
           <div id="colorwheel"

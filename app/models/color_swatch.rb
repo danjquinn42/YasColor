@@ -15,7 +15,7 @@
 class ColorSwatch < ActiveRecord::Base
   validates :hue, :saturation, :lightness, :theme, :ord, presence: true
 
-  belongs_to :theme
+  belongs_to :theme, inverse_of: :color_swatches
 
   # after_initialize :verify_values
 

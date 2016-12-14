@@ -9,9 +9,19 @@ class Api::ThemesController < ApplicationController
   end
 
   def create
-    @theme = Theme.new(themes_params)
+    @theme = current_user.themes.new(themes_params)
+    color_swatches = params[:theme][:color_swatches]
 
-    if @theme.save!
+    if @theme.save
+      5.times do |swatch|
+        hue = color_swatches["#{swatch}"][:hue]
+        saturation = color_swatches["#{swatch}"][:saturation]
+        lightness = color_swatches["#{swatch}"][:lightness]
+        ord = color_swatches["#{swatch}"][:ord]
+        color = @theme.color_swatches.new(hue: hue, saturation: saturation, lightness: lightness, ord: ord)
+        color.save
+
+      end
       render :show
     else
       render json: @theme.errors.full_messages, status: 422
@@ -42,6 +52,6 @@ class Api::ThemesController < ApplicationController
   private
 
   def themes_params
-    params.require(:user).permit(:user, :title, :color_swatches, :colors)
+    params.require(:theme).permit(:user, :title, :color_swatches, :colors)
   end
 end

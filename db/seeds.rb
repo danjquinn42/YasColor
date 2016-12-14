@@ -27,6 +27,7 @@ users = User.create([
   {name: 'Rebeka', email: 'rebeka@gmail.com', password: 'pb23ksu9' }
   ])
 
+
 themes = Theme.create([
   {user: User.find_by(name: 'demo'), title: "Mint Julips and Orange Blossoms", colors: [[12, 100, 61], [60, 100, 81], [96, 66, 77], [139, 34, 61], [170, 100, 32] ] },
   {user: User.find_by(name: 'demo'), title: "Firenze", colors: [[149, 32, 41], [50, 100, 82], [36, 100, 62], [15, 65, 43], [17, 100, 28] ] },

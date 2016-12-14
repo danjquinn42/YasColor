@@ -5,11 +5,11 @@ export const getThemes = () => {
   });
 };
 
-export const postTheme = (props) => {
+export const postTheme = (theme) => {
   return $.ajax({
     method: 'POST',
     url: 'api/themes',
-    data: props
+    data: {theme}
   });
 };//'api/themes
 

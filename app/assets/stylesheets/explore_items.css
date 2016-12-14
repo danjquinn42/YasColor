@@ -10,7 +10,7 @@
 }
 
 .cooltip {
-  display: inline-block;
+  /*display: inline-block;*/
   -webkit-flex:1;
 	-moz-flex:1;
 	-ms-flex:1;
@@ -19,7 +19,9 @@
   flex-basis: 20%;
   box-sizing: border-box;
   min-width: 280px;
-  margin: 4.16% 20px 0 20px;
+  max-width: 600px;
+  padding: 4.16% 20px 0 20px;
+  margin: 0 auto;
   /*-webkit-transition: width 600ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: width 600ms cubic-bezier(0.445, 0.05, 0.55, 0.95);*/
 }
