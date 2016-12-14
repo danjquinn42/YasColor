@@ -34,69 +34,39 @@ class Create extends React.Component {
     this.HSLBackground = this.HSLBackground.bind(this);
   }
 
-  color0(format) {
-    if (format === 'array') {
-      return [this.state.color0hue,
-              this.state.color0saturation,
-              this.state.color0lightness];
-    } else {
+  color0() {
     return { hue: this.state.color0hue,
       saturation: this.state.color0saturation,
       lightness: this.state.color0lightness,
       ord: 0};
-    }
   }
 
-  color1(format) {
-    if (format === 'array') {
-      return [this.state.color1hue,
-              this.state.color1saturation,
-              this.state.color1lightness];
-    } else {
+  color1() {
     return { hue: this.state.color1hue,
       saturation: this.state.color1saturation,
       lightness: this.state.color1lightness,
       ord: 1};
-    }
   }
 
-  color2(format) {
-    if (format === 'array') {
-      return [this.state.color2hue,
-              this.state.color2saturation,
-              this.state.color2lightness];
-    } else {
+  color2() {
     return { hue: this.state.color2hue,
       saturation: this.state.color2saturation,
       lightness: this.state.color2lightness,
       ord: 2};
-    }
   }
 
-  color3(format) {
-    if (format === 'array') {
-      return [this.state.color3hue,
-              this.state.color3saturation,
-              this.state.color3lightness];
-    } else {
+  color3() {
     return { hue: this.state.color3hue,
       saturation: this.state.color3saturation,
       lightness: this.state.color3lightness,
       ord: 3};
-    }
   }
 
-  color4(format) {
-    if (format === 'array') {
-      return [this.state.color0hue,
-              this.state.color0saturation,
-              this.state.color0lightness];
-    } else {
+  color4() {
     return { hue: this.state.color4hue,
       saturation: this.state.color4saturation,
       lightness: this.state.color4lightness,
       ord: 4};
-    }
   }
 
 
@@ -169,12 +139,12 @@ class Create extends React.Component {
 
  // ------------------
   XYtoHueAndSaturation(x, y) {
-    const saturation =  this.distanceFromOrigin(x, y) * 100;
-    if ( x > y) {
-    console.log("angle: ", this.toDegrees(Math.acos(y / saturation)));
-    } else {
-      console.log("angle: ", this.toDegrees(Math.acos(x / saturation)));
-    }
+    const hypotenuse =  this.distanceFromOrigin(x, y);
+    const angle = this.toDegrees(Math.acos( x / hypotenuse));
+    const saturation = hypotenuse * 100;
+    const hue = ( 0 > y ) ? angle : -(angle - 180) + 180;
+    console.log("saturation: ", saturation);
+    console.log("hue: ", hue);
   }
 
   toDegrees(angle) {
@@ -195,8 +165,8 @@ class Create extends React.Component {
       const scaleFactor = 2;
       markerLeft = (( markerLeft / diameter ) + originOffset) * scaleFactor;
       markerTop = (( markerTop / diameter ) + originOffset) * scaleFactor;
-      console.log('markerLeft: ', markerLeft);
-      console.log('markerTop: ', markerTop);
+      // console.log('markerLeft: ', markerLeft);
+      // console.log('markerTop: ', markerTop);
       this.XYtoHueAndSaturation(markerLeft, markerTop);
     };
   }
