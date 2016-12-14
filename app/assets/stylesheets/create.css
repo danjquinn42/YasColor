@@ -37,7 +37,7 @@
   margin: 10px auto 5px auto;
   width: 25%;
   height: 25%;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   box-shadow: 0 0 0 3pt black;
   border-radius: 50%;
   /*box-sizing: border-box;d*/
@@ -97,6 +97,11 @@ border-radius: 50%;
   box-shadow: 0 0 0 2pt rgba(255, 255, 255, 0.7);
 }
 
+#content > .theme {
+  border: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
 .themeBox {
   display: flex;
 }
@@ -107,9 +112,10 @@ border-radius: 50%;
 }
 
 .themeBox > .selected {
-  border: 2px solid #ccc;
-  border-bottom: none;
-  box-sizing: content-box;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  box-sizing: border-box;
 }
 
 #slider-list {
@@ -127,13 +133,16 @@ border-radius: 50%;
 }
 
 .slider {
+  margin-top: -2px;
   padding-top: 20px;
   width: 20%;
-  /*border: none;*/
-  /*border: 0px solid transparent;*/
 }
 
-.slider .selected{
+#slider-list > .selected {
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
 }
 
 .slider .not-selected {
@@ -143,7 +152,6 @@ border-radius: 50%;
 input-range {
   margin-bottom: 10px;
   -webkit-appearance: none;
-  border: 0px solid transparent;
   height: 20px;
   width: 100%;
   /*background: transparent;*/

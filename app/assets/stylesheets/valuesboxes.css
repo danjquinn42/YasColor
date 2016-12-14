@@ -1,23 +1,46 @@
-#value-boxes {
-
+#values-boxes {
+  display: flex;
+  background: #333333;
+  padding: 10px 0 0px 0;
+  margin-top: -15px;
 }
 
-.value-box {
+#values-boxes .selected{
+  border-right: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
 
+.values-box {
+  width: 20%;
 }
 
 .value-item {
-
+  display: flex;
 }
 
 .value-type {
-
+  margin: 0 auto;
+  float: left;
+  color: #616161;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 2px;
 }
 
 .color-format {
-
+  display: flex;
+  float: left;
+  margin-right: auto;
 }
 
 .color-format > li {
-
+  width: 25px;
+  text-align: center;
+  font-size: 12px;
+  color: #585856;
+  margin: 1px;
+  padding: 4px 2px;
+  background: #262626;
 }
