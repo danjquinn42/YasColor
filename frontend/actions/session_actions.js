@@ -59,7 +59,6 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-
 export const showSignIn = () => ({
   type: SHOW_SIGN_IN
 });

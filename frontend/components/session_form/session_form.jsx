@@ -25,8 +25,10 @@ class SessionForm extends React.Component {
 		const user = this.state;
     if (this.state.formType === 'login') {
   		this.props.login({user: user});
+      this.props.showSignIn();
     } else {
       this.props.signup({user: user});
+      this.props.showSignIn();
     }
 	}
 
@@ -43,11 +45,16 @@ class SessionForm extends React.Component {
   }
 
   changeForm() {
-    // debugger
     if (this.state.formType === 'login'){
-      return (event) => { this.setState({ formType: 'signup' }); };
+      return (event) => {
+        this.props.clearErrors();
+        this.setState({ formType: 'signup' });
+      };
     } else {
-      return (event) => { this.setState({ formType: 'login' }); };
+      return (event) => {
+        this.props.clearErrors();
+        this.setState({ formType: 'login' });
+      };
     }
   }
 

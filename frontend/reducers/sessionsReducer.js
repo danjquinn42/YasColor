@@ -24,12 +24,16 @@ const SessionsReducer = (state = _nullUser, action) => {
       const currentUser = action.currentUser;
       return merge({}, _nullUser, {currentUser});
     case CLEAR_ERRORS:
-      return merge({}, _nullErrors, {currentUser});
+      return merge({}, state, _nullErrors, {currentUser});
     case LOGOUT:
       return merge({}, _nullUser);
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, _nullUser, { errors });
+      let authFormVisible;
+      if (errors) {
+        authFormVisible = { authFormVisible: true };
+      }
+      return merge({}, _nullUser, { errors }, authFormVisible);
     case SHOW_SIGN_IN:
       return merge({}, state, { authFormVisible: true, formType: 'login' });
     case HIDE_SIGN_IN:
