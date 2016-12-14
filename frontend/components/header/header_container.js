@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { login, logout, signup } from '../../actions/session_actions';
+import {
+  login,
+  logout,
+  signup,
+  showSignIn } from '../../actions/session_actions';
 import Header from './header';
 
 
@@ -9,7 +13,8 @@ const mapStateToProps = ({ session }) => ({
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    showSignIn: () => dispatch(showSignIn())
   };
 };
 

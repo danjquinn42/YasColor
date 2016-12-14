@@ -36,10 +36,6 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
           <IndexRoute component={CreateContainer} />
-          <Route path="/login" component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn} />
-          <Route path="/signup" component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn} />
           <Route path="/explore" component={ThemeExploreContainer} />
           <Route path="/create" component={CreateContainer} />
           <Route path="/mythemes" component={MyThemesContainer} />
@@ -50,5 +46,9 @@ const Root = ({ store }) => {
     </Provider>
   );
 };
+// <Route path="/login" component={SessionFormContainer}
+//   onEnter={_redirectIfLoggedIn} />
+// <Route path="/signup" component={SessionFormContainer}
+//   onEnter={_redirectIfLoggedIn} />
 
 export default Root;

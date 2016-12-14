@@ -4,19 +4,13 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { name: "", email: "", password: "" };
+		this.state = { name: "",
+      email: "",
+      password: "",
+      formType: props.formType };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.demoUser = this.demoUser.bind(this);
-	}
-
-	componentDidUpdate() {
-		this.redirectIfLoggedIn();
-	}
-
-	redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			this.props.router.push("/");
-    }
+    this.changeForm = this.changeForm.bind(this);
 	}
 
 	update(field) {
@@ -27,19 +21,51 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+    e.stopPropagation();
 		const user = this.state;
-		this.props.processForm({user: user});
+    if (this.state.formType === 'login') {
+  		this.props.login({user: user});
+    } else {
+      this.props.signup({user: user});
+    }
 	}
 
-	navLink() {
-		if (this.props.formType === "login") {
-			return (<Link to="/signup" onClick={this.props.clearErrors} className="question">
-              Don't yet have an account? <strong>Sign up here.</strong>
-            </Link>);
+  invisible() {
+    if (this.props.authFormVisible) {
+      return 'visible';
+    } else {
+      return 'non-display';
+    }
+  }
+
+  selectColor(colorId) {
+    return (event) => { this.setState({ selected: colorId }); };
+  }
+
+  changeForm() {
+    // debugger
+    if (this.state.formType === 'login'){
+      return (event) => { this.setState({ formType: 'signup' }); };
+    } else {
+      return (event) => { this.setState({ formType: 'login' }); };
+    }
+  }
+
+	redirectQuestion() {
+		if (this.state.formType === "signup") {
+			return (
+        <h3 onClick={this.changeForm()}
+            className="question">
+          Already have an account? <strong>Log in here.</strong>
+      </h3>
+          );
 		} else {
-			return (<Link to="/login" onClick={this.props.clearErrors} className="question">
-              Already have an account? <strong>Log in here.</strong>
-            </Link>);
+			return (
+        <h3 onClick={this.changeForm()}
+          className="question">
+          Dont yet have an account? <strong>Sign up here.</strong>
+      </h3>
+          );
 		}
 	}
 
@@ -63,7 +89,7 @@ class SessionForm extends React.Component {
   }
 
   demo() {
-    if (this.props.formType === "login") {
+    if (this.state.formType === "login") {
       return(
         <form onSubmit={this.handleSubmit}>
           <input type="submit"
@@ -77,7 +103,7 @@ class SessionForm extends React.Component {
   }
 
   signUpOnly() {
-    if (this.props.formType === 'signup') {
+    if (this.state.formType === 'signup') {
       return(
         <div className="name-and-photo">
 					<div className="add-photo">
@@ -99,18 +125,27 @@ class SessionForm extends React.Component {
 
 	render() {
 		return (
-      <div className="modal">
-        <Link to="/" className="splashlink" onClick={this.props.clearErrors}></Link>
+      <div className={`modal ${this.invisible()}`}>
+        <div
+          className="splashlink"
+          onClick={this.props.clearErrors}
+          onClick={this.props.hideSignIn}>
+        </div>
   			<section className="session-form-container group">
-					<Link to="/" onClick={this.props.clearErrors} >
-						<img src={window.close} className="close"></img>
-					</Link>
+					<div
+            onClick={this.props.clearErrors}
+            onClick={this.props.hideSignIn}>
+						<img src={window.close}
+              className="close"
+              onClick={this.props.hideSignIn}></img>
+					</div>
 					<Link to="/" className="signup-logo">
             <img src={window.logo} className="logo"></img>
             <h1>Yas Color!</h1>
           </Link>
   				<form onSubmit={this.handleSubmit} className="session-form-box">
-  					<h2 className="form-title">{this.props.formType}</h2> {this.navLink()}
+  					<h2 className="form-title">{this.props.formType}</h2>
+            {this.redirectQuestion()}
   					<div className="session-form">
               {this.signUpOnly()}
             {this.renderErrors('Name')}

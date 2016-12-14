@@ -6,10 +6,14 @@ export const SIGNUP = 'SIGNUP';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const SHOW_SIGN_IN = 'SHOW_SIGN_IN';
+export const HIDE_SIGN_IN = 'HIDE_SIGN_IN';
+
 
 export function login(user) {
   return (dispatch) => {
-    return APIUtil.login(user).then(currentUser => dispatch(receiveCurrentUser(currentUser)),
+    return APIUtil.login(user).
+    then(currentUser => dispatch(receiveCurrentUser(currentUser)),
     err => {
       return dispatch(receiveErrors(err.responseJSON));
     });
@@ -33,7 +37,8 @@ export function clearSessionErrors() {
 
 export function signup(user) {
   return (dispatch) => {
-    return APIUtil.signup(user).then(currentUser => dispatch(receiveCurrentUser(currentUser)),
+    return APIUtil.signup(user).
+    then(currentUser => dispatch(receiveCurrentUser(currentUser)),
             err => {
               return dispatch(receiveErrors(err.responseJSON));
             });
@@ -52,4 +57,13 @@ export const receiveCurrentUser = (currentUser) => ({
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+
+export const showSignIn = () => ({
+  type: SHOW_SIGN_IN
+});
+
+export const hideSignIn = () => ({
+  type: HIDE_SIGN_IN
 });

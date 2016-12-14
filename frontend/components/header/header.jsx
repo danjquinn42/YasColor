@@ -22,14 +22,14 @@ class Header extends React.Component{
       );
     } else {
       return (
-        <h2 className="login-signup">
-          <Link to="/login">log in</Link>
-          &nbsp;or&nbsp;
-          <Link to="/signup">sign up</Link>
+        <h2 className="login-signup"
+          onClick={this.props.showSignIn}>
+          log in
         </h2>
       );
     }
   }
+
 
   verifyUser() {
     if (this.props.currentUser) {
@@ -37,8 +37,8 @@ class Header extends React.Component{
           <h4>My Themes</h4>
         </Link>);
     } else {
-      return ( <Link to="/login">
-          <h4>My Themes</h4>
+      return ( <Link to="/">
+          <h4></h4>
         </Link>);
     }
   }

@@ -1,20 +1,36 @@
 import { connect } from 'react-redux';
-import { login, logout, signup, clearSessionErrors } from '../../actions/session_actions';
+import {
+    login,
+    logout,
+    signup,
+    clearSessionErrors,
+    hideSignIn,
+    showSignIn
+  } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
-const mapStateToProps = ({ session }) => ({
-  loggedIn: Boolean(session.currentUser),
-  errors: session.errors
-});
+const mapStateToProps = ({ session }) => {
+  // debugger
+  return {
+    loggedIn: Boolean(session.currentUser),
+    authFormVisible: session.authFormVisible,
+    errors: session.errors,
+    formType: session.formType
+  };
+};
 
 const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
-  const processForm = (formType === 'login') ? login : signup;
+  const formType = 'login';
+  // const processForm = (formType === 'login') ? login : signup;
+  // processForm: user => dispatch(processForm(user)),
 
   return {
     clearErrors: () => dispatch(clearSessionErrors()),
-    processForm: user => dispatch(processForm(user)),
+    login: user => dispatch(login(user)),
+    signup: user => dispatch(signup(user)),
+    hideSignIn: () => dispatch(hideSignIn()),
+    showSignIn: () => dispatch(showSignIn()),
     formType
   };
 };

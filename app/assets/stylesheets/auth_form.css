@@ -90,6 +90,7 @@
 
 .question:hover {
   color: #222;
+  cursor: pointer;
 }
 
 .name-and-photo {

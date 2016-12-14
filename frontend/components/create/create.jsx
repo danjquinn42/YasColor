@@ -405,6 +405,22 @@ class Create extends React.Component {
     );
   }
 
+  saveButton(){
+    if (this.props.user){
+      return(
+        <form onSubmit={this.handleSubmit}>
+          <input type="submit" className="save-button" value="Save"></input>
+        </form>
+      );
+    } else {
+      return(
+        <form onClick={(this.props.showSignIn)}>
+          <input type="submit" className="save-button" value="Log In to Save"></input>
+        </form>
+      );
+    }
+  }
+
 
   render() {
     let { theme, user, loading } = this.props;
@@ -418,9 +434,7 @@ class Create extends React.Component {
 
         <div className="editor"
           draggable="false">
-          <form onSubmit={this.handleSubmit}>
-            <input type="submit" className="save-button" value="Save"></input>
-          </form>
+          {this.saveButton()}
           <div className="harmonyrule"></div>
 
           <div id="colorwheel"

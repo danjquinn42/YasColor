@@ -1,7 +1,9 @@
 import { RECEIVE_CURRENT_USER,
         LOGOUT,
         CLEAR_ERRORS,
-        RECEIVE_ERRORS
+        RECEIVE_ERRORS,
+        SHOW_SIGN_IN,
+        HIDE_SIGN_IN
         } from '../actions/session_actions.js';
 import merge from 'lodash/merge';
 
@@ -27,9 +29,11 @@ const SessionsReducer = (state = _nullUser, action) => {
       return merge({}, _nullUser);
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, _nullUser, {
-        errors
-      });
+      return merge({}, _nullUser, { errors });
+    case SHOW_SIGN_IN:
+      return merge({}, state, { authFormVisible: true, formType: 'login' });
+    case HIDE_SIGN_IN:
+      return merge({}, state, { authFormVisible: false });
     default:
       return state;
   }

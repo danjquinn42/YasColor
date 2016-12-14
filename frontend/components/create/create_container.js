@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Create from './create';
 import { createTheme, receiveTheme, fetchTheme } from '../../actions/theme_actions';
+import { showSignIn } from '../../actions/session_actions';
 import { selectTheme } from '../../reducers/selectors';
 
 
@@ -11,7 +12,8 @@ const mapStateToProps = ( { themes, session, loading }, ownProps ) => {
   return {
     theme: selectTheme(themes, ownProps.params.themeId),
     loading: loading.themeLoading,
-    user: session.currentUser
+    user: session.currentUser,
+    authFormVisible: session.authFormVisible
   };
 };
 
@@ -20,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
   return  {
     createTheme: theme => dispatch(createTheme(theme)),
     receiveTheme: (id) => dispatch(receiveTheme(id)),
-    fetchTheme: (id) => dispatch(fetchTheme(id)) };
+    fetchTheme: (id) => dispatch(fetchTheme(id)),
+    showSignIn: () => dispatch(showSignIn())};
 };
 
 export default connect(

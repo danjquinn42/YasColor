@@ -65,17 +65,16 @@
   font-weight: lighter;
   margin-left: auto;
   display: flex;
+  font-weight: bold;
   font-size: 14px;
   color: #888;
-  padding-top: 25px;
-  padding-right: 25px;
+  padding-top: 20px;
+  padding-right: 35px;
 }
 
-.login-signup a{
-}
-
-.login-signup a:hover{
+.login-signup:hover{
   color: #ccc;
+  cursor: pointer;
 }
 
 .user-profile-link > h2 {
