@@ -110,27 +110,66 @@ class Create extends React.Component {
   hueToX(hue, saturation) {
     saturation = saturation / 100;
     hue = hue * Math.PI / 180;
-    return ((Math.cos(hue) * saturation) + 1 ) / 2 * 98;
+    return ((Math.cos(hue) * saturation) + 1 ) / 2 * 100;
   }
 
   hueToY(hue, saturation) {
     saturation = saturation / 100;
     hue = hue * Math.PI / 180;
-    return ((Math.sin(hue) * saturation) + 1 ) / 2 * -98 + 100;
+    return ((Math.sin(hue) * saturation) + 1 ) / 2 * -100 + 100;
   }
+
+
+
 
 
   HSLBackground(color){
     return { background: `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)` };
   }
 
+
+ // ------------------
+  XYtoHueAndSaturation(x, y) {
+    const saturation =  this.distanceFromOrigin(x, y) * 100;
+    if ( x > y) {
+    console.log("angle: ", this.toDegrees(Math.acos(y / saturation)));
+    } else {
+      console.log("angle: ", this.toDegrees(Math.acos(x / saturation)));
+    }
+  }
+
+  toDegrees(angle) {
+    return angle * (180 / Math.PI);
+  }
+
+  distanceFromOrigin(x, y) {
+    return Math.sqrt(x*x + y*y);
+  }
+
+
+  getCoordinates(color) {
+    return (event) => {
+      const diameter = event.target.offsetParent.offsetParent.clientWidth;
+      let markerLeft = event.target.offsetParent.offsetLeft;
+      let markerTop = event.target.offsetParent.offsetTop;
+      const originOffset = -0.5;
+      const scaleFactor = 2;
+      markerLeft = (( markerLeft / diameter ) + originOffset) * scaleFactor;
+      markerTop = (( markerTop / diameter ) + originOffset) * scaleFactor;
+      console.log('markerLeft: ', markerLeft);
+      console.log('markerTop: ', markerTop);
+      this.XYtoHueAndSaturation(markerLeft, markerTop);
+    };
+  }
+  // ---------
+
   marker(color) {
       return (
         <div
           className={`marker ${this.selectedClass(color)}`}
-          draggable="true"
+          draggable="false"
+          onClick={this.getCoordinates(color)}
           onMouseDown={this.selectColor(color.id)}
-          onDrag={(proxy, event) =>(console.log(`drag - X:${proxy.clientX} by Y:${proxy.clientX}`))}
 
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
             top: `${this.hueToY(color.hue, color.saturation)}%`}}>
@@ -210,7 +249,6 @@ class Create extends React.Component {
   }
 
   selectColor(colorId) {
-    console.log(this.state.selected);
     return (event) => { this.setState({ selected: colorId }); };
   }
 
@@ -298,7 +336,7 @@ class Create extends React.Component {
 
   valuesBoxes() {
     return (
-      <ol id='values-boxes'>
+      <ol id='values-boxes' className='group'>
         <li className='values-box'>{this.values(this.color0())}</li>
         <li className='values-box'>{this.values(this.color1())}</li>
         <li className='values-box'>{this.values(this.color2())}</li>
@@ -310,9 +348,9 @@ class Create extends React.Component {
 
   values(color) {
     return(
-          <li className={`value-item ${this.selectedClass(color)}`}>
+          <div className={`value-item ${this.selectedClass(color)}`}>
             <h5 className="value-type">HSL</h5>
-            <ol className="color-format">
+            <ol className="color-format group">
               <li>
                 {color.hue}
               </li>
@@ -323,7 +361,7 @@ class Create extends React.Component {
                 {color.lightness}
               </li>
             </ol>
-          </li>
+          </div>
     );
   }
 
