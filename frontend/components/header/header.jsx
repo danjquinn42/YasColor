@@ -31,15 +31,13 @@ class Header extends React.Component{
   }
 
 
-  verifyUser() {
+  myThemes() {
     if (this.props.currentUser) {
       return (<Link to="/mythemes">
           <h4>My Themes</h4>
         </Link>);
     } else {
-      return ( <Link to="/">
-          <h4></h4>
-        </Link>);
+      return ( '' );
     }
   }
 
@@ -63,7 +61,7 @@ class Header extends React.Component{
             </li>
 
             <li>
-              {this.verifyUser()}
+              {this.myThemes()}
             </li>
 
           </ul>

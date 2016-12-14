@@ -405,6 +405,22 @@ class Create extends React.Component {
     );
   }
 
+  updateTheme(){
+    return () => {
+      this.setState(
+        { theme: {
+          color_swatches: [
+            this.color0(),
+            this.color1(),
+            this.color2(),
+            this.color3(),
+            this.color4()]
+        }}
+      );
+    };
+  }
+
+
   saveButton(){
     if (this.props.user){
       return(
@@ -414,8 +430,12 @@ class Create extends React.Component {
       );
     } else {
       return(
-        <form onClick={(this.props.showSignIn)}>
-          <input type="submit" className="save-button" value="Log In to Save"></input>
+        <form onClick={this.updateTheme() }>
+          <input type="submit"
+
+            onClick={this.props.showSignIn}
+            className="save-button"
+            value="Log In to Save"></input>
         </form>
       );
     }
