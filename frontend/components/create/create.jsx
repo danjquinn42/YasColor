@@ -455,7 +455,7 @@ class Create extends React.Component {
     if (this.props.user){
       return(
         <form onSubmit={this.handleSubmit}>
-          <input type="submit" className="save-button" value="Create"></input>
+          <input type="submit" className="save-button" value="Save"></input>
         </form>
       );
     } else {
@@ -465,7 +465,7 @@ class Create extends React.Component {
 
             onClick={this.props.showSignIn}
             className="save-button"
-            value="Log In to Create"></input>
+            value="Log In to Save"></input>
         </form>
       );
     }
