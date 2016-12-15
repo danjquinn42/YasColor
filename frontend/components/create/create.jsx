@@ -71,6 +71,13 @@ class Create extends React.Component {
   }
 
 
+  // shouldComponentUpdate() {
+  //   return !this.props.authFormVisible;
+  // }
+  //
+  // componentWillUpdate() {
+  //   debugger;
+  // }
 
   componentDidMount() {
     if (this.props.params.themeId) {
@@ -230,6 +237,7 @@ class Create extends React.Component {
         <div
           className={`marker ${this.selectedClass(color)} ${this.isDragging}`}
           draggable="true"
+          onMouseDown={ this.selectColor(color.ord) }
           onDragStart={this.dragImage().bind(this)}
           onDrag={this.followMouse(color, colorString).bind(this)}
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,

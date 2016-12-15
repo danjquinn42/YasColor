@@ -81,7 +81,7 @@ class ThemeView extends React.Component {
         </form>
       );
     }
-    // <input type="submit" className="save-button non-display" value="submit"></input>
+    <input type="submit" className="save-button non-display" value="submit"></input>
   }
 
   // displayAfterSave(){
