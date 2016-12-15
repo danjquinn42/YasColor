@@ -11,7 +11,6 @@ import SessionForm from './session_form';
 
 
 const mapStateToProps = ({ session }) => {
-  // debugger
   return {
     loggedIn: Boolean(session.currentUser),
     authFormVisible: session.authFormVisible,

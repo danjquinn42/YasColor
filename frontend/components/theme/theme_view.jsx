@@ -25,7 +25,6 @@ class ThemeView extends React.Component {
       theme: nextProps.theme,
       title: nextProps.theme.title
     });
-    debugger;
   }
 
 
@@ -36,7 +35,6 @@ class ThemeView extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault;
-    // debugger;
     const newTheme = merge( {}, this.props.theme, { title: this.state.title });
     if ( this.props.theme.user.id === this.props.user.id ) {
       this.props.updateTheme(newTheme);

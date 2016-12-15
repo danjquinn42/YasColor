@@ -21,6 +21,8 @@ class Theme < ActiveRecord::Base
     source: :tag
   )
 
+  accepts_nested_attributes_for :tags
+
 
   has_many(
    :theme_saves,

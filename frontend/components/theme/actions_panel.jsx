@@ -29,6 +29,38 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
     }
   };
 
+  const updateTag = (tag) => {
+    return(event) => {
+      return "";
+    };
+  };
+
+  const tagItems = () => {
+    if ( user && user.id === theme.user.id ) {
+      return theme.tags.map( (tag) => {
+        return (
+          <input key={tag.id}
+            className="tag"
+            onChange={ updateTag(tag) }
+            defaultValue={tag.title}>
+          </input>
+        );
+      });
+    } else {
+      return theme.tags.map( (tag) => {
+        return (
+          <li key={tag.id}
+            className="tag">
+            {tag.title}
+          </li>
+        );
+      });
+    }
+  };
+
+
+
+
   return (
 
     <section className="actions-panel group">
@@ -49,11 +81,13 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
       <h3>Info</h3>
       <ul>
         <li className="info-item"><h4 className="info-type">Created By:</h4><h4 className="info-content">{theme.user.name}</h4></li>
-        <li className="info-item"><h4 className="info-type">Created At:</h4><h4 className="info-content">{theme.created_at.slice(0,10)}</h4></li>
+        <li className="info-item"><h4 className="info-type">Created At:&nbsp;</h4><h4 className="info-content">{theme.created_at.slice(0,10)}</h4></li>
+        <li className="info-item box-below"><h4 className="info-type">Tags</h4>
+          <ul id="tagbox">
+          { tagItems() }
+          </ul>
+        </li>
       </ul>
-      <section className="tagBox">
-        <li className="tag"></li>
-      </section>
     </section>
   );
 };

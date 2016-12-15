@@ -13,16 +13,12 @@
 
 .edit-title  .title {
   display: inline;
-  /*float: left;*/
   width: 500px;
   font-size: 18px;
   margin-right: 15px;
   letter-spacing: 0.1em;
 }
 
-/*.title-form {
-  display: flex;
-}*/
 .title-form .non-display {
   display: none;
 }
@@ -36,7 +32,6 @@
 .pencil {
   display: inline;
   position: relative;
-  /*right: 54px;*/
   z-index: 0;
   padding: 3px 15px 0 0;
   width: 15px;
@@ -50,8 +45,6 @@
   margin-bottom: 24px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /*display: inline;*/
-  /*position: relative;*/
   padding: 0;
   border: 5px solid rgba(0, 0 , 0 , 0.1);
   /*overflow: hidden;*/

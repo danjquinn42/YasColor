@@ -27,7 +27,6 @@ const ExploreBar = () => {
 };
 
 const ExploreItems = ({ themes }) => {
-  // debugger
   return (
     <ul className="theme-grid">
       { themes.map((theme) => <ExploreItem key={theme.id} theme={theme} />) }
