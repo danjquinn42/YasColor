@@ -25,6 +25,7 @@ class ThemeView extends React.Component {
       theme: nextProps.theme,
       title: nextProps.theme.title
     });
+    debugger;
   }
 
 

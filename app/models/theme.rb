@@ -13,6 +13,14 @@ class Theme < ActiveRecord::Base
   validates :user, presence: true
 
   has_many :color_swatches, inverse_of: :theme
+  has_many :taggings, inverse_of: :theme
+
+  has_many(
+    :tags,
+    through: :taggings,
+    source: :tag
+  )
+
 
   has_many(
    :theme_saves,

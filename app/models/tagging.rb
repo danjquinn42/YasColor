@@ -11,4 +11,7 @@
 
 class Tagging < ApplicationRecord
   validates :tag_id, :theme_id, presence: true
+
+  belongs_to :tag, inverse_of: :taggings
+  belongs_to :theme, inverse_of: :taggings
 end

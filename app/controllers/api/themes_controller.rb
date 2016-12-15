@@ -51,6 +51,6 @@ class Api::ThemesController < ApplicationController
   private
 
   def themes_params
-    params.require(:theme).permit(:user, :title, :color_swatches, :colors)
+    params.require(:theme).permit(:user, :title, :color_swatches, :colors, :tags)
   end
 end

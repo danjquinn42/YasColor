@@ -24,10 +24,24 @@
 }
 
 .harmonyrule {
-  width: 30px;
-  float: left;
-  height: 30px;
+  position: relative;
+  top: 80px;
+  left: -63px;
+  /*width: 200px;*/
+  /*float: left;*/
+  /*height: 30px;*/
   /*border: 2px solid white;*/
+}
+
+.color-rule {
+  background: #555;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.color-rule:hover{
+  color: #ccc;
 }
 
 #colorwheel {

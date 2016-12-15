@@ -51,6 +51,9 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
         <li className="info-item"><h4 className="info-type">Created By:</h4><h4 className="info-content">{theme.user.name}</h4></li>
         <li className="info-item"><h4 className="info-type">Created At:</h4><h4 className="info-content">{theme.created_at.slice(0,10)}</h4></li>
       </ul>
+      <section className="tagBox">
+        <li className="tag"></li>
+      </section>
     </section>
   );
 };

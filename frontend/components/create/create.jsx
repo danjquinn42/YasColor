@@ -204,7 +204,11 @@ class Create extends React.Component {
     return (event) => {
       event.preventDefault();
       this.updateMousePosition(event);
-      this.updateHueFromWheel(`${colorString}hue`, `${colorString}saturation`);
+      if ( this.state.hueLock ) {
+        this.updateAllHuesFromWheel(color);
+      } else {
+        this.updateHueFromWheel(`${colorString}hue`, `${colorString}saturation`);
+      }
     };
   }
 
@@ -227,10 +231,26 @@ class Create extends React.Component {
     this.setState({ [hue]: newHue , [saturation]: newSaturation});
   }
 
-  updateSaturationFromWheel(saturation, newValue){
-    newValue = Math.round(newValue);
-    this.setState({ [saturation]: newValue });
+  updateAllHuesFromWheel(color) {
+    let x = this.state.mouseCoordinates[0];
+    let y = this.state.mouseCoordinates[1];
+    const newHue = this.XYtoHueAndSaturation(x, y).hue;
+    let hueChange = newHue - color.hue;
+    const hue0 = Math.round(this.state.color0hue + hueChange) % 360;
+    const hue1 = Math.round(this.state.color1hue + hueChange) % 360;
+    const hue2 = Math.round(this.state.color2hue + hueChange) % 360;
+    const hue3 = Math.round(this.state.color3hue + hueChange) % 360;
+    const hue4 = Math.round(this.state.color4hue + hueChange) % 360;
+
+    this.setState({
+      color0hue: hue0,
+      color1hue: hue1,
+      color2hue: hue2,
+      color3hue: hue3,
+      color4hue: hue4,
+    });
   }
+
 
   marker(color, colorString) {
       return (
@@ -471,6 +491,36 @@ class Create extends React.Component {
     }
   }
 
+  toggleHueLock() {
+    return () => {
+      return this.state.hueLock ?
+      this.setState({ hueLock: false }) :
+      this.setState({ hueLock: true });
+    };
+  }
+
+
+  hueLockButton() {
+    if ( this.state.hueLock ){
+      return (
+        <button
+          className="hue-lock color-rule"
+          onClick={this.toggleHueLock().bind(this)}>
+          Unlock Color Relationship
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="hue-lock color-rule"
+          onClick={this.toggleHueLock().bind(this)}>
+          &nbsp;Lock Color Relationship&nbsp;
+        </button>
+      );
+    }
+
+  }
+
 
   render() {
     let { theme, user, loading } = this.props;
@@ -485,7 +535,9 @@ class Create extends React.Component {
         <div className="editor"
           draggable="false">
           {this.saveButton()}
-          <div className="harmonyrule"></div>
+          <div className="harmonyrule">
+            { this.hueLockButton() }
+          </div>
 
           <div id="colorwheel"
               draggable="false">

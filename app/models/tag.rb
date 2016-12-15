@@ -10,4 +10,14 @@
 
 class Tag < ApplicationRecord
   validates :title, presence: true
+
+  has_many :taggings, inverse_of: :tag
+
+  has_many(
+    :themes,
+    through: :taggings,
+    source: :theme,
+    inverse_of: :tags
+  )
+
 end
