@@ -20,10 +20,24 @@
   letter-spacing: 0.1em;
 }
 
-.edit-title  .pencil {
+/*.title-form {
+  display: flex;
+}*/
+.title-form .non-display {
+  display: none;
+}
+
+.title-form .check {
+  width: 20px;
+  height: 20px;
+  margin-top: -5px;
+}
+
+.pencil {
   display: inline;
   position: relative;
   /*right: 54px;*/
+  z-index: 0;
   padding: 3px 15px 0 0;
   width: 15px;
   height: 15px;

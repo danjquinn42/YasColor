@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Create from './create';
 import { createTheme, receiveTheme, fetchTheme } from '../../actions/theme_actions';
 import { showSignIn } from '../../actions/session_actions';
+import { updateUser } from '../../actions/user_actions';
 import { selectTheme } from '../../reducers/selectors';
 
 
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => {
   return  {
     createTheme: theme => dispatch(createTheme(theme)),
     receiveTheme: (id) => dispatch(receiveTheme(id)),
+    updateUser: (user) => dispatch(updateUser(user)),
     fetchTheme: (id) => dispatch(fetchTheme(id)),
     showSignIn: () => dispatch(showSignIn())};
 };

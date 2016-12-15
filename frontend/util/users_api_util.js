@@ -1,4 +1,4 @@
-export const patchUser = (user) => {
+export const patchUser = ({user}) => {
   return $.ajax({
     method: 'PATCH',
     url: `api/users/${user.id}`,

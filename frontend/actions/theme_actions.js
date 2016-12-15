@@ -31,7 +31,7 @@ export function createTheme(theme) {
 
 export function updateTheme(theme) {
   return (dispatch) => {
-    return APIUtil.patchTheme(theme).them(updatedTheme => {
+    return APIUtil.patchTheme(theme).then(updatedTheme => {
       dispatch(receiveUpdatedTheme(updatedTheme));
       return updatedTheme;
     });

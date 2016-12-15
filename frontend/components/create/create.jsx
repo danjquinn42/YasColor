@@ -119,6 +119,8 @@ class Create extends React.Component {
       then((data) => this.props.router.push(`/theme/${data.id}`));
   }
 
+
+
   hueToX(hue, saturation) {
     saturation = saturation / 100;
     hue = hue * Math.PI / 180;
@@ -203,10 +205,9 @@ class Create extends React.Component {
     return (event) =>{
       const image = document.createElement("img");
       image.setAttribute('style','position: absolute; display: block; top: 0; left: 0; width: 1px; height: 1px;' );
-      // image.src = "http://www.cornucopia-design.co.uk/Assets/images/template_images/business-cards-small_blank_04.png";
       document.body.appendChild(image);
       event.dataTransfer.setDragImage(image, 0, 0);
-    }
+    };
   }
 
   updateHueFromWheel(hue, saturation){
@@ -446,7 +447,7 @@ class Create extends React.Component {
     if (this.props.user){
       return(
         <form onSubmit={this.handleSubmit}>
-          <input type="submit" className="save-button" value="Save"></input>
+          <input type="submit" className="save-button" value="Create"></input>
         </form>
       );
     } else {
@@ -456,7 +457,7 @@ class Create extends React.Component {
 
             onClick={this.props.showSignIn}
             className="save-button"
-            value="Log In to Save"></input>
+            value="Log In to Create"></input>
         </form>
       );
     }

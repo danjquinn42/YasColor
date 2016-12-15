@@ -23,8 +23,7 @@ class ThemeView extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       theme: nextProps.theme,
-      title: nextProps.theme.title,
-      justSaved: nextProps.justSaved
+      title: nextProps.theme.title
     });
   }
 
@@ -45,6 +44,7 @@ class ThemeView extends React.Component {
   }
 
 
+
   swatches(theme){
     return theme.color_swatches.map((color) => {
       const style = { background: `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`};
@@ -58,9 +58,58 @@ class ThemeView extends React.Component {
     });
   }
 
+  title(){
+    if ( this.props.user.id === this.props.theme.user.id ){
+      return (
+        <form className="title-form"
+          onSubmit={this.handleSubmit}>
+          { this.editSaveIcon() }
+          <input
+            className="title"
+            type="text"
+            defaultValue={ this.state.title }
+            onChange={this.updateTitle()}>
+          </input>
+          <input type="submit" className="save-button non-display" value="submit"></input>
+        </form>
+      );
+    } else {
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <div className="pencil"></div>
+          <h3 className="title">{ this.state.title }</h3>
+        </form>
+      );
+    }
+    // <input type="submit" className="save-button non-display" value="submit"></input>
+  }
+
+  // displayAfterSave(){
+  //   return (this.state.justSaved ? "show-check" : "non-display");
+  // }
+
+  editSaveIcon() {
+    if (this.state.justSaved) {
+      return (
+        <img className="pencil check"
+           src={window.check}>
+        </img>
+      );
+    } else {
+      return (
+        <img className="pencil"
+           src={window.pencil}>
+        </img>
+      );
+    }
+  }
+
+  dontDisplayAfterSave(){
+    return (this.state.justSaved ? "non-display" : "show-check");
+  }
+
   updateTitle(feild){
-    // debugger;
-    return event =>  this.setState({ title: event.target.value });
+    return event => this.setState({ title: event.target.value, justSaved: false });
   }
 
   render(){
@@ -72,16 +121,7 @@ class ThemeView extends React.Component {
     return (
       <content className="view-page group">
         <div className = "edit-title group">
-          <form onSubmit={this.handleSubmit}>
-            <img className="pencil" src={window.pencil}></img>
-            <input
-              className="title"
-              type="text"
-              defaultValue={ this.state.title }
-              onChange={this.updateTitle()}>
-            </input>
-            <input type="submit" className="save-button non-display" value="submit"></input>
-          </form>
+          { this.title() }
         </div>
         <ol className={`view-theme ${this.state.themeDisplay}`}
           onClick={this.toggleFullscreen.bind(this)}>

@@ -11,7 +11,6 @@ class Api::ThemesController < ApplicationController
   def create
     @theme = current_user.themes.new(themes_params)
     color_swatches = params[:theme][:color_swatches]
-
     if @theme.save
       5.times do |swatch|
         hue = color_swatches["#{swatch}"][:hue]
@@ -20,7 +19,7 @@ class Api::ThemesController < ApplicationController
         ord = color_swatches["#{swatch}"][:ord]
         color = @theme.color_swatches.new(hue: hue, saturation: saturation, lightness: lightness, ord: ord)
         color.save
-
+        current_user.saved_themes << @theme
       end
       render :show
     else
