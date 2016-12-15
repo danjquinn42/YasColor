@@ -12,10 +12,7 @@ class Header extends React.Component{
           <h2>{this.props.currentUser.name}</h2>
           <ul className="dropdown">
             <li>
-              <h3 onClick={this.props.logout}>log out</h3>
-            </li>
-            <li>
-              <h3 to="/">edit profile</h3>
+              <Link to="/" onClick={this.props.logout}>log out</Link>
             </li>
           </ul>
         </section>
@@ -29,6 +26,9 @@ class Header extends React.Component{
       );
     }
   }
+  // <li>
+  //   <h3 to="/">edit profile</h3>
+  // </li>
 
 
   myThemes() {

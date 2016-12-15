@@ -26,7 +26,7 @@ export const patchTheme = (theme) => {
   return $.ajax({
     method: 'PATCH',
     url: `api/themes/${theme.id}`,
-    data: theme
+    data: {theme}
   });
 }; // 'api/themes/:id
 

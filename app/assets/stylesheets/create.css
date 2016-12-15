@@ -65,6 +65,7 @@
   align-content: center;
   /*border: 2px solid black;*/
   pointer-events: auto;
+  drag-image: none;
 
 }
 
@@ -72,6 +73,7 @@
   position: absolute;
   right: 50%;
   bottom: 50%;
+  user-select: none;
   /*top: -7px;*/
   width: 100%;
   height: 100%;

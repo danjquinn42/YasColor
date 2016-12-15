@@ -5,6 +5,7 @@ export const RECEIVE_THEME = 'RECEIVE_THEME';
 export const RECEIVE_NEW_THEME = 'RECEIVE_NEW_THEME';
 export const REQUEST_THEME = 'REQUEST_THEME';
 export const REQUEST_THEMES = 'REQUEST_THEMES';
+export const RECEIVE_UPDATED_THEME = "RECEIVE_UPDATED_THEME";
 
 export function fetchThemes() {
   return (dispatch) => {
@@ -27,6 +28,20 @@ export function createTheme(theme) {
     });
   };
 }
+
+export function updateTheme(theme) {
+  return (dispatch) => {
+    return APIUtil.patchTheme(theme).them(updatedTheme => {
+      dispatch(receiveUpdatedTheme(updatedTheme));
+      return updatedTheme;
+    });
+  };
+}
+
+export const receiveUpdatedTheme = theme => ({
+  type: RECEIVE_UPDATED_THEME,
+  theme
+});
 
 export const receiveNewTheme = theme => ({
 	type: RECEIVE_NEW_THEME,

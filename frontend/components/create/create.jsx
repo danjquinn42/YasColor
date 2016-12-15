@@ -32,6 +32,7 @@ class Create extends React.Component {
     this.updateSaturation = this.updateSaturation.bind(this);
     this.updateLightness = this.updateLightness.bind(this);
     this.HSLBackground = this.HSLBackground.bind(this);
+    this.selectedClass = this.selectedClass.bind(this);
   }
 
   color0() {
@@ -137,14 +138,12 @@ class Create extends React.Component {
   }
 
 
- // ------------------
   XYtoHueAndSaturation(x, y) {
     const hypotenuse =  this.distanceFromOrigin(x, y);
     const angle = this.toDegrees(Math.acos( x / hypotenuse));
-    const saturation = hypotenuse * 100;
+    const saturation = Math.min( hypotenuse * 100, 100 );
     const hue = ( 0 > y ) ? angle : -(angle - 180) + 180;
-    console.log("saturation: ", saturation);
-    console.log("hue: ", hue);
+    return { hue: hue, saturation: saturation };
   }
 
   toDegrees(angle) {
@@ -156,8 +155,7 @@ class Create extends React.Component {
   }
 
 
-  getCoordinates(color) {
-    return (event) => {
+  getCoordinates(color, event) {
       const diameter = event.target.offsetParent.offsetParent.clientWidth;
       let markerLeft = event.target.offsetParent.offsetLeft;
       let markerTop = event.target.offsetParent.offsetTop;
@@ -165,24 +163,77 @@ class Create extends React.Component {
       const scaleFactor = 2;
       markerLeft = (( markerLeft / diameter ) + originOffset) * scaleFactor;
       markerTop = (( markerTop / diameter ) + originOffset) * scaleFactor;
-      // console.log('markerLeft: ', markerLeft);
-      // console.log('markerTop: ', markerTop);
-      this.XYtoHueAndSaturation(markerLeft, markerTop);
+      return [markerLeft, markerTop];
+  }
+
+
+  updateMousePosition(event){
+    const radius = event.target.parentElement.clientHeight / 2;
+    const originX = event.target.parentElement.offsetLeft + radius;
+    const originY = event.target.parentElement.offsetTop + radius;
+    // debugger;
+    let mouseLeft = (event.pageX - originX) / radius;
+    let mouseTop = (event.pageY - originY) / radius;
+    // console.log("mouseLeft ", mouseLeft, "mouseTop", mouseTop);
+
+    this.setState({mouseCoordinates: [mouseLeft, mouseTop]});
+  }
+
+  tracking(color, value) {
+    return (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      color.tracking = value;
+      if (value) {
+        this.selectedClass(color);
+      }
     };
   }
-  // ---------
 
-  marker(color) {
+
+  followMouse(color, colorString){
+    return (event) => {
+      event.preventDefault();
+      this.updateMousePosition(event);
+      this.updateHueFromWheel(`${colorString}hue`, `${colorString}saturation`);
+    };
+  }
+
+  dragImage() {
+    return (event) =>{
+      const image = document.createElement("img");
+      image.setAttribute('style','position: absolute; display: block; top: 0; left: 0; width: 1px; height: 1px;' );
+      // image.src = "http://www.cornucopia-design.co.uk/Assets/images/template_images/business-cards-small_blank_04.png";
+      document.body.appendChild(image);
+      event.dataTransfer.setDragImage(image, 0, 0);
+    }
+  }
+
+  updateHueFromWheel(hue, saturation){
+    let x = this.state.mouseCoordinates[0];
+    let y = this.state.mouseCoordinates[1];
+    let newHue = this.XYtoHueAndSaturation(x, y).hue;
+    let newSaturation = this.XYtoHueAndSaturation(x, y).saturation;
+    newHue = Math.round(newHue);
+    newSaturation = Math.round(newSaturation);
+    this.setState({ [hue]: newHue , [saturation]: newSaturation});
+  }
+
+  updateSaturationFromWheel(saturation, newValue){
+    newValue = Math.round(newValue);
+    this.setState({ [saturation]: newValue });
+  }
+
+  marker(color, colorString) {
       return (
         <div
-          className={`marker ${this.selectedClass(color)}`}
-          draggable="false"
-          onClick={this.getCoordinates(color)}
-          onMouseDown={this.selectColor(color.ord)}
-
+          className={`marker ${this.selectedClass(color)} ${this.isDragging}`}
+          draggable="true"
+          onDragStart={this.dragImage().bind(this)}
+          onDrag={this.followMouse(color, colorString).bind(this)}
           style={{left: `${this.hueToX(color.hue, color.saturation)}%`,
             top: `${this.hueToY(color.hue, color.saturation)}%`}}>
-          <div style={ this.HSLBackground(color) }></div>
+          <div style={ this.HSLBackground(color) }>  </div>
         </div>
       );
   }
@@ -291,8 +342,8 @@ class Create extends React.Component {
     return (event) => {
       this.setState({ [lightness]: event.target.value });
     };
-
   }
+
 
   sliders(color, colorString, pos){
     return(
@@ -428,18 +479,19 @@ class Create extends React.Component {
           <div className="harmonyrule"></div>
 
           <div id="colorwheel"
-              draggable="false2">
+              draggable="false">
 
             <img alt="HSL Color Wheel"
+              onMouseMove={(event) => {this.updateMousePosition(event);}}
               id="hsl-wheel"
               src={window.wheel}
               draggable="false" />
 
-            {this.marker(this.color0())}
-            {this.marker(this.color1())}
-            {this.marker(this.color2())}
-            {this.marker(this.color3())}
-            {this.marker(this.color4())}
+            {this.marker(this.color0(), "color0")}
+            {this.marker(this.color1(), "color1")}
+            {this.marker(this.color2(), "color2")}
+            {this.marker(this.color3(), "color3")}
+            {this.marker(this.color4(), "color4")}
 
           </div>
         </div>

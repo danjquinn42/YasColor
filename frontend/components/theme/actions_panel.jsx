@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const ActionsPanel = ( theme, user, updateUser, router) => {
+const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
 
   //
   const saveTheme = () => {
     const themeIDs = user.saved_themes.map((sTheme) => {
-      return sTheme.id
+      return sTheme.id;
     });
     if (!themeIDs.includes(theme.id)){
       user.saved_themes.push(theme);
@@ -16,18 +16,18 @@ const ActionsPanel = ( theme, user, updateUser, router) => {
   };
 
   const verifyUser = () => {
-    if (window.currentUser) {
+    if (user) {
       return (<Link to="/mythemes" onClick={saveTheme}>
       <img className="action-icon" src={window.save}></img>
       <h4>Save to Library</h4>
     </Link>);
     } else {
-      return ( <Link to="/login">
+      return ( <Link onClick={showSignIn}>
       <img className="action-icon" src={window.save}></img>
-      <h4>Save to Library</h4>
+      <h4>Log in to Save</h4>
     </Link>);
     }
-  }
+  };
 
   return (
 
