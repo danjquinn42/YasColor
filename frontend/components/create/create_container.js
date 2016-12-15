@@ -7,9 +7,6 @@ import { selectTheme } from '../../reducers/selectors';
 
 
 const mapStateToProps = ( { themes, session, loading }, ownProps ) => {
-  // TODO 2: current theme => themescurrentTHeme
-  // debugger
-  // theme: themes.currentTheme,
   return {
     theme: selectTheme(themes, ownProps.params.themeId),
     loading: loading.themeLoading,

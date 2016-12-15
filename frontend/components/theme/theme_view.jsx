@@ -59,7 +59,7 @@ class ThemeView extends React.Component {
   }
 
   title(){
-    if ( this.props.user.id === this.props.theme.user.id ){
+    if ( this.props.user && this.props.user.id === this.props.theme.user.id ){
       return (
         <form className="title-form"
           onSubmit={this.handleSubmit}>
@@ -81,7 +81,7 @@ class ThemeView extends React.Component {
         </form>
       );
     }
-    <input type="submit" className="save-button non-display" value="submit"></input>
+    // <input type="submit" className="save-button non-display" value="submit"></input>
   }
 
   // displayAfterSave(){
