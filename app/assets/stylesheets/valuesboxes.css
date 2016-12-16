@@ -37,6 +37,8 @@
 
 .color-format > li {
   width: 25px;
+  -webkit-user-select: all;
+  user-select: all;
   text-align: center;
   font-size: 12px;
   color: #585856;

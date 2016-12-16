@@ -25,6 +25,17 @@ class ThemeView extends React.Component {
       theme: nextProps.theme,
       title: nextProps.theme.title
     });
+    const user = this.props.user;
+    // debugger
+    if ( user && !this.props.theme.default && this.state.theme.user === user ){
+      const themeIDs = user.saved_themes.map((sTheme) => {
+        return sTheme.id;
+      });
+      if (!themeIDs.includes(this.state.theme.id)){
+        user.saved_themes.push(this.state.theme.id);
+        this.props.updateUser(user);
+      }
+    }
   }
 
 
