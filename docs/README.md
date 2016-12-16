@@ -3,7 +3,7 @@
 [Trello](https://trello.com/b/wZtjG4ta/yas-color)
 
 ## Minimum Viable Product
- Yas Color is a web app inspired by [Adobe Color](https://color.adobe.com/ "Abobe Color CC"). By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+ [Yas Color](https://yascolor.herokuapp.com/?#/) is a web app inspired by [Adobe Color](https://color.adobe.com/ "Abobe Color CC"). By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
   * New account creation, login, and demo login
   * Hosting on Heroku
   * Production README
