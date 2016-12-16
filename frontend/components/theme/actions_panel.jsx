@@ -69,7 +69,7 @@ const ActionsPanel = (
   };
 
   const userIsOwner = () => {
-    if ( user.id && user.id === theme.user.id ){
+    if ( user && user.id === theme.user.id ){
       return "";
     }else {
       return "non-display";
