@@ -34,9 +34,14 @@ const ExploreItems = ({ searchTerms, themes }) => {
   return (
     <ul className="theme-grid">
       { themes.map((theme) => {
+        let tagTitles = "";
+        theme.tags.forEach((tag) =>{
+          tagTitles += `${tag.title} `;
+        });
+        tagTitles = tagTitles.toLowerCase();
         const title = theme.title.toLowerCase();
         const term = searchTerms.toLowerCase();
-        if (title.includes(term)) {
+        if (title.includes(term) || tagTitles.includes(term)) {
           return (<ExploreItem key={theme.id} theme={theme} />);
           }
         })

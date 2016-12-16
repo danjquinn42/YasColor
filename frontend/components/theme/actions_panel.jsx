@@ -2,14 +2,15 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const ActionsPanel = ( theme,
-   user,
-    updateUser,
-     updateNewTag,
-      newTag,
-      addNewTag,
-       showSignIn,
-        router) => {
+const ActionsPanel = (
+  theme,
+  user,
+  updateUser,
+  updateNewTag,
+  newTag,
+  addNewTag,
+  showSignIn,
+  router) => {
 
   //
   const saveTheme = () => {
@@ -67,6 +68,14 @@ const ActionsPanel = ( theme,
     }
   };
 
+  const userIsOwner = () => {
+    if ( user.id && user.id === theme.user.id ){
+      return "";
+    }else {
+      return "non-display";
+    }
+  };
+
   let showHideNewTag = "non-display";
 
   return (
@@ -91,7 +100,7 @@ const ActionsPanel = ( theme,
         <li className="info-item"><h4 className="info-type">Created At:&nbsp;</h4><h4 className="info-content">{theme.created_at.slice(0,10)}</h4></li>
         <li className="info-item box-below"><h4 className="info-type">Tags</h4>
           <ul id="tagbox">
-            <form className="new-tag-form"
+            <form className={`new-tag-form ${userIsOwner()}`}
               onSubmit={addNewTag(newTag)}>
               <input
                 className="new-tag"

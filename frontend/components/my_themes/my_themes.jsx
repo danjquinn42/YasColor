@@ -11,6 +11,9 @@ const MyItems = ( {themes} ) => {
 };
 
 class MyThemes extends React.Component {
+
+
+
   render() {
     const themes = this.props.user.saved_themes;
 

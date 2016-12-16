@@ -48,7 +48,7 @@ class ThemeView extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault;
+    event.preventDefault();
     const newTheme = merge( {}, this.props.theme, { title: this.state.title });
     if ( this.props.theme.user.id === this.props.user.id ) {
       this.props.updateTheme(newTheme);
@@ -167,7 +167,8 @@ class ThemeView extends React.Component {
         </ol>
         <div className="metadata group">
           <Comments />
-          {ActionsPanel(theme,
+          {ActionsPanel(
+            theme,
             user,
             updateUser,
             this.updateNewTag,

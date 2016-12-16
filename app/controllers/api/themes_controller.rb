@@ -31,13 +31,15 @@ class Api::ThemesController < ApplicationController
     @theme = Theme.find(params[:id])
     # debugger
     tags = params[:theme][:tags]
-    tags.each_with_index do |tag, index|
-      unless ( tag[1][:id] )
-        new_tag = Tag.new
-        new_tag.title = tag[1][:title]
-        new_tag.save
-        new_tag.themes << @theme
-        @theme.tags << new_tag
+    if tags
+      tags.each_with_index do |tag, index|
+        unless ( tag[1][:id] )
+          new_tag = Tag.new
+          new_tag.title = tag[1][:title]
+          new_tag.save
+          new_tag.themes << @theme
+          @theme.tags << new_tag
+        end
       end
     end
     if @theme.update(themes_params)
