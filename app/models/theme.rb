@@ -17,8 +17,7 @@ class Theme < ActiveRecord::Base
 
   has_many(
     :tags,
-    through: :taggings,
-    source: :tag
+    through: :taggings
   )
 
   accepts_nested_attributes_for :tags

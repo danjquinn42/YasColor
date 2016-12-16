@@ -126,7 +126,8 @@ class ThemeView extends React.Component {
       // debugger
       newTag = { title: newTag };
       const newTheme = merge( {}, this.state.theme );
-      this.props.theme.tags.push(newTag);
+      newTheme.tags.push(newTag);
+      // debugger;
       this.props.updateTheme(newTheme);
       this.setState({ newTag: "" });
     };

@@ -15,9 +15,7 @@ class Tag < ApplicationRecord
 
   has_many(
     :themes,
-    through: :taggings,
-    source: :theme,
-    inverse_of: :tags
+    through: :taggings
   )
 
 end
