@@ -64,13 +64,29 @@ class ThemeExplore extends React.Component {
     };
   }
 
+
   render() {
+    if ( this.props.exploreLoading ) {
+    return (
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+      );
+    }
+
     const themes = this.props.themes;
     return (
       <div className="explore-page">
-        <ExploreBar searchTerms={this.state.searchTerms} setSearchTerms={this.setSearchTerms.bind(this)} />
+        <ExploreBar
+          searchTerms={this.state.searchTerms}
+          setSearchTerms={this.setSearchTerms.bind(this)} />
         <main>
-          <ExploreItems searchTerms={this.state.searchTerms} themes={ themes } />
+          <ExploreItems
+            searchTerms={this.state.searchTerms}
+            themes={ themes } />
         </main>
       </div>
     );

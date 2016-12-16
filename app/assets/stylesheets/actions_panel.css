@@ -75,7 +75,7 @@
   border: 1px solid black;
   margin: 10px auto;
   float: left;
-  display: flex;
+  /*display: flex;*/
   padding: 7px 10px 24px 10px;
   background-color: #333333;
   width: 215px;
@@ -85,7 +85,7 @@
 #tagbox .tag {
   font-weight: bold;
   margin: 1px;
-  float: left;
+  /*float: left;*/
   max-width: 70px;
   /*display: inline;*/
   font-size: 12px;
@@ -94,8 +94,13 @@
   padding: 10px 10px 10px 5px;
 }
 
-#tagbox > .add-tag {
-  height: 15px;
+#tagbox .new-tag {
+  height: 25px;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: block;
+  width: 205px;
+  background: #555;
 }
 
 #tagbox .tag:hover {

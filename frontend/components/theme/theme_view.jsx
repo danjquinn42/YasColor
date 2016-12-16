@@ -11,9 +11,12 @@ class ThemeView extends React.Component {
     super(props);
     this.state = { themeDisplay: "small",
       title: props.theme.title,
-      justSaved: false };
+      justSaved: false,
+      newTag: "" };
     this.updateTitle = this.updateTitle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateNewTag = this.updateNewTag.bind(this);
+    this.addNewTag = this.addNewTag.bind(this);
   }
 
   componentDidMount() {
@@ -118,14 +121,38 @@ class ThemeView extends React.Component {
     return (this.state.justSaved ? "non-display" : "show-check");
   }
 
+  addNewTag(newTag) {
+    return (event) => {
+      // debugger
+      newTag = { title: newTag };
+      const newTheme = merge( {}, this.state.theme );
+      this.props.theme.tags.push(newTag);
+      this.props.updateTheme(newTheme);
+      this.setState({ newTag: "" });
+    };
+  }
+
+  updateNewTag() {
+    return (event) => {
+      this.setState({ newTag: event.target.value });
+    };
+  }
+
   updateTitle(feild){
     return event => this.setState({ title: event.target.value, justSaved: false });
   }
 
   render(){
-    const { theme, loading, children, user, updateUser } = this.props;
+    const { theme, loading, children, user, updateUser, updateTheme } = this.props;
     if (loading || theme.default) {
-      return <h1>loading</h1>;
+      return (
+        <div className="sk-folding-cube">
+          <div className="sk-cube1 sk-cube"></div>
+          <div className="sk-cube2 sk-cube"></div>
+          <div className="sk-cube4 sk-cube"></div>
+          <div className="sk-cube3 sk-cube"></div>
+        </div>
+        );
     }
 
     return (
@@ -139,7 +166,13 @@ class ThemeView extends React.Component {
         </ol>
         <div className="metadata group">
           <Comments />
-          {ActionsPanel(theme, user, updateUser, this.props.showSignIn)}
+          {ActionsPanel(theme,
+            user,
+            updateUser,
+            this.updateNewTag,
+            this.state.newTag,
+            this.addNewTag,
+            this.props.showSignIn)}
         </div>
       </content>
     );

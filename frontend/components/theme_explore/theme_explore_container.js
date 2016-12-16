@@ -5,7 +5,8 @@ import { selectAllThemes } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
   return {
-    themes: selectAllThemes(state)
+    themes: selectAllThemes(state),
+    loading: state.loading.exploreLoading
   };
 };
 

@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
+const ActionsPanel = ( theme,
+   user,
+    updateUser,
+     updateNewTag,
+      newTag,
+      addNewTag,
+       showSignIn,
+        router) => {
 
   //
   const saveTheme = () => {
@@ -39,7 +46,8 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
     if ( user && user.id === theme.user.id ) {
       return theme.tags.map( (tag) => {
         return (
-          <input key={tag.id}
+          <input
+            key={tag.id}
             className="tag"
             onChange={ updateTag(tag) }
             defaultValue={tag.title}>
@@ -49,7 +57,8 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
     } else {
       return theme.tags.map( (tag) => {
         return (
-          <li key={tag.id}
+          <li
+            key={tag.id}
             className="tag">
             {tag.title}
           </li>
@@ -59,13 +68,6 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
   };
 
   let showHideNewTag = "non-display";
-
-  const addNewTag = () => {
-    return (event) => {
-      showHideNewTag = "";
-    };
-  };
-
 
   return (
 
@@ -89,6 +91,16 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
         <li className="info-item"><h4 className="info-type">Created At:&nbsp;</h4><h4 className="info-content">{theme.created_at.slice(0,10)}</h4></li>
         <li className="info-item box-below"><h4 className="info-type">Tags</h4>
           <ul id="tagbox">
+            <form className="new-tag-form"
+              onSubmit={addNewTag(newTag)}>
+              <input
+                className="new-tag"
+                onChange={updateNewTag()}
+                value={newTag}
+                placeholder="Add a New Tag">
+              </input>
+              <input type="submit" className="non-display" value="submit"></input>
+            </form>
           { tagItems() }
           </ul>
         </li>
