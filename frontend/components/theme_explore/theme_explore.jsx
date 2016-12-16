@@ -4,7 +4,8 @@ import { Link, withRouter } from 'react-router';
 import ExploreItem from './explore_item';
 
 
-const ExploreBar = () => {
+const ExploreBar = ({searchTerms, setSearchTerms}) => {
+
   return (
     <span className="explore-bar-wrapper group">
       <section className="explore-bar group">
@@ -19,17 +20,27 @@ const ExploreBar = () => {
         </nav>
           <div className="search" >
             <img src={window.search} className="search-icon"></img>
-            <input type="text"></input>
+            <input type="text"
+              onChange={setSearchTerms()}
+              value={searchTerms}
+              ></input>
           </div>
       </section>
     </span>
   );
 };
 
-const ExploreItems = ({ themes }) => {
+const ExploreItems = ({ searchTerms, themes }) => {
   return (
     <ul className="theme-grid">
-      { themes.map((theme) => <ExploreItem key={theme.id} theme={theme} />) }
+      { themes.map((theme) => {
+        const title = theme.title.toLowerCase();
+        const term = searchTerms.toLowerCase();
+        if (title.includes(term)) {
+          return (<ExploreItem key={theme.id} theme={theme} />);
+          }
+        })
+      }
     </ul>
   );
 };
@@ -37,18 +48,29 @@ const ExploreItems = ({ themes }) => {
 
 class ThemeExplore extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { searchTerms: "" };
+    this.setSearchTerms = this.setSearchTerms.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchThemes();
+  }
+
+  setSearchTerms() {
+    return (event) => {
+      this.setState({ searchTerms: event.target.value });
+    };
   }
 
   render() {
     const themes = this.props.themes;
     return (
       <div className="explore-page">
-        <ExploreBar />
-
+        <ExploreBar searchTerms={this.state.searchTerms} setSearchTerms={this.setSearchTerms.bind(this)} />
         <main>
-          <ExploreItems themes={ themes } />
+          <ExploreItems searchTerms={this.state.searchTerms} themes={ themes } />
         </main>
       </div>
     );

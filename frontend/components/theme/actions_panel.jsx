@@ -58,7 +58,13 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
     }
   };
 
+  let showHideNewTag = "non-display";
 
+  const addNewTag = () => {
+    return (event) => {
+      showHideNewTag = "";
+    };
+  };
 
 
   return (
@@ -68,7 +74,6 @@ const ActionsPanel = ( theme, user, updateUser, showSignIn, router) => {
       <ul>
         <li className="action-item">
             { verifyUser() }
-
         </li>
 
         <li className="action-item">

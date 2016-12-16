@@ -27,30 +27,63 @@ users = User.create([
   {name: 'Tyrone', email: 'tyrone@gmail.com', password: 'cmo93810' },
   {name: 'Tamika', email: 'tamika@gmail.com', password: 'dlkna00y' },
   {name: 'Rebeka', email: 'rebeka@gmail.com', password: 'pb23ksu9' }
-  ])
+  ]
+)
 
+summer = Tag.create({ title: "summer" })
+kentucky = Tag.create({ title: "kentucky" })
+italy = Tag.create({ title: "italy" })
+sweet = Tag.create({ title: "sweet" })
+puerto = Tag.create({ title: "puerto rico" })
+fall = Tag.create({ title: "fall" })
+leaves = Tag.create({ title: "leaves" })
+michigan = Tag.create({ title: "Michigan" })
+
+mint = Theme.create({
+  user: User.find_by(name: 'demo'),
+  title: "Mint Julips and Orange Blossoms",
+  colors: [[12, 100, 61], [60, 100, 81], [96, 66, 77], [139, 34, 61], [170, 100, 32]]}
+)
+
+mint.tags << summer
+mint.tags << kentucky
+
+firenze = Theme.create({
+  user: User.find_by(name: 'demo'),
+  title: "Firenze",
+  colors: [[149, 32, 41], [50, 100, 82], [36, 100, 62], [15, 65, 43], [17, 100, 28]]}
+)
+
+firenze.tags << italy
+
+honey = Theme.create({
+  user: User.find_by(name: 'demo'),
+  title: "Honey",
+  colors: [[186,72,23], [53,100,92], [45,100,65], [38,70,54], [10,58,47]]}
+)
+
+honey.tags << sweet
+
+summerPR = Theme.create({
+  user: User.find_by(name: 'Dwayne'),
+  title: "Summer in Puerto Rico",
+  colors: [[350,75,59], [31,100,63], [52,53,39], [167,34,26], [198,100,13]]}
+)
+
+summerPR.tags << summer
+summerPR.tags << puerto
+
+mi = Theme.create({
+  user: User.find_by(name: 'Dwayne'),
+  title: "Fall in Michigan",
+  colors: [[6,60,44], [20,64,50], [57,71,56], [226,44,28], [30,39,30]]}
+)
+
+mi.tags << fall
+mi.tags << leaves
+mi.tags << michigan
 
 themes = Theme.create([
-  {user: User.find_by(name: 'demo'),
-    title: "Mint Julips and Orange Blossoms",
-    colors: [[12, 100, 61], [60, 100, 81], [96, 66, 77], [139, 34, 61], [170, 100, 32]]
-  },
-  {user: User.find_by(name: 'demo'),
-    title: "Firenze",
-    colors: [[149, 32, 41], [50, 100, 82], [36, 100, 62], [15, 65, 43], [17, 100, 28]]
-  },
-  {user: User.find_by(name: 'demo'),
-    title: "Honey",
-    colors: [[186,72,23], [53,100,92], [45,100,65], [38,70,54], [10,58,47]]
-  },
-  {user: User.find_by(name: 'Dwayne'),
-    title: "Summer in Puerto Rico",
-    colors: [[350,75,59], [31,100,63], [52,53,39], [167,34,26], [198,100,13]]
-  },
-  {user: User.find_by(name: 'Dwayne'),
-    title: "Fall in Michigan",
-    colors: [[6,60,44], [20,64,50], [57,71,56], [226,44,28], [30,39,30]]
-  },
   {user: User.find_by(name: 'Nanjie'),
     title: "Specimens",
     colors: [[201,30,28], [168,44,49], [46,84,62], [22,74,57], [7,69,58]]

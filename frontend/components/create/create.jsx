@@ -70,15 +70,6 @@ class Create extends React.Component {
       ord: 4};
   }
 
-
-  // shouldComponentUpdate() {
-  //   return !this.props.authFormVisible;
-  // }
-  //
-  // componentWillUpdate() {
-  //   debugger;
-  // }
-
   componentDidMount() {
     if (this.props.params.themeId) {
     this.props.fetchTheme(this.props.params.themeId);
@@ -180,11 +171,8 @@ class Create extends React.Component {
     const radius = event.target.parentElement.clientHeight / 2;
     const originX = event.target.parentElement.offsetLeft + radius;
     const originY = event.target.parentElement.offsetTop + radius;
-    // debugger;
     let mouseLeft = (event.pageX - originX) / radius;
     let mouseTop = (event.pageY - originY) / radius;
-    // console.log("mouseLeft ", mouseLeft, "mouseTop", mouseTop);
-
     this.setState({mouseCoordinates: [mouseLeft, mouseTop]});
   }
 
@@ -475,7 +463,7 @@ class Create extends React.Component {
     if (this.props.user){
       return(
         <form onSubmit={this.handleSubmit}>
-          <input type="submit" className="save-button" value="Save"></input>
+          <input type="submit" className="save-button" value="Create Theme"></input>
         </form>
       );
     } else {
@@ -485,7 +473,7 @@ class Create extends React.Component {
 
             onClick={this.props.showSignIn}
             className="save-button"
-            value="Log In to Save"></input>
+            value="Log In to Create Theme"></input>
         </form>
       );
     }
