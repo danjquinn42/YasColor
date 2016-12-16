@@ -24,9 +24,10 @@
 }
 
 .harmonyrule {
-  position: relative;
-  top: 80px;
-  left: -63px;
+  float: left;
+  position: absolute;
+  top: 150px;
+  /*left: -63px;*/
 }
 
 .color-rule {
