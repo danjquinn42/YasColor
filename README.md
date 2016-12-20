@@ -2,7 +2,7 @@
 
 [Yas Color! live](https://yascolor.herokuapp.com/?#/)
 
-Yas Color is a online tool for designers and artists inspired by [Adobe Color](https://color.adobe.com/ "Abobe Color CC"). The backend is built with Ruby on Rails and a PostgreSQL database. The front end is written in React.js with Redux.
+Yas Color is a online tool for designers and artists inspired by [Adobe Color](https://color.adobe.com/ "Adobe Color CC"). The backend is built with Ruby on Rails and a PostgreSQL database. The front end is written in React.js with Redux.
 
 
 ## Yas Features and Implementation!
