@@ -17,8 +17,10 @@
     rgba(40, 35, 35, .3),
     rgba(30, 30, 30, .8)
     );
+}
 
-  /*background: red;*/
+.close-form {
+  cursor: pointer;
 }
 
 .modal .session-form-container {
@@ -41,6 +43,7 @@
 .signup-logo {
   padding: 15px 20px 0 0;
   margin: 0 20px 0px 0px;
+  cursor: default;
 }
 
 .signup-logo .logo {
@@ -84,7 +87,6 @@
   text-align: right;
   font-size: 12px;
   padding: 3px 0;
-  /*margin: 5px 0 5px 0;*/
   color: #BA270D;
 }
 
@@ -106,9 +108,6 @@
 
 .name-and-photo > .add-photo > h4{
   position: absolute;
-  /*width: 80px;
-  height: 61px;
-  background-color: #ccc;*/
   font-size: 12px;
   text-align: center;
   padding: 10px 5px 0 5px;
@@ -122,7 +121,6 @@
   width: 70px;
   height: auto;
   bottom: 11px;
-  /*background-color: #ccc;*/
   font-size: 12px;
   text-align: center;
   padding: 0px 5px 0 5px;
@@ -150,8 +148,7 @@
 
 .session-form-container .button {
   display: block;
-  /*border-top: 1px solid #444;
-  border-bottom: 1px solid #262626;*/
+  cursor: pointer;
   height: 36px;
   margin-top: 44px;
   background-image: linear-gradient(
@@ -167,8 +164,6 @@
 
 
 .session-form-container .button:hover {
-  /*border-top: 1px solid #333;
-  border-bottom: 1px solid #444;*/
   background-image: linear-gradient(
     to bottom,
     #2D5485,
@@ -179,8 +174,6 @@
 
 
 .session-form-container .button:active {
-  /*border-top: 1px solid #333;
-  border-bottom: 1px solid #444;*/
   background-image: linear-gradient(
     to bottom,
     #315D91,
@@ -191,8 +184,7 @@
 
 input.demo{
   display: block;
-  /*border-top: 1px solid #444;
-  border-bottom: 1px solid #262626;*/
+  cursor: pointer;
   height: 36px;
   background-image: linear-gradient(
     to bottom,
@@ -207,8 +199,6 @@ input.demo{
 
 
 .demo:hover {
-  /*border-top: 1px solid #333;
-  border-bottom: 1px solid #444;*/
   background-image: linear-gradient(
     to bottom,
     #555,
@@ -220,8 +210,6 @@ input.demo{
 
 
 .demo:active {
-  /*border-top: 1px solid #333;
-  border-bottom: 1px solid #444;*/
   background-image: linear-gradient(
     to bottom,
     #444,

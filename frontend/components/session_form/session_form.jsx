@@ -141,16 +141,17 @@ class SessionForm extends React.Component {
 		return (
       <div className={`modal ${this.invisible()}`}>
         <div
-          className="splashlink"
+          className="splashlink close-form"
           onClick={this.props.clearErrors}
           onClick={this.closeForm()}>
         </div>
   			<section className="session-form-container group">
 					<div
+            className="close-form"
             onClick={this.props.clearErrors}
             onClick={this.closeForm()}>
 						<img src={window.close}
-              className="close"
+              className="close close-form"
               onClick={this.closeForm()}></img>
 					</div>
 					<Link to="/" className="signup-logo">
