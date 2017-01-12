@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 const path = require('path');
 module.exports = {
   context: __dirname,
@@ -21,5 +22,12 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-maps'
+  devtool: 'source-maps',
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"production"'
+      }
+    })
+  ],
 };

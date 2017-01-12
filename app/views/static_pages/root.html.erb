@@ -1,5 +1,5 @@
-<script id="bootstrap-current-user" type="text/javascript">
 <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,700,800" rel="stylesheet">
+<script id="bootstrap-current-user" type="text/javascript">
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
   <% end %>
