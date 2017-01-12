@@ -92,7 +92,6 @@
   display: block;
   box-sizing: border-box;
   max-width: 1920px;
-  /*width: 87%;*/
   margin: 0 50px;
 }
 
@@ -126,18 +125,16 @@
   padding: 3px 15px 0 0;
   width: 15px;
   height: 15px;
-  /*float: right;*/
 }
 
 .view-theme {
   margin-top: 15px;
-  /*width: 83%*/
+  cursor: pointer;
   margin-bottom: 24px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   border: 5px solid rgba(0, 0 , 0 , 0.1);
-  /*overflow: hidden;*/
   font-size: 0;
 }
 
@@ -170,7 +167,6 @@
 
 .metadata {
   display: flex;
-  /*background-color: red;*/
   box-sizing: border-box;
   border: 5px solid #292929;
   background: #333333;
@@ -180,11 +176,8 @@
   display: inline;
   width: auto;
   height: 100%;
-  /*flex-basis: 75%;*/
-  /*float: left;*/
   box-sizing: border-box;
   margin-right: auto;
   height: 100%;
-  /*width: 75%;*/
 
 }
