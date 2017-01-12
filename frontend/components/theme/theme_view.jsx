@@ -29,7 +29,6 @@ class ThemeView extends React.Component {
       title: nextProps.theme.title
     });
     const user = this.props.user;
-    // debugger
     if ( user && !this.props.theme.default && this.props.theme.user === user ){
       const themeIDs = user.saved_themes.map((sTheme) => {
         return sTheme.id;
@@ -123,11 +122,9 @@ class ThemeView extends React.Component {
 
   addNewTag(newTag) {
     return (event) => {
-      // debugger
       newTag = { title: newTag };
       const newTheme = merge( {}, this.state.theme );
       newTheme.tags.push(newTag);
-      // debugger;
       this.props.updateTheme(newTheme);
       this.setState({ newTag: "" });
     };

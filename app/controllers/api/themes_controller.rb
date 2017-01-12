@@ -29,7 +29,6 @@ class Api::ThemesController < ApplicationController
 
   def update
     @theme = Theme.find(params[:id])
-    # debugger
     tags = params[:theme][:tags]
     if tags
       tags.each_with_index do |tag, index|
