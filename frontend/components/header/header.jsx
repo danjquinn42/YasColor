@@ -26,9 +26,6 @@ class Header extends React.Component{
       );
     }
   }
-  // <li>
-  //   <h3 to="/">edit profile</h3>
-  // </li>
 
 
   myThemes() {

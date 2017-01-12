@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
 
 
 	renderErrors(type) {
-		if (this.props.errors) { //&& this.formIsSame()
+		if (this.props.errors) {
   		return (
       	<ul>
         	{	this.props.errors.map((error, i) => {
@@ -129,6 +129,13 @@ class SessionForm extends React.Component {
     }
   }
 
+  closeForm(){
+    return() => {
+      this.setState({ formType: 'login' });
+      this.props.hideSignIn();
+    };
+  }
+
 
 	render() {
 		return (
@@ -136,22 +143,22 @@ class SessionForm extends React.Component {
         <div
           className="splashlink"
           onClick={this.props.clearErrors}
-          onClick={this.props.hideSignIn}>
+          onClick={this.closeForm()}>
         </div>
   			<section className="session-form-container group">
 					<div
             onClick={this.props.clearErrors}
-            onClick={this.props.hideSignIn}>
+            onClick={this.closeForm()}>
 						<img src={window.close}
               className="close"
-              onClick={this.props.hideSignIn}></img>
+              onClick={this.closeForm()}></img>
 					</div>
 					<Link to="/" className="signup-logo">
             <img src={window.logo} className="logo"></img>
             <h1>Yas Color!</h1>
           </Link>
   				<form onSubmit={this.handleSubmit} className="session-form-box">
-  					<h2 className="form-title">{this.props.formType}</h2>
+  					<h2 className="form-title">{this.state.formType}</h2>
             {this.redirectQuestion()}
   					<div className="session-form">
               {this.signUpOnly()}

@@ -37,7 +37,7 @@ const SessionsReducer = (state = _nullUser, action) => {
     case SHOW_SIGN_IN:
       return merge({}, state, { authFormVisible: true, formType: 'login' });
     case HIDE_SIGN_IN:
-      return merge({}, state, { authFormVisible: false });
+      return merge({}, state, { authFormVisible: false, formType: 'login' });
     default:
       return state;
   }

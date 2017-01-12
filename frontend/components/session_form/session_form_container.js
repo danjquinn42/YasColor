@@ -21,8 +21,6 @@ const mapStateToProps = ({ session }) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   const formType = 'login';
-  // const processForm = (formType === 'login') ? login : signup;
-  // processForm: user => dispatch(processForm(user)),
 
   return {
     clearErrors: () => dispatch(clearSessionErrors()),
