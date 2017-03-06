@@ -12,24 +12,14 @@ import MyThemesContainer from './my_themes/my_themes_container';
 import App from './app';
 
 const Root = ({ store }) => {
-  // const _ensureLoggedIn = (nextState, replace) => {
-  //   const currentUser = store.getState().session.currentUser;
-  //   if (!currentUser) {
-  //     replace('/login');
-  //   }
-  // };
+
 
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/create'); /// TODO redirect to create
+      replace('/create');
     }
   };
-
-  // const _redirectToCreate = (nextState, replace) => {
-  //   if (this.path === '/'){
-  //   replace('/create');}
-  // };
 
   return (
     <Provider store={ store }>
@@ -46,9 +36,5 @@ const Root = ({ store }) => {
     </Provider>
   );
 };
-// <Route path="/login" component={SessionFormContainer}
-//   onEnter={_redirectIfLoggedIn} />
-// <Route path="/signup" component={SessionFormContainer}
-//   onEnter={_redirectIfLoggedIn} />
 
 export default Root;

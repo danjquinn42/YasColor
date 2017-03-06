@@ -71,6 +71,13 @@
   display: block;
 }
 
+.delete {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  padding: 5px;
+}
+
 #tagbox {
   border: 1px solid black;
   margin: 10px auto;

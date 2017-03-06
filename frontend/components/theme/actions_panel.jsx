@@ -47,12 +47,14 @@ const ActionsPanel = (
     if ( user && user.id === theme.user.id ) {
       return theme.tags.map( (tag) => {
         return (
-          <input
+          <li
             key={tag.id}
-            className="tag"
-            onChange={ updateTag(tag) }
-            defaultValue={tag.title}>
-          </input>
+            className="tag">
+            {tag.title}
+              <img className="delete"
+                 src={window.close}>
+              </img>
+          </li>
         );
       });
     } else {
