@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-
 const ActionsPanel = (
   theme,
   user,
@@ -12,7 +11,6 @@ const ActionsPanel = (
   showSignIn,
   router) => {
 
-  //
   const saveTheme = () => {
     const themeIDs = user.saved_themes.map((sTheme) => {
       return sTheme.id;

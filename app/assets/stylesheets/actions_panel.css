@@ -2,13 +2,10 @@
   box-sizing: border-box;
   border-left: 5px solid #292929;
   display: inline;
-  /*flex-basis: 25%;*/
   width: 275px;
   height: 100%;
-  /*display: inline;*/
   background: #4B4B4B;
   margin-left: auto;
-  /*height: 100%;*/
   float: right;
 }
 
@@ -47,7 +44,6 @@
   position: relative;
   left: 20px;
   float: right;
-  /*background: green;*/
 }
 
 .action-item:hover {
@@ -82,7 +78,6 @@
   border: 1px solid black;
   margin: 10px auto;
   float: left;
-  /*display: flex;*/
   padding: 7px 10px 24px 10px;
   background-color: #333333;
   width: 215px;
@@ -92,9 +87,7 @@
 #tagbox .tag {
   font-weight: bold;
   margin: 1px;
-  /*float: left;*/
   max-width: 70px;
-  /*display: inline;*/
   font-size: 12px;
   color: #A9A9A6;
   background-color: #515151;
