@@ -57,7 +57,11 @@ class ThemeExplore extends React.Component {
     this.state = { searchTerms: "" };
     this.setSearchTerms = this.setSearchTerms.bind(this);
   }
- 
+
+  componentDidMount() {
+    this.props.fetchThemes();
+  }
+
   setSearchTerms() {
     return (event) => {
       this.setState({ searchTerms: event.target.value });
