@@ -17,6 +17,7 @@ class ThemeView extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateNewTag = this.updateNewTag.bind(this);
     this.addNewTag = this.addNewTag.bind(this);
+    this.deleteTag = this.deleteTag.bind(this);
   }
 
   componentDidMount() {
@@ -134,7 +135,8 @@ class ThemeView extends React.Component {
     return (event) => {
       const updatedTheme = merge( {}, this.state.theme );
       const tagIndex = updatedTheme.tags.indexOf(tag);
-
+      updatedTheme.tags.splice(tagIndex, 1);
+      setState({theme: updatedTheme});
     }
   }
 
@@ -179,7 +181,8 @@ class ThemeView extends React.Component {
             this.updateNewTag,
             this.state.newTag,
             this.addNewTag,
-            this.props.showSignIn)}
+            this.props.showSignIn,
+            this.deleteTag)}
         </div>
       </content>
     );

@@ -9,6 +9,7 @@ const ActionsPanel = (
   newTag,
   addNewTag,
   showSignIn,
+  deleteTag,
   router) => {
 
   const saveTheme = () => {
@@ -50,7 +51,8 @@ const ActionsPanel = (
             className="tag">
             {tag.title}
               <img className="delete"
-                 src={window.close}>
+                onclick={deleteTag}
+                src={window.close}>
               </img>
           </li>
         );
