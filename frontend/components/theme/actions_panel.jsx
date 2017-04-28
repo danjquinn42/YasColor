@@ -42,6 +42,7 @@ const ActionsPanel = (
     };
   };
 
+
   const tagItems = () => {
     if ( user && user.id === theme.user.id ) {
       return theme.tags.map( (tag) => {
@@ -51,7 +52,7 @@ const ActionsPanel = (
             className="tag">
             {tag.title}
               <img className="delete"
-                onclick={deleteTag}
+                onClick={deleteTag(tag)}
                 src={window.close}>
               </img>
           </li>
