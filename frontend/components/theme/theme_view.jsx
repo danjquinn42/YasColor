@@ -132,13 +132,14 @@ class ThemeView extends React.Component {
   }
 
   deleteTag(tag) {
+    const that = this;
     return (event) => {
-      const newTheme = merge( {}, this.state.theme );
+      const newTheme = merge( {}, that.state.theme );
       const tagIndex = newTheme.tags.findIndex( (t) => {
         	return t.title === tag.title;
         });
       newTheme.tags.splice(tagIndex, 1);
-      this.props.updateTheme(newTheme);
+      that.props.updateTheme(newTheme);
     };
   }
 
