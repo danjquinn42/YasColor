@@ -22,7 +22,7 @@ class Api::TagsController < ApplicationController
  private
 
  def tag_params
-   params.require(:tag).permit(:title, :theme, :password, :theme_saves)
+   params.require(:tag).permit(:title, :theme)
  end
 
 end

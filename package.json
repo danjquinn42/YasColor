@@ -21,7 +21,9 @@
     "redux": "^3.6.0",
     "webpack": "^1.13.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "redux-logger": "^3.0.1"
+  },
   "scripts": {
     "postinstall": "./node_modules/.bin/webpack"
   },

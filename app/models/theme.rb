@@ -1,5 +1,3 @@
-# == Schema Information
-#
 # Table name: themes
 #
 #  id         :integer          not null, primary key
