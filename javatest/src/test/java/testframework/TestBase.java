@@ -13,9 +13,9 @@ import java.net.URL;
 public class TestBase {
 
     protected WebDriver driver;
-    protected Given given;
-    protected When when;
-    protected Then then;
+    protected Given givenUser;
+    protected When whenUser;
+    protected Then thenUser;
 
     public TestBase() {
     }
@@ -26,9 +26,9 @@ public class TestBase {
         URL remoteDriverUrl = new URL("http://localhost:9515");
         driver = new RemoteWebDriver(remoteDriverUrl, DesiredCapabilities.chrome());
         WebDriverWait wait = new WebDriverWait(driver, 2);
-        given = new Given(driver, appUrlRoot);
-        when = new When(driver, wait);
-        then = new Then(driver, wait);
+        givenUser = new Given(driver, wait, appUrlRoot);
+        whenUser = new When(driver, wait);
+        thenUser = new Then(driver, wait);
     }
 
     @After

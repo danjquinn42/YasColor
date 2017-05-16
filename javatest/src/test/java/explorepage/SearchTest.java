@@ -7,15 +7,15 @@ public class SearchTest extends TestBase {
 
     @Test
     public void searchFiltersItems() {
-        given.onExplorePage();
-        when.enterSearchKeys("Mich");
-        then.noElementContainingText("Megasonic");
+        givenUser.onExplorePage();
+        whenUser.enterSearchKeys("Mich");
+        thenUser.noElementContainingText("Megasonic");
     }
 
     @Test
     public void searchFilterKeepsAppropriateItems() {
-        given.onExplorePage();
-        when.enterSearchKeys("Mich");
-        then.thereIsAnElementContainingText("Fall in Michigan");
+        givenUser.onExplorePage();
+        whenUser.enterSearchKeys("Mich");
+        thenUser.thereIsAnElementContainingText("Fall in Michigan");
     }
 }

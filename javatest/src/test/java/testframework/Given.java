@@ -3,14 +3,18 @@ package testframework;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Given {
 
     private final WebDriver driver;
+    private final WebDriverWait wait;
     private final String urlRoot;
 
-    public Given(final WebDriver driver, String urlRoot) {
+    public Given(final WebDriver driver, final WebDriverWait wait, final String urlRoot) {
         this.driver = driver;
+        this.wait = wait;
         this.urlRoot = urlRoot;
     }
 
@@ -34,8 +38,11 @@ public class Given {
         clickLoginToCreateLink();
     }
 
-    public void onColorPage() {
-        getPage("/?#/theme/125");
+    public void isOnColorPage() {
+        getPage("/#/explore");
+        By xpathSelector = By.xpath("//main/ul/div[1]/section/a");
+        waitForElement(xpathSelector);
+        driver.findElement(xpathSelector).click();
     }
 
     public void onExplorePage() {
@@ -50,9 +57,11 @@ public class Given {
 
     }
 
-    public void colorPagePallateIsFullscreen() {
-        onColorPage();
-        driver.findElement(By.cssSelector(".view-theme")).click();
+    public void viewsThemeFullscreen() {
+        isOnColorPage();
+        By cssSelector = By.cssSelector(".view-theme");
+        waitForElement(cssSelector);
+        driver.findElement(cssSelector).click();
     }
 
     public void onHomePage() {
@@ -63,6 +72,10 @@ public class Given {
         onHomePage();
         clickLoginLinkTopRight();
         clickSignInAsGuestUser();
+    }
+
+    private void waitForElement(By locatorKey) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locatorKey));
     }
 
     private void clickLoginLinkTopRight() {

@@ -6,35 +6,35 @@ import testframework.TestBase;
 public class ColorPageTest extends TestBase {
     @Test
     public void canLogin() {
-        given.onColorPage();
-        when.clickLoginToSaveLink();
-        then.seeLoginForm();
+        givenUser.isOnColorPage();
+        whenUser.clicksLoginToSaveLink();
+        thenUser.seesLoginForm();
     }
 
     @Test
     public void editCopyGoesToCreatePage() {
-        given.onColorPage();
-        when.clickEditCopyLink();
-        then.onCreatePage();
+        givenUser.isOnColorPage();
+        whenUser.clicksEditCopyLink();
+        thenUser.isOnCreatePage();
     }
 
     @Test
     public void shouldMakeColorFullscreen() {
-        given.onColorPage();
-        when.clickPallate();
-        then.pallateIsFullscreen();
+        givenUser.isOnColorPage();
+        whenUser.clicksTheme();
+        thenUser.seesThemeFullscreen();
     }
 
     @Test
     public void shouldExitFullscreenOnClick() {
-        given.colorPagePallateIsFullscreen();
-        when.clickPallate();
-        then.pallateIsNotFullscreen();
+        givenUser.viewsThemeFullscreen();
+        whenUser.clicksTheme();
+        thenUser.seesThemeNotFullscreen();
     }
 
     @Test
     public void seeTags() {
-        given.onColorPage();
-        then.seeColorTags();
+        givenUser.isOnColorPage();
+        thenUser.seesColorTags();
     }
 }

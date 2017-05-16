@@ -53,24 +53,23 @@ public class Then {
         assertElementPresentAfterWait(locatorKey);
     }
 
-    public void seeLoginForm() {
+    public void seesLoginForm() {
         assertElementPresentAfterWait(By.cssSelector(".modal.visible > section > form.session-form-box"));
     }
 
-    public void onCreatePage() {
+    public void isOnCreatePage() {
         assertThat(driver.getCurrentUrl()).contains("create");
     }
 
-    public void pallateIsFullscreen() {
-        By locatorKey = By.cssSelector(".view-theme.fullscreen");
-        assertElementPresentAfterWait(locatorKey);
+    public void seesThemeFullscreen() {
+        assertElementPresentAfterWait(By.cssSelector(".view-theme.fullscreen"));
     }
 
-    public void pallateIsNotFullscreen() {
+    public void seesThemeNotFullscreen() {
         assertElementNotPresent(driver, By.cssSelector(".fullscreen"));
     }
 
-    public void seeColorTags() {
+    public void seesColorTags() {
         assertElementPresent(driver, By.cssSelector("#tagbox > .tag"));
     }
 

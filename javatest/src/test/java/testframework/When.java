@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static testframework.Helpers.*;
 
 public class When {
-    private WebDriver driver;
-    private WebDriverWait wait;
+    private final WebDriver driver;
+    private final WebDriverWait wait;
 
-    public When(final WebDriver driver, WebDriverWait wait) {
+    public When(final WebDriver driver, final WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
@@ -47,7 +47,7 @@ public class When {
         elementBySelector(driver, "#password").submit();
     }
 
-    public void clickLoginToSaveLink() {
+    public void clicksLoginToSaveLink() {
         driver.findElement(byInnerText("Log in to Save")).click();
     }
 
@@ -58,16 +58,16 @@ public class When {
         searchBox.sendKeys(keys);
     }
 
-    // Warning: Better to describe your when condition in a method.
+    // Warning: Better to describe your whenUser condition in a method.
     public void clickElementWithText(String innerText) {
         waitForElement(byInnerText(innerText));
     }
 
-    public void clickEditCopyLink() {
+    public void clicksEditCopyLink() {
         elementByInnerText(driver, "Edit Copy").click();
     }
 
-    public void clickPallate() {
+    public void clicksTheme() {
         driver.findElement(By.cssSelector(".view-theme")).click();
     }
 
@@ -77,6 +77,10 @@ public class When {
 
     public void clickSignInAsGuestUser() {
         By guestLinkLocator = By.cssSelector(".demo");
+        clickAfterWait(guestLinkLocator);
+    }
+
+    private void clickAfterWait(By guestLinkLocator) {
         waitToBeClickable(guestLinkLocator);
         driver.findElement(guestLinkLocator).click();
     }
@@ -86,8 +90,7 @@ public class When {
         waitForElement(profileLinkLocator);
         WebElement username = driver.findElement(profileLinkLocator);
         new Actions(driver).moveToElement(username).build().perform();
-        waitToBeClickable(byInnerText("log out"));
-        elementByInnerText(driver, "log out").click();
+        clickAfterWait(byInnerText("log out"));
     }
 
     private void waitForElement(By locatorKey) {
