@@ -22,7 +22,7 @@ public class TestBase {
 
     @Before
     public void setup() throws MalformedURLException {
-        String appUrlRoot = "https://www.yascolor.com";
+        String appUrlRoot = "localhost:3000";
         URL remoteDriverUrl = new URL("http://localhost:9515");
         driver = new RemoteWebDriver(remoteDriverUrl, DesiredCapabilities.chrome());
         WebDriverWait wait = new WebDriverWait(driver, 2);
