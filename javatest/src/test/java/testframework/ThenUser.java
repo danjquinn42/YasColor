@@ -10,9 +10,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertTrue;
 import static testframework.Helpers.*;
 
-public class Then extends Subject {
+public class ThenUser extends Subject {
 
-    public Then(final WebDriver driver, WebDriverWait wait) {
+    public ThenUser(final WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 

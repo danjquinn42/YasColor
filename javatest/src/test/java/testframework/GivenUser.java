@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Given extends Subject {
+public class GivenUser extends Subject {
 
     private final String urlRoot;
 
-    public Given(final WebDriver driver, final WebDriverWait wait, final String urlRoot) {
+    public GivenUser(final WebDriver driver, final WebDriverWait wait, final String urlRoot) {
         super(driver, wait);
         this.urlRoot = urlRoot;
     }

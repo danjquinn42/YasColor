@@ -11,9 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static testframework.Helpers.byInnerText;
 import static testframework.Helpers.elementBySelector;
 
-public class When extends Subject {
+public class WhenUser extends Subject {
 
-    public When(final WebDriver driver, final WebDriverWait wait) {
+    public WhenUser(final WebDriver driver, final WebDriverWait wait) {
         super(driver, wait);
     }
 
