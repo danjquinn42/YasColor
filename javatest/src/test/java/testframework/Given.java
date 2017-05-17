@@ -3,7 +3,6 @@ package testframework;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Given extends Subject {
@@ -15,7 +14,7 @@ public class Given extends Subject {
         this.urlRoot = urlRoot;
     }
 
-    public void isOnCreatePage() {
+    public void navigatedToCreatePage() {
         getPage("/#/create/");
     }
 
@@ -29,7 +28,7 @@ public class Given extends Subject {
     }
 
     public void isOnLoginPopoverOnCreatePage() {
-        isOnCreatePage();
+        navigatedToCreatePage();
         clickLoginToCreateLink();
         // TODO(b/123) Should only have to click here once
         clickLoginToCreateLink();

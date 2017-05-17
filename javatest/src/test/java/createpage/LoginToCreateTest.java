@@ -6,10 +6,10 @@ import testframework.TestBase;
 
 public class LoginToCreateTest extends TestBase {
 
-    @Ignore // FAILING! TODO(b/123)
+    @Ignore // FAILING! TODO(djquinn)
     @Test
-    public void canLoginFromCreatePage() {
-        givenUser.isOnCreatePage();
+    public void canLoginUsingLogInToCreateButton() {
+        givenUser.navigatedToCreatePage();
         whenUser.clicksLoginToCreateLink();
         thenUser.seesEmailInput(); // fails because popover disappears on first visit
     }

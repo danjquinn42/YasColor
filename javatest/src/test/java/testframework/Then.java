@@ -2,6 +2,7 @@ package testframework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -77,5 +78,13 @@ public class Then extends Subject {
         By locator = By.cssSelector(".login-signup");
         assertElementPresentAfterWait(locator);
         assertElementNotPresent(driver, By.cssSelector(".user-profile-link"));
+    }
+
+    public void seesFirstColorIsNotDefault() {
+        By firstColorSelector = By.xpath("//*[@id=\"content\"]/div[2]/ul/li[1]");
+        waitForElement(firstColorSelector);
+        WebElement firstColor = driver.findElement(firstColorSelector);
+        String color = firstColor.getCssValue("background-color");
+        assertThat(color).doesNotContain("rgba(170, 39, 65, 1)");
     }
 }

@@ -3,6 +3,7 @@ package testframework;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -88,5 +89,14 @@ public class When extends Subject {
         WebElement username = driver.findElement(profileLinkLocator);
         new Actions(driver).moveToElement(username).build().perform();
         clickAfterWait(byInnerText("log out"));
+    }
+
+    public void movesFirstHueSlider() {
+        By firstSliderSelector = By.xpath("//*[@id='hue']");
+        waitForElement(firstSliderSelector);
+        WebElement firstSlider = driver.findElement(firstSliderSelector);
+        new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
+                .build()
+                .perform();
     }
 }
