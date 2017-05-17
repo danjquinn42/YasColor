@@ -31,8 +31,10 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/testframework/ThenUser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding />
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +43,10 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/testframework/WhenUser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-              <folding />
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,13 +103,13 @@
         <option value="$PROJECT_DIR$/src/test/java/testframework/Subject.java" />
         <option value="$PROJECT_DIR$/src/test/java/createpage/LoginToCreateTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/colorpage/ColorPageTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/Given.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/GivenUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/Then.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/ThenUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/When.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/WhenUser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java" />
       </list>
     </option>
   </component>
@@ -833,16 +837,20 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/ThenUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/WhenUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,7 +867,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
