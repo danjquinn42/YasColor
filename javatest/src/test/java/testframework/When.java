@@ -10,13 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static testframework.Helpers.byInnerText;
 import static testframework.Helpers.elementBySelector;
 
-public class When {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+public class When extends Subject {
 
     public When(final WebDriver driver, final WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
+        super(driver, wait);
     }
 
     public void clicksLoginToCreateLink() {
@@ -91,13 +88,5 @@ public class When {
         WebElement username = driver.findElement(profileLinkLocator);
         new Actions(driver).moveToElement(username).build().perform();
         clickAfterWait(byInnerText("log out"));
-    }
-
-    private void waitForElement(By locatorKey) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locatorKey));
-    }
-
-    private void waitToBeClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 }

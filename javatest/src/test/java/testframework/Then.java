@@ -9,13 +9,10 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertTrue;
 import static testframework.Helpers.*;
 
-public class Then {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+public class Then extends Subject {
 
     public Then(final WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
+        super(driver, wait);
     }
 
     public void seesEmailInput() {
@@ -28,10 +25,6 @@ public class Then {
 
     public void seesLockColorRelationshipButton() {
         assertElementPresent(driver, byInnerText("Lock Color Relationship"));
-    }
-
-    private void waitForElement(By locatorKey) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locatorKey));
     }
 
     private void assertElementPresentAfterWait(By locatorKey) {

@@ -6,15 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Given {
+public class Given extends Subject {
 
-    private final WebDriver driver;
-    private final WebDriverWait wait;
     private final String urlRoot;
 
     public Given(final WebDriver driver, final WebDriverWait wait, final String urlRoot) {
-        this.driver = driver;
-        this.wait = wait;
+        super(driver, wait);
         this.urlRoot = urlRoot;
     }
 
@@ -74,10 +71,6 @@ public class Given {
         clickSignInAsGuestUser();
     }
 
-    private void waitForElement(By locatorKey) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locatorKey));
-    }
-
     private void clickLoginLinkTopRight() {
         driver.findElement(By.cssSelector(".login-signup")).click();
     }
@@ -85,4 +78,5 @@ public class Given {
     private void clickSignInAsGuestUser() {
         driver.findElement(By.cssSelector(".demo")).click();
     }
+
 }

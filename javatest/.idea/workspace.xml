@@ -13,7 +13,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.51592356">
       <split-first>
         <leaf>
           <file leaf-file-name="SearchTest.java" pinned="false" current-in-tab="false">
@@ -26,11 +26,47 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Given.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Given.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/testframework/Given.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="149">
-                  <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+                <state relative-caret-position="1105">
+                  <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Then.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/testframework/Then.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-295">
+                  <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#441#442#0" expanded="true" />
+                    <element signature="e#476#477#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Subject.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/testframework/Subject.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#621#622#0" expanded="true" />
+                    <element signature="e#697#698#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/testframework/TestBase.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -43,10 +79,13 @@
           <file leaf-file-name="When.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/testframework/When.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="659">
-                  <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+                <state relative-caret-position="584">
+                  <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
                   <folding>
-                    <element signature="e#2229#2230#0" expanded="true" />
+                    <element signature="e#501#502#0" expanded="true" />
+                    <element signature="e#536#537#0" expanded="true" />
+                    <element signature="e#2083#2084#0" expanded="true" />
+                    <element signature="e#2144#2145#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -55,6 +94,14 @@
         </leaf>
       </split-second>
     </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -68,13 +115,15 @@
         <option value="$PROJECT_DIR$/src/test/java/createpage/GuestUserCreatesTheme.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/TestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/colorpage/ColorPageTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testframework/Given.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testframework/Then.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testframework/When.java" />
         <option value="$PROJECT_DIR$/src/test/java/createpage/LockColorRelationshipTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/explorepage/SearchTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/LoginTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/createpage/LoginToCreateTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testframework/LikeSubjectCommonVerbsIBunno.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testframework/Given.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testframework/When.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testframework/Then.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testframework/Subject.java" />
       </list>
     </option>
   </component>
@@ -273,6 +322,9 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="testframework" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java" />
     </key>
@@ -597,9 +649,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_javatest - 2017.05.16 at 18h 55m 54s.xml">
-      <configuration name="All in javatest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_javatest - 2017.05.16 at 19h 21m 28s.xml">
       <configuration name="All in javatest" configurationId="JUnit" />
     </history-entry>
@@ -621,8 +670,11 @@
     <history-entry file="All_in_javatest - 2017.05.16 at 19h 57m 02s.xml">
       <configuration name="All in javatest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorPageTest_shouldExitFullscreenOnClick - 2017.05.16 at 18h 52m 01s.xml">
-      <configuration name="ColorPageTest.shouldExitFullscreenOnClick" configurationId="JUnit" />
+    <history-entry file="All_in_javatest - 2017.05.16 at 20h 18m 30s.xml">
+      <configuration name="All in javatest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_javatest - 2017.05.16 at 20h 26m 02s.xml">
+      <configuration name="All in javatest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ColorPageTest_shouldMakeColorFullscreen - 2017.05.16 at 19h 38m 45s.xml">
       <configuration name="ColorPageTest.shouldMakeColorFullscreen" configurationId="JUnit" />
@@ -676,14 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testframework/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -746,29 +790,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testframework/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testframework/LikeSubjectCommonVerbsIBunno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/When.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        <state relative-caret-position="584">
+          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding>
-            <element signature="e#2229#2230#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#2083#2084#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/Then.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="-295">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/Given.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="1105">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testframework/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
