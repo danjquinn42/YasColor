@@ -7,7 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static testframework.Helpers.*;
+import static testframework.Helpers.byInnerText;
+import static testframework.Helpers.elementBySelector;
 
 public class When {
     private final WebDriver driver;
@@ -18,24 +19,24 @@ public class When {
         this.wait = wait;
     }
 
-    public void clickLoginToCreateLink() {
+    public void clicksLoginToCreateLink() {
         WebElement loginButton = driver.findElement(By.cssSelector("#content > div.editor > form > input"));
         loginButton.click();
     }
 
-    public void lockColorRelationship() {
+    public void locksColorRelationship() {
         driver.findElement(byInnerText("Lock Color Relationship")).click();
     }
 
-    public void unlockColorRelationship() {
+    public void unlocksColorRelationship() {
         driver.findElement(byInnerText("Unlock Color Relationship")).click();
     }
 
-    public void enterEmail(final String emailAddress) {
+    public void entersEmail(final String emailAddress) {
         driver.findElement(By.cssSelector("#email")).sendKeys(emailAddress);
     }
 
-    public void enterPassword(final String password) {
+    public void entersPassword(final String password) {
         passwordBox().sendKeys(password);
     }
 
@@ -43,19 +44,18 @@ public class When {
         return driver.findElement(By.cssSelector("#password"));
     }
 
-    public void submitLogin() {
+    public void submitsLogin() {
         elementBySelector(driver, "#password").submit();
     }
 
     public void clicksLoginToSaveLink() {
-        driver.findElement(byInnerText("Log in to Save")).click();
+        clickAfterWait(byInnerText("Log in to Save"));
     }
 
-    public void enterSearchKeys(String keys) {
-        String selector = ".search > input";
-        WebElement searchBox = driver.findElement(By.cssSelector(selector));
-        searchBox.click();
-        searchBox.sendKeys(keys);
+    public void entersSearchKeys(String keys) {
+        By searchInputSelector = By.cssSelector(".search > input");
+        clickAfterWait(searchInputSelector);
+        driver.findElement(searchInputSelector).sendKeys(keys);
     }
 
     // Warning: Better to describe your whenUser condition in a method.
@@ -64,14 +64,14 @@ public class When {
     }
 
     public void clicksEditCopyLink() {
-        elementByInnerText(driver, "Edit Copy").click();
+        clickAfterWait(byInnerText("Edit Copy"));
     }
 
     public void clicksTheme() {
-        driver.findElement(By.cssSelector(".view-theme")).click();
+        clickAfterWait(By.cssSelector(".view-theme"));
     }
 
-    public void clickLoginLinkTopRight() {
+    public void clicksLoginLinkTopRight() {
         driver.findElement(By.cssSelector(".login-signup")).click();
     }
 
@@ -85,7 +85,7 @@ public class When {
         driver.findElement(guestLinkLocator).click();
     }
 
-    public void clickLogoutLink() {
+    public void clicksLogoutLink() {
         By profileLinkLocator = By.cssSelector(".user-profile-link");
         waitForElement(profileLinkLocator);
         WebElement username = driver.findElement(profileLinkLocator);

@@ -18,7 +18,7 @@ public class Given {
         this.urlRoot = urlRoot;
     }
 
-    public void onCreatePage() {
+    public void isOnCreatePage() {
         getPage("/#/create/");
     }
 
@@ -31,8 +31,8 @@ public class Given {
         loginButton.click();
     }
 
-    public void inLoginPopoverOnCreatePage() {
-        onCreatePage();
+    public void isOnLoginPopoverOnCreatePage() {
+        isOnCreatePage();
         clickLoginToCreateLink();
         // TODO(b/123) Should only have to click here once
         clickLoginToCreateLink();
@@ -45,7 +45,7 @@ public class Given {
         driver.findElement(xpathSelector).click();
     }
 
-    public void onExplorePage() {
+    public void isOnExplorePage() {
         getPage("/#/explore");
     }
 
@@ -68,7 +68,7 @@ public class Given {
         getPage("/");
     }
 
-    public void loggedInAsDemoUser() {
+    public void isLoggedInAsDemoUser() {
         onHomePage();
         clickLoginLinkTopRight();
         clickSignInAsGuestUser();

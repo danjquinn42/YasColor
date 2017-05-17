@@ -5,15 +5,15 @@ public class LoginTest extends TestBase {
     @Test
     public void loginAsDemoUser() {
         givenUser.onHomePage();
-        whenUser.clickLoginLinkTopRight();
+        whenUser.clicksLoginLinkTopRight();
         whenUser.clickSignInAsGuestUser();
-        thenUser.usernameDisplayedInTopRightIs("demo");
+        thenUser.seesUsernameDisplayedInTopRightIs("demo");
     }
 
     @Test
     public void logoutAsDemoUser() {
-        givenUser.loggedInAsDemoUser();
-        whenUser.clickLogoutLink();
-        thenUser.amLoggedOut();
+        givenUser.isLoggedInAsDemoUser();
+        whenUser.clicksLogoutLink();
+        thenUser.isLoggedOut();
     }
 }

@@ -18,15 +18,15 @@ public class Then {
         this.wait = wait;
     }
 
-    public void emailInputIsDisplayed() {
+    public void seesEmailInput() {
         assertTrue(driver.findElement(By.cssSelector("#email")).isDisplayed());
     }
 
-    public void seeUnlockColorRelationshipButton() {
+    public void seesUnlockColorRelationshipButton() {
         assertElementPresent(driver, byInnerText("Unlock Color Relationship"));
     }
 
-    public void seeLockColorRelationshipButton() {
+    public void seesLockColorRelationshipButton() {
         assertElementPresent(driver, byInnerText("Lock Color Relationship"));
     }
 
@@ -39,16 +39,16 @@ public class Then {
         assertElementPresent(driver, locatorKey);
     }
 
-    public void seeEmailPasswordCombinationInvalidMessage() {
+    public void seesEmailPasswordCombinationInvalidMessage() {
         waitForElement(By.cssSelector(".error"));
         assertElementPresent(driver, byInnerText("Email and password do not match"));
     }
 
-    public void noElementContainingText(String innerText) {
+    public void doesNotSeeText(String innerText) {
         assertElementNotPresent(driver, byInnerText(innerText));
     }
 
-    public void thereIsAnElementContainingText(String innerText) {
+    public void seesText(String innerText) {
         By locatorKey = byInnerText(innerText);
         assertElementPresentAfterWait(locatorKey);
     }
@@ -70,16 +70,17 @@ public class Then {
     }
 
     public void seesColorTags() {
-        assertElementPresent(driver, By.cssSelector("#tagbox > .tag"));
+        By tagSelector = By.cssSelector("#tagbox > .tag");
+        assertElementPresentAfterWait(tagSelector);
     }
 
-    public void usernameDisplayedInTopRightIs(String username) {
+    public void seesUsernameDisplayedInTopRightIs(String username) {
         assertElementPresentAfterWait(By.cssSelector(".user-profile-link > h2"));
         // TODO not right, we need the username to be the same element not just any element:
         assertElementPresentAfterWait(byInnerText(username));
     }
 
-    public void amLoggedOut() {
+    public void isLoggedOut() {
         By locator = By.cssSelector(".login-signup");
         assertElementPresentAfterWait(locator);
         assertElementNotPresent(driver, By.cssSelector(".user-profile-link"));

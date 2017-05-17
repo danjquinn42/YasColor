@@ -7,16 +7,16 @@ public class LockColorRelationshipTest extends TestBase {
 
     @Test
     public void lockColorRelationshipTogglesToUnlock() {
-        givenUser.onCreatePage();
-        whenUser.lockColorRelationship();
-        thenUser.seeUnlockColorRelationshipButton();
+        givenUser.isOnCreatePage();
+        whenUser.locksColorRelationship();
+        thenUser.seesUnlockColorRelationshipButton();
     }
 
     @Test
     public void unlockColorRelationshipTogglesBackToLock() {
-        givenUser.onCreatePage();
-        whenUser.lockColorRelationship();
-        whenUser.unlockColorRelationship();
-        thenUser.seeLockColorRelationshipButton();
+        givenUser.isOnCreatePage();
+        whenUser.locksColorRelationship();
+        whenUser.unlocksColorRelationship();
+        thenUser.seesLockColorRelationshipButton();
     }
 }

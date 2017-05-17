@@ -7,7 +7,7 @@ public class SelectElementsTest extends TestBase {
 
     @Test
     public void clickOnBasquiat() {
-        givenUser.onExplorePage();
+        givenUser.isOnExplorePage();
         givenUser.searchedExplorePageFor("Mich");
         whenUser.clickElementWithText("Basquiat");
     }
