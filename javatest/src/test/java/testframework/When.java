@@ -92,9 +92,27 @@ public class When extends Subject {
     }
 
     public void movesFirstHueSlider() {
-        By firstSliderSelector = By.xpath("//*[@id='hue']");
-        waitForElement(firstSliderSelector);
-        WebElement firstSlider = driver.findElement(firstSliderSelector);
+        By firstHueSelector = By.xpath("//*[@id='hue']");
+        waitForElement(firstHueSelector);
+        WebElement firstSlider = driver.findElement(firstHueSelector);
+        new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
+                .build()
+                .perform();
+    }
+
+    public void movesFirstSaturationSlider() {
+        By firstSaturationSlider = By.xpath("//*[@id='saturation']");
+        waitForElement(firstSaturationSlider);
+        WebElement firstSlider = driver.findElement(firstSaturationSlider);
+        new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
+                .build()
+                .perform();
+    }
+
+    public void movesFirstLightnessSlider() {
+        By firstLightnessSlider = By.xpath("//*[@id='lightness']");
+        waitForElement(firstLightnessSlider);
+        WebElement firstSlider = driver.findElement(firstLightnessSlider);
         new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
                 .build()
                 .perform();

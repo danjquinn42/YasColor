@@ -87,4 +87,12 @@ public class Then extends Subject {
         String color = firstColor.getCssValue("background-color");
         assertThat(color).doesNotContain("rgba(170, 39, 65, 1)");
     }
+
+    public void seesDefaultColor() {
+        By firstColorSelector = By.xpath("//*[@id=\"content\"]/div[2]/ul/li[1]");
+        waitForElement(firstColorSelector);
+        WebElement firstColor = driver.findElement(firstColorSelector);
+        String color = firstColor.getCssValue("background-color");
+        assertThat(color).isEqualTo("rgba(170, 39, 65, 1)");
+    }
 }
