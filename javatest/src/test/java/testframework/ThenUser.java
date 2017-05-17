@@ -79,7 +79,7 @@ public class ThenUser extends Subject {
         assertElementNotPresent(driver, By.cssSelector(".user-profile-link"));
     }
 
-    public void seesFirstColorIsNotDefault() {
+    public void seesColorIsNotDefault(int swatchIndex) {
         By firstColorSelector = By.xpath("//*[@id=\"content\"]/div[2]/ul/li[1]");
         waitForElement(firstColorSelector);
         WebElement firstColor = driver.findElement(firstColorSelector);

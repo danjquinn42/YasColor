@@ -1,9 +1,11 @@
 package testframework;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static testframework.Helpers.byInnerText;
@@ -89,8 +91,8 @@ public class WhenUser extends Subject {
         clickAfterWait(byInnerText("log out"));
     }
 
-    public void movesFirstHueSlider() {
-        By firstHueSelector = By.xpath("//*[@id='hue']");
+    public void movesHueSlider(int swatchIndex) {
+        By firstHueSelector = By.xpath(String.format("(//*[@id='hue'])[%d]", swatchIndex));
         waitForElement(firstHueSelector);
         WebElement firstSlider = driver.findElement(firstHueSelector);
         new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
@@ -114,5 +116,18 @@ public class WhenUser extends Subject {
         new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
                 .build()
                 .perform();
+    }
+
+    public void movesFirstMarker() {
+        By firstColorWheelMarkerSelector = By.xpath("//*[@id='colorwheel']/div[1]/div");
+        waitForElement(firstColorWheelMarkerSelector);
+        WebElement firstColorWheelMarker = driver.findElement(firstColorWheelMarkerSelector);
+        new Actions(driver)
+                .clickAndHold(firstColorWheelMarker)
+                .moveByOffset(-20, 20)
+                .release()
+                .build()
+                .perform();
+
     }
 }

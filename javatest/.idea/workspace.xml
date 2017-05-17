@@ -30,11 +30,9 @@
       <file leaf-file-name="ThenUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testframework/ThenUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="237">
+              <caret line="81" column="47" lean-forward="false" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,22 +40,31 @@
       <file leaf-file-name="WhenUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testframework/WhenUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="390">
+              <caret line="120" column="36" lean-forward="false" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuestUserCreatesTheme.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/createpage/GuestUserCreatesTheme.java">
+      <file leaf-file-name="Actions.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.jar!/org/openqa/selenium/interactions/Actions.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="205">
+              <caret line="305" column="44" lean-forward="false" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PauseAction.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.jar!/org/openqa/selenium/interactions/PauseAction.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,11 +73,31 @@
       <file leaf-file-name="ColorEditingTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="314">
+              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LockColorRelationshipTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/createpage/LockColorRelationshipTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginToCreateTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/createpage/LoginToCreateTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/test/java/testframework/Given.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/GivenUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/Then.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testframework/ThenUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/When.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testframework/ThenUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/testframework/WhenUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java" />
       </list>
@@ -301,28 +328,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in javatest">
-    <configuration default="false" name="All in javatest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="javatest" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.createpage in javatest">
     <configuration default="false" name="ColorEditingTest.draggingHueSliderChangesColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -336,32 +342,6 @@
       <option name="PACKAGE_NAME" value="createpage" />
       <option name="MAIN_CLASS_NAME" value="createpage.ColorEditingTest" />
       <option name="METHOD_NAME" value="draggingHueSliderChangesColor" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ColorEditingTest.draggingSaturationSliderChangesColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="createpage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="javatest" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="createpage" />
-      <option name="MAIN_CLASS_NAME" value="createpage.ColorEditingTest" />
-      <option name="METHOD_NAME" value="draggingSaturationSliderChangesColor" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -415,6 +395,58 @@
       <option name="MAIN_CLASS_NAME" value="createpage.ColorEditingTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ColorEditingTest.draggingMarkerChangesColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="createpage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="javatest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="createpage" />
+      <option name="MAIN_CLASS_NAME" value="createpage.ColorEditingTest" />
+      <option name="METHOD_NAME" value="draggingMarkerChangesColor" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="createpage in javatest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="createpage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="javatest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="createpage" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -627,18 +659,18 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.All in javatest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingHueSliderChangesColor" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingSaturationSliderChangesColor" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingLightnessSliderChangesColor" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ColorEditingTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingHueSliderChangesColor" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingLightnessSliderChangesColor" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ColorEditingTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingMarkerChangesColor" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.createpage in javatest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in javatest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ColorEditingTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.createpage in javatest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingMarkerChangesColor" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingLightnessSliderChangesColor" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingSaturationSliderChangesColor" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ColorEditingTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.ColorEditingTest.draggingHueSliderChangesColor" />
       </list>
     </recent_temporary>
@@ -665,35 +697,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_javatest - 2017.05.16 at 21h 20m 29s.xml">
-      <configuration name="All in javatest" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 01h 41m 50s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_javatest - 2017.05.16 at 21h 39m 05s.xml">
-      <configuration name="All in javatest" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 01h 42m 57s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest - 2017.05.16 at 21h 37m 05s.xml">
-      <configuration name="ColorEditingTest" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 01h 43m 45s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingHueSliderChangesHue - 2017.05.16 at 21h 13m 29s.xml">
-      <configuration name="ColorEditingTest.draggingHueSliderChangesHue" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 01h 45m 01s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingHueSliderChangesHue - 2017.05.16 at 21h 13m 56s.xml">
-      <configuration name="ColorEditingTest.draggingHueSliderChangesHue" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 01h 49m 21s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingHueSliderChangesHue - 2017.05.16 at 21h 14m 26s.xml">
-      <configuration name="ColorEditingTest.draggingHueSliderChangesHue" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 01h 58m 33s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingHueSliderChangesHue - 2017.05.16 at 21h 18m 42s.xml">
-      <configuration name="ColorEditingTest.draggingHueSliderChangesHue" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 15h 02m 58s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingHueSliderChangesHue - 2017.05.16 at 21h 19m 06s.xml">
-      <configuration name="ColorEditingTest.draggingHueSliderChangesHue" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 15h 04m 20s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingLightnessSliderChangesColor - 2017.05.16 at 21h 34m 16s.xml">
-      <configuration name="ColorEditingTest.draggingLightnessSliderChangesColor" configurationId="JUnit" />
+    <history-entry file="ColorEditingTest_draggingMarkerChangesColor - 2017.05.17 at 15h 05m 36s.xml">
+      <configuration name="ColorEditingTest.draggingMarkerChangesColor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ColorEditingTest_draggingSaturationSliderChangesColor - 2017.05.16 at 21h 31m 00s.xml">
-      <configuration name="ColorEditingTest.draggingSaturationSliderChangesColor" configurationId="JUnit" />
+    <history-entry file="createpage_in_javatest - 2017.05.17 at 15h 06m 05s.xml">
+      <configuration name="createpage in javatest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -705,11 +737,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35856575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26958832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32421875" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22109374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3612218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -756,14 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testframework/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/LikeSubjectCommonVerbsIBunno.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -777,17 +801,9 @@
         <state relative-caret-position="90">
           <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding>
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="false" />
+            <element signature="e#697#698#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/createpage/LoginToCreateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,14 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/createpage/LockColorRelationshipTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -834,23 +842,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testframework/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#1073#1074#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/ThenUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="237">
+          <caret line="81" column="47" lean-forward="false" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.jar!/org/openqa/selenium/interactions/Actions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="305" column="44" lean-forward="false" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testframework/WhenUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="120" column="36" lean-forward="false" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -859,15 +881,42 @@
         <state relative-caret-position="75">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.jar!/org/openqa/selenium/interactions/PauseAction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/createpage/LockColorRelationshipTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/createpage/LoginToCreateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/createpage/ColorEditingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="314">
+          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,5 +1,6 @@
 package createpage;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import testframework.TestBase;
 
@@ -13,21 +14,29 @@ public class ColorEditingTest extends TestBase {
     @Test
     public void draggingHueSliderChangesColor() {
         givenUser.navigatedToCreatePage();
-        whenUser.movesFirstHueSlider();
-        thenUser.seesFirstColorIsNotDefault();
+        whenUser.movesHueSlider(1);
+        thenUser.seesColorIsNotDefault(1);
     }
 
     @Test
     public void draggingSaturationSliderChangesColor() {
         givenUser.navigatedToCreatePage();
         whenUser.movesFirstSaturationSlider();
-        thenUser.seesFirstColorIsNotDefault();
+        thenUser.seesColorIsNotDefault(1);
     }
 
     @Test
     public void draggingLightnessSliderChangesColor() {
         givenUser.navigatedToCreatePage();
         whenUser.movesFirstLightnessSlider();
-        thenUser.seesFirstColorIsNotDefault();
+        thenUser.seesColorIsNotDefault(1);
+    }
+
+    @Ignore // TODO djquinn
+    @Test
+    public void draggingMarkerChangesColor() {
+        givenUser.navigatedToCreatePage();
+        whenUser.movesFirstMarker();
+        thenUser.seesColorIsNotDefault(1);
     }
 }
