@@ -4,6 +4,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 import testframework.TestBase;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertTrue;
+
 public class ColorEditingTest extends TestBase {
     @Test
     public void pageLoadsWithDefaultColor() {

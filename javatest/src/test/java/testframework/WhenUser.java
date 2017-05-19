@@ -92,27 +92,20 @@ public class WhenUser extends Subject {
     }
 
     public void movesHueSlider(int swatchIndex) {
-        By firstHueSelector = By.xpath(String.format("(//*[@id='hue'])[%d]", swatchIndex));
-        waitForElement(firstHueSelector);
-        WebElement firstSlider = driver.findElement(firstHueSelector);
-        new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
-                .build()
-                .perform();
+        moveSlider(By.xpath(String.format("(//*[@id='hue'])[%d]", swatchIndex)));
     }
 
     public void movesFirstSaturationSlider() {
-        By firstSaturationSlider = By.xpath("//*[@id='saturation']");
-        waitForElement(firstSaturationSlider);
-        WebElement firstSlider = driver.findElement(firstSaturationSlider);
-        new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
-                .build()
-                .perform();
+        moveSlider(By.xpath("//*[@id='saturation']"));
     }
 
     public void movesFirstLightnessSlider() {
-        By firstLightnessSlider = By.xpath("//*[@id='lightness']");
-        waitForElement(firstLightnessSlider);
-        WebElement firstSlider = driver.findElement(firstLightnessSlider);
+        moveSlider(By.xpath("//*[@id='lightness']"));
+    }
+
+    private void moveSlider(By firstSaturationSlider) {
+        waitForElement(firstSaturationSlider);
+        WebElement firstSlider = driver.findElement(firstSaturationSlider);
         new Actions(driver).dragAndDropBy(firstSlider, -30, 0)
                 .build()
                 .perform();
@@ -128,6 +121,10 @@ public class WhenUser extends Subject {
                 .release()
                 .build()
                 .perform();
+
+    }
+
+    public void clicksCreateThemeButton() {
 
     }
 }
