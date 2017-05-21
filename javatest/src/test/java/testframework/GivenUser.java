@@ -27,6 +27,10 @@ public class GivenUser extends Subject {
         loginButton.click();
     }
 
+    private void clickCreateThemeLink() {
+        waitToBeClickable(By.xpath("//*[@id='content']/div[1]/form/input"));
+    }
+
     public void isOnLoginPopoverOnCreatePage() {
         navigatedToCreatePage();
         clickLoginToCreateLink();
@@ -70,6 +74,11 @@ public class GivenUser extends Subject {
         clickSignInAsGuestUser();
     }
 
+    public void hasCreatedATheme() {
+        isLoggedInAsDemoUser();
+        clickCreateThemeLink();
+    }
+
     private void clickLoginLinkTopRight() {
         driver.findElement(By.cssSelector(".login-signup")).click();
     }
@@ -77,5 +86,4 @@ public class GivenUser extends Subject {
     private void clickSignInAsGuestUser() {
         driver.findElement(By.cssSelector(".demo")).click();
     }
-
 }

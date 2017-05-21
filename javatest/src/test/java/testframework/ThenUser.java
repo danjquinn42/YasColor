@@ -94,4 +94,17 @@ public class ThenUser extends Subject {
         String color = firstColor.getCssValue("background-color");
         assertThat(color).isEqualTo("rgba(170, 39, 65, 1)");
     }
+
+    public void seesThemeViewPage() {
+        waitForElement(By.xpath("//*[@id='root']/div/content/div[1]/form/input[1]"));
+        String url = driver.getCurrentUrl();
+        assertThat(url).contains("/#/theme/");
+    }
+
+    public void seesTagListed(String tagText) {
+        By tag = By.xpath("//*[@id='tagbox']/li");
+        waitForElement(tag);
+        String tagContent = driver.findElement(tag).getText();
+        assertThat(tagContent).contains(tagText);
+    }
 }

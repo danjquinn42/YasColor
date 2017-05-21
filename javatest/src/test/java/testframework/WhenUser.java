@@ -2,11 +2,14 @@ package testframework;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.UUID;
 
 import static testframework.Helpers.byInnerText;
 import static testframework.Helpers.elementBySelector;
@@ -125,6 +128,20 @@ public class WhenUser extends Subject {
     }
 
     public void clicksCreateThemeButton() {
+        waitForElementToDisappear(By.cssSelector("#root > div > div > div"));
+        By createThemeButtonSelector = By.xpath("//*[@id='content']/div[1]/form/input");
+        clickAfterWait(createThemeButtonSelector);
 
+    }
+
+    public void addsATag(String tagText) {
+//        waitForElement(By.xpath("//*[@id='tagbox']/form/input[1]"));
+        waitToBeClickable(By.cssSelector("#tagbox > form > input.new-tag"));
+        WebElement tagBox = driver.findElement(By.cssSelector("#tagbox > form > input.new-tag"));
+        new Actions(driver).click(tagBox).sendKeys(tagText).build().perform();
+        new Actions(driver).sendKeys(Keys.RETURN).build().perform();
+    }
+
+    public void clicksDeleteTag() {
     }
 }
