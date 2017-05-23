@@ -20,7 +20,6 @@
 }
 
 .close-form {
-  cursor: pointer;
 }
 
 .modal .session-form-container {
@@ -38,6 +37,7 @@
 .close {
   float: right;
   width: 15px;
+  cursor: pointer;
 }
 
 .signup-logo {

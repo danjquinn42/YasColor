@@ -6,7 +6,7 @@ import testframework.TestBase;
 
 import java.util.UUID;
 
-public class GuestUserCreatesTheme extends TestBase{
+public class GuestUserCreatesTheme extends TestBase {
 
     @Test
     public void creatingThemeRedirectsToThemeView() {
@@ -27,10 +27,10 @@ public class GuestUserCreatesTheme extends TestBase{
         thenUser.seesTagListed(tagText);
     }
 
+    @Ignore //TODO danquinn
     @Test
     public void userCanAddTitleToNewTheme() {
         String titleText = UUID.randomUUID().toString();
-        
     }
 
     @Ignore("Not implemented")

@@ -1,15 +1,11 @@
 package testframework;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.UUID;
 
 import static testframework.Helpers.byInnerText;
 import static testframework.Helpers.elementBySelector;
