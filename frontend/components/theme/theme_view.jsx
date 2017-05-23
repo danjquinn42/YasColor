@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Comments from './comments';
-import ActionsPanel from './actions_panel';
+import ActionsPanel from '../actions_panel/actions_panel_container';
 import merge from 'lodash/merge';
 
 
@@ -15,9 +15,6 @@ class ThemeView extends React.Component {
       newTag: "" };
     this.updateTitle = this.updateTitle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateNewTag = this.updateNewTag.bind(this);
-    this.addNewTag = this.addNewTag.bind(this);
-    this.deleteTag = this.deleteTag.bind(this);
   }
 
   componentDidMount() {
@@ -101,52 +98,10 @@ class ThemeView extends React.Component {
   //   return (this.state.justSaved ? "show-check" : "non-display");
   // }
 
-  editSaveIcon() {
-    if (this.state.justSaved) {
-      return (
-        <img className="pencil check"
-           src={window.check}>
-        </img>
-      );
-    } else {
-      return (
-        <img className="pencil"
-           src={window.pencil}>
-        </img>
-      );
-    }
-  }
+
 
   dontDisplayAfterSave(){
     return (this.state.justSaved ? "non-display" : "show-check");
-  }
-
-  addNewTag(newTag) {
-    return (event) => {
-      newTag = { title: newTag };
-      const newTheme = merge( {}, this.state.theme );
-      newTheme.tags.push(newTag);
-      this.props.updateTheme(newTheme);
-      this.setState({ newTag: "" });
-    };
-  }
-
-  deleteTag(tag) {
-    const that = this;
-    return (event) => {
-      const newTheme = merge( {}, that.state.theme );
-      const tagIndex = newTheme.tags.findIndex( (t) => {
-        	return t.title === tag.title;
-        });
-      newTheme.tags.splice(tagIndex, 1);
-      that.props.updateTheme(newTheme);
-    };
-  }
-
-  updateNewTag() {
-    return (event) => {
-      this.setState({ newTag: event.target.value });
-    };
   }
 
   updateTitle(feild){
@@ -177,15 +132,7 @@ class ThemeView extends React.Component {
         </ol>
         <div className="metadata group">
           <Comments />
-          {ActionsPanel(
-            theme,
-            user,
-            updateUser,
-            this.updateNewTag,
-            this.state.newTag,
-            this.addNewTag,
-            this.props.showSignIn,
-            this.deleteTag)}
+            <ActionsPanel />
         </div>
       </content>
     );
