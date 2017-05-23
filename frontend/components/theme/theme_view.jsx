@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import Comments from './comments';
 import ActionsPanel from '../actions_panel/actions_panel_container';
 import merge from 'lodash/merge';
 
@@ -91,14 +90,7 @@ class ThemeView extends React.Component {
         </form>
       );
     }
-    // <input type="submit" className="save-button non-display" value="submit"></input>
   }
-
-  // displayAfterSave(){
-  //   return (this.state.justSaved ? "show-check" : "non-display");
-  // }
-
-
 
   dontDisplayAfterSave(){
     return (this.state.justSaved ? "non-display" : "show-check");
@@ -131,7 +123,6 @@ class ThemeView extends React.Component {
           {this.swatches(theme)}
         </ol>
         <div className="metadata group">
-          <Comments />
             <ActionsPanel />
         </div>
       </content>
