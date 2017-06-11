@@ -1,0 +1,70 @@
+Issues:
+
+- Cannot Delete Tags
+- Complete User object saved in each theme
+	- Includes user email, password digest, and last session token
+
+
+TODO:
+• Create a currentTheme reducer
+• remove user from theme object - replace with author or userID
+• Extract Actions panel from Theme ⬆️
+• Log in to save should not change theme - singing in should save
+• My Themes page should always be up to date without refresh
+
+
+
+Desired State:
+{
+Loading: {
+	exploreLoading: false,
+	themeLoading: false
+	},
+
+Session: {
+	currentUser: {
+		email: "email",
+		id: userID,
+		name: "name",
+		myThemes: [#, #, #, #, #]
+		},
+	errors: []
+	},
+
+CurrentTheme: {
+	color_swatches: [O, O, O, O, O],
+	created_at: Date,
+	id: #,
+	tags: [#, #, #, ... #],
+	author: "userName",
+	title: "title"
+	},
+
+Themes: [
+	id: {
+		color_swatches: [O, O, O, O, O],
+		created_at: Date,
+		id: #,
+		tags: [#, #, #, ... #],
+		author: "userName",
+		title: "title"
+		},
+	id: {
+		color_swatches: [O, O, O, O, O],
+		created_at: Date,
+		id: #,
+		tags: [#, #, #, ... #],
+		author: "userName",
+		title: "title"
+		},
+	...
+	id: {
+		color_swatches: [O, O, O, O, O],
+		created_at: Date,
+		id: #,
+		tags: [#, #, #, ... #],
+		author: "userName",
+		title: "title"
+		}
+	]
+}
