@@ -3,9 +3,9 @@ import React from 'react';
 class ActionsPanel extends React.Component {
 
   render(){
+    debugger;
     return (
       <section className="actions-panel group">
-        <h3>Actions</h3>
         <ul>
           <li className="action-item">
 
